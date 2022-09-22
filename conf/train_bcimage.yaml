@@ -1,0 +1,36 @@
+default:
+    - override hydra/output: local
+    - override hydra/launcher: local
+
+data:
+  logs_folder: /home/gaoyue/Desktop/peg-inserting-units/blue
+  pickle_fn: 'parsed_with_depth.pkl'
+  subsample_period: 1
+  in_dim: 7
+  out_dim: 7
+  tracking: null
+  images:
+    cameras: # A list of camera images to use, or [] to not use cameras
+      - 'cam0c'
+    im_h: 480
+    im_w: 640
+    per_img_out: 128
+  noise: 0.0
+  H: 1
+
+agent:
+  type: 'bcimage'
+  vision_model: 'resnet'
+  fix_resnet: True # only effective when vision_model is 'resnet'
+  description: ""
+  name: ''
+
+training:
+  lr: 1e-4
+  seed: 0
+  epochs: 40
+  device: 'cuda:0'
+  batch_size: 64
+  save_every_x_epoch: 10
+
+debug: False
