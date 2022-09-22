@@ -70,7 +70,7 @@ class BCImageAgent(Agent):
                  'optimizer': self.optimizer.state_dict(),
                  }
         for mname, m in self.models.items():
-            if mname != 'img_encoder': # Don't save img encoder net
+            if mname != 'img_encoder': 
                 state[mname] = m.state_dict()
         torch.save(state, os.path.join(foldername, filename))
 
@@ -83,7 +83,7 @@ class BCImageAgent(Agent):
         return self.loss.item()
 
     def zero_grad(self):
-        [m.zero_grad() for m in self.models.values()]   # this is redundant?
+        [m.zero_grad() for m in self.models.values()] 
         self.optimizer.zero_grad()
 
 def init_weights(m):

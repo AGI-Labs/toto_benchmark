@@ -21,7 +21,7 @@ data:
 agent:
   type: 'bcimage'
   vision_model: 'resnet'
-  fix_resnet: True # only effective when vision_model is 'resnet'
+  fix_resnet: True 
   description: ""
   name: ''
 

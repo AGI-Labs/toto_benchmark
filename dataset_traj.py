@@ -24,7 +24,7 @@ class FrankaDatasetTraj(Dataset):
             im_w=640,
             obs_dim=7,
             action_dim=7,
-            H=50, ##########
+            H=50, 
             device='cpu',
             cameras=None,
             img_transform_fn=None,
@@ -39,7 +39,7 @@ class FrankaDatasetTraj(Dataset):
         self.im_h = im_h
         self.im_w = im_w
         self.obs_dim = obs_dim
-        self.action_dim = action_dim # not used yet
+        self.action_dim = action_dim
         self.H = H
         self.demos = data
         self.device = device
@@ -55,37 +55,34 @@ class FrankaDatasetTraj(Dataset):
         for traj in self.demos:
             for key in ['cam0c', 'observations', 'actions', 'terminated', 'rewards']:
                 if key == 'observations':
-                    traj[key] = traj[key][:, :self.obs_dim] ##############
+                    traj[key] = traj[key][:, :self.obs_dim] 
                 traj[key] = traj[key][::self.subsample_period]
 
-    def process_demos(self): # each datapoint is a single (st, at)!
+    def process_demos(self): 
         inputs, labels = [], []
         for traj in self.demos:
-            if traj['actions'].shape[0] > self.H: # ignore short trajs
+            if traj['actions'].shape[0] > self.H: 
                 for start in range(traj['actions'].shape[0] - self.H + 1):
                     inputs.append(traj['observations'][start])
-                    labels.append(traj['actions'][start : start + self.H, :]) # sliding window
+                    labels.append(traj['actions'][start : start + self.H, :]) 
         inputs = np.stack(inputs, axis=0).astype(np.float64)
         labels = np.stack(labels, axis=0).astype(np.float64)
         if self.cameras:
             images = []
             for traj in self.demos:
-                if traj['actions'].shape[0] > self.H: # ignore short trajs
+                if traj['actions'].shape[0] > self.H: 
                     for start in range(traj['actions'].shape[0] - self.H + 1):
                         images.append(traj['images'][start])
-            # images = np.concatenate(images, axis=0) ### TODO: sanity check
             self.images = images
         self.inputs = np_to_tensor(inputs, self.device)
         self.labels = np_to_tensor(labels, self.device)
-
-        self.labels = self.labels.reshape([self.labels.shape[0], -1]) # flatten actions to (#trajs, H * action_dim)
+        self.labels = self.labels.reshape([self.labels.shape[0], -1]) 
 
 
     def load_imgs(self):
         print("Start loading images...")
         cnt = 0
         for path in self.demos:
-            print(cnt, "  ", path['traj_id'])
             path['images'] = []
             for i in range(path['observations'].shape[0]):
                 img_path = os.path.join(self.logs_folder, os.path.join('data', path['traj_id'], path['cam0c'][i]))
@@ -99,7 +96,7 @@ class FrankaDatasetTraj(Dataset):
     def __getitem__(self, idx):
         datapoint = {
                 'inputs': self.inputs[idx],
-                'labels': self.labels[idx],  ######
+                'labels': self.labels[idx],  
                 }
         if self.noise:
             datapoint['inputs'] += torch.randn_like(datapoint['inputs']) * self.noise
