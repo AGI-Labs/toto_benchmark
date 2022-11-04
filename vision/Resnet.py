@@ -1,4 +1,3 @@
-import os
 import torch
 from torch import nn
 import torchvision.models as models
@@ -29,7 +28,6 @@ def _load_model(config):
     return PretrainedResNet( 
         config.data.images.im_h, config.data.images.im_w,
         config.data.images.per_img_out, config.agent.fix_resnet)
-
 
 def _load_transforms(config):
     from torchvision import transforms

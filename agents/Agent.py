@@ -1,5 +1,4 @@
 from torch import Tensor
-
 from abc import ABC, abstractmethod
 
 class Agent(ABC):

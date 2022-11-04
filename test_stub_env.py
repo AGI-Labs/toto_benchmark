@@ -8,6 +8,7 @@ import torch
 
 from agents import init_agent_from_config
 import time
+from utils import Namespace
 
 SUCCESS_MESSAGE = "Agent outputs valid action - Test passed!"
 FAILURE_MESSAGE = "Agent outputs invalid action - Test failed."
@@ -24,45 +25,6 @@ cd TOTO_starter
 python test_stub_env.py -f ./outputs/dummy_agent
 ```
 '''
-class Namespace(collections.MutableMapping):
-    """Utility class to convert a (nested) dictionary into a (nested) namespace.
-    """
-
-    def __init__(self, data):
-        self._data = data
-
-    def __getitem__(self, k):
-        return self._data[k]
-
-    def __setitem__(self, k, v):
-        self._data[k] = v
-
-    def __delitem__(self, k):
-        del self._data[k]
-
-    def __iter__(self):
-        return iter(self._data)
-
-    def __len__(self): 
-        return len(self._data)
-
-    def __getattr__(self, k):
-        if not k.startswith('_'):
-            if k not in self._data:
-                return Namespace({})
-            v = self._data[k]
-            if isinstance(v, dict):
-                v = Namespace(v)
-            return v
-
-        if k not in self.__dict__:
-            raise AttributeError("'Namespace' object has no attribute '{}'".format(k))
-
-        return self.__dict__[k]
-
-    def __repr__(self):
-        return repr(self._data)
-
 
 class DummyFrankaEnv():
     CMD_SHAPE = 7

@@ -1,9 +1,9 @@
-"""Train a RoboCloud agent.
+"""Train a TOTO agent.
 
 Example command:
-python train_example.py --config-name train_bcimage.yaml data.logs_folder=/RoboCloud/cloud-dataset-scooping-v0
+python train.py --config-name train_bcopen.yaml 
 
-Hyperparameters can be set in confs/train_bcimage.yaml
+Hyperparameters can be set in corresponding .yaml files in confs/
 """
 
 import logging
@@ -15,11 +15,12 @@ import torch
 from omegaconf import DictConfig, OmegaConf, open_dict
 import baselines
 import hydra
+import wandb
 
 from torch.utils.data import DataLoader, random_split
 from agents import init_agent_from_config
 from dataset_traj import FrankaDatasetTraj
-from vision import load_transforms
+from vision import load_transforms, EMBEDDING_DIMS
 
 log = logging.getLogger(__name__)
 
@@ -31,16 +32,36 @@ def global_seeding(seed=0):
 def main(cfg : DictConfig) -> None:
     with open_dict(cfg):
         cfg['saved_folder'] = os.getcwd()
+        print("Model saved dir: ", cfg['saved_folder'])
+
+        if 'crop' not in cfg['data']['images']:
+            cfg['data']['images']['crop'] = False
+        if 'H' not in cfg['data']:
+            cfg['data']['H'] = 1
+        cfg['data']['logs_folder'] = os.path.dirname(cfg['data']['pickle_fn']) 
+
+    if cfg.agent.type in ['bcimage', 'bcimage_pre']:
+        cfg['data']['images']['per_img_out'] = EMBEDDING_DIMS[cfg['agent']['vision_model']]
+        if cfg.agent.type == 'bcimage_pre':
+            # assume in_dim is without adding the image embedding dimensions
+            cfg['data']['in_dim'] = cfg['data']['in_dim'] + cfg['data']['images']['per_img_out']
 
     print(OmegaConf.to_yaml(cfg, resolve=True))
-
     with open(os.path.join(os.getcwd(), 'hydra.yaml'), 'w') as f:
         f.write(OmegaConf.to_yaml(cfg, resolve=True))
 
     global_seeding(cfg.training.seed)
+    print(hydra.utils.get_original_cwd(),cfg.data.pickle_fn)
+
+    agent_name = cfg['saved_folder'].split('outputs/')[-1]
+    flat_dict = {}
+    for key in ['data', 'agent', 'training']:
+        flat_dict.update(dict(cfg[key]))
+    wandb.init(project="toto-bc", config=flat_dict)
+    wandb.run.name = "{}".format(agent_name)
 
     try:
-        with open(os.path.join(cfg.data.logs_folder, cfg.data.pickle_fn), 'rb') as f:
+        with open(os.path.join(hydra.utils.get_original_cwd(), cfg.data.pickle_fn), 'rb') as f:
             data = pickle.load(f)
     except:
         print("\n***Pickle does not exist. Make sure the pickle is in the logs_folder directory.")
@@ -54,18 +75,20 @@ def main(cfg : DictConfig) -> None:
         obs_dim=cfg.data.in_dim,
         action_dim=cfg.data.out_dim,
         H=cfg.data.H,
+        top_k=cfg.data.top_k,
         device=cfg.training.device,
         cameras=cfg.data.images.cameras,
         img_transform_fn=load_transforms(cfg),
-        noise=cfg.data.noise)
-
-    agent, _ = init_agent_from_config(cfg, cfg.training.device, normalization=dset)
-
+        noise=cfg.data.noise,
+        crop_images=cfg.data.images.crop)
+    del data
     split_sizes = [int(len(dset) * 0.8), len(dset) - int(len(dset) * 0.8)]
     train_set, test_set = random_split(dset, split_sizes)
 
-    train_loader = DataLoader(train_set, batch_size=cfg.training.batch_size, shuffle=True, num_workers=4, pin_memory=True)
+    num_workers = 0
+    train_loader = DataLoader(train_set, batch_size=cfg.training.batch_size, shuffle=True, num_workers=num_workers, pin_memory=True)
     test_loader = DataLoader(test_set, batch_size=cfg.training.batch_size)
+    agent, _ = init_agent_from_config(cfg, cfg.training.device, normalization=dset)
     train_metric, test_metric = baselines.Metric(), baselines.Metric()
 
     for epoch in range(cfg.training.epochs):
@@ -86,14 +109,18 @@ def main(cfg : DictConfig) -> None:
             for key in data:
                 data[key] = data[key].to(cfg.training.device)
             test_metric.add(agent.eval(data))
-        log.info('epoch {} \t train {:.6f} \t test {:.6f}'.format(epoch, train_metric.mean, test_metric.mean))
 
+        log.info('epoch {} \t train {:.6f} \t test {:.6f}'.format(epoch, train_metric.mean, test_metric.mean))
         log.info(f'Accumulated loss: {acc_loss}')
         if epoch % cfg.training.save_every_x_epoch == 0:
             agent.save(os.getcwd())
 
+        wandb.log({"Train Loss": train_metric.mean, "Epoch": epoch})
+        wandb.log({"Test Loss": test_metric.mean, "Epoch": epoch})
+        wandb.log({"Acc Train Loss": acc_loss, "Epoch": epoch})
+
     agent.save(os.getcwd())
-    print("Saved agent to",os.getcwd())
+    log.info("Saved agent to {}".format(os.getcwd()))
 
 if __name__ == '__main__':
     main()

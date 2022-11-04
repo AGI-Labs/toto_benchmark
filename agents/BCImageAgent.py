@@ -6,7 +6,6 @@ import torchvision.models as models
 from vision import load_model, load_transforms
 from .Agent import Agent
 
-
 class BCImageAgent(Agent):
     def __init__(self, models, learning_rate, device, cameras):
         self.models = models
