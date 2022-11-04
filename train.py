@@ -1,7 +1,7 @@
 """Train a TOTO agent.
 
 Example command:
-python train.py --config-name train_bcopen.yaml 
+python train.py --config-name train_bc.yaml 
 
 Hyperparameters can be set in corresponding .yaml files in confs/
 """
