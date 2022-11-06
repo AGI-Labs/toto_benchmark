@@ -3,7 +3,13 @@
 
 ## Installation
 <!-- TODO: conda only instructions from the docker instructions?  -->
-...
+You can either use a local conda environment or docker setup
+
+### Setup conda environment
+1. Run ```source setup_toto_env.sh```
+
+### Setup docker environment
+1. Follow the instructions in ```docker_instructions.md```
 
 If you are contributing models to TOTO, we suggest setting up a docker...
 

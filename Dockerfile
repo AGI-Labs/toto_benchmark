@@ -38,21 +38,21 @@ RUN ls -la /TOTO_starter/*
 # WORKDIR TOTO_starter
 WORKDIR /TOTO_starter
 
-RUN conda env create -f ./environment.yml
+RUN conda env create -f ./toto.yml
 
 ## ADD CONDA ENV PATH TO LINUX PATH 
-ENV PATH /root/miniconda3/envs/robocloud-env/bin:$PATH
-ENV CONDA_DEFAULT_ENV robocloud-env
+ENV PATH /root/miniconda3/envs/toto/bin:$PATH
+ENV CONDA_DEFAULT_ENV toto
 # make sure to put your env name in place of myconda
 
 ## MAKE ALL BELOW RUN COMMANDS USE THE NEW CONDA ENVIRONMENT
-SHELL ["conda", "run", "-n", "robocloud-env", "/bin/bash", "-c"]
+SHELL ["conda", "run", "-n", "toto", "/bin/bash", "-c"]
 
 RUN mamba install -y pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
 
 WORKDIR /
-RUN git clone https://github.com/AGI-Labs/robot_baselines.git
-RUN pip install -e ./robot_baselines
+RUN pip install git+https://github.com/AGI-Labs/robot_baselines.git
 RUN pip install git+https://github.com/openai/CLIP.git
 
-RUN echo "conda activate robocloud-env" >> ~/.bashrc
+# Activate 
+RUN echo "conda activate toto" >> ~/.bashrc

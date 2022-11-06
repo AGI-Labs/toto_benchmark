@@ -1,4 +1,4 @@
-name: robocloud-env
+name: toto
 channels:
   - fair-robotics
   - aihabitat
