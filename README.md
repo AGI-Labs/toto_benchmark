@@ -11,7 +11,7 @@ You can either use a local conda environment or docker setup
 ### Setup docker environment
 1. Follow the instructions in ```docker_instructions.md```
 
-If you are contributing models to TOTO, we suggest setting up a docker...
+Note: If you are contributing models to TOTO, we strongly suggest setting up the docker environment
 
 ### TOTO Visual Representation Models
 ### TOTO Datasets
