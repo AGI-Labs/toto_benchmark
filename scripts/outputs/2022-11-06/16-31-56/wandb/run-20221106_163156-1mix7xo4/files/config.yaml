@@ -1,0 +1,90 @@
+wandb_version: 1
+
+H:
+  desc: null
+  value: 50
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.17
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.8.0
+    start_time: 1667770316
+    t:
+      1:
+      - 1
+      - 41
+      - 50
+      - 55
+      2:
+      - 1
+      - 41
+      - 50
+      - 55
+      3:
+      - 16
+      - 17
+      4: 3.8.0
+      5: 0.12.17
+      8:
+      - 5
+batch_size:
+  desc: null
+  value: 128
+description:
+  desc: null
+  value: NA
+device:
+  desc: null
+  value: cuda:0
+epochs:
+  desc: null
+  value: 80
+hidden_dim:
+  desc: null
+  value: 128
+images:
+  desc: null
+  value: '{''cameras'': [], ''im_h'': 480, ''im_w'': 640, ''per_img_out'': 2048, ''crop'':
+    True}'
+in_dim:
+  desc: null
+  value: 2055
+logs_folder:
+  desc: null
+  value: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/assets/cloud-dataset-pouring-v0
+lr:
+  desc: null
+  value: 0.001
+noise:
+  desc: null
+  value: 0.0
+out_dim:
+  desc: null
+  value: 7
+pickle_fn:
+  desc: null
+  value: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/assets/cloud-dataset-pouring-v0/parsed_with_embeddings_moco_conv5_robocloud.pkl
+save_every_x_epoch:
+  desc: null
+  value: 10
+seed:
+  desc: null
+  value: 0
+subsample_period:
+  desc: null
+  value: 1
+top_k:
+  desc: null
+  value: null
+type:
+  desc: null
+  value: bcimage_pre
+vision_model:
+  desc: null
+  value: moco_conv5_robocloud
+vision_model_path:
+  desc: null
+  value: ../assets/BYOL_18v2_fixed_100.pt

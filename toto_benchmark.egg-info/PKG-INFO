@@ -1,3 +1,10 @@
+Metadata-Version: 2.1
+Name: toto-benchmark
+Version: 0.0.1
+Summary: UNKNOWN
+License: MIT License
+Platform: UNKNOWN
+
 # Train Offline, Test Online: A Real Robot Learning Benchmark
 <!-- TODO: add teaser figures, some setup/task images, etc  -->
 
@@ -81,4 +88,6 @@ python train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-
 - Update the agent config file `outputs/collaborator_agent/hydra.yaml` for initializing your agent
 - Once the above is done, run `python test_stub_env.py -f outputs/collaborator_agent/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
+
+
 

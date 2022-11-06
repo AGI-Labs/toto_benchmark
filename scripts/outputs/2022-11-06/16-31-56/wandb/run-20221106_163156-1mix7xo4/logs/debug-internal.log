@@ -1,0 +1,1421 @@
+2022-11-06 16:31:57,016 INFO    MainThread:287027 [internal.py:wandb_internal():90] W&B internal server running at pid: 287027, started at: 2022-11-06 16:31:57.016040
+2022-11-06 16:31:57,018 INFO    WriterThread:287027 [datastore.py:open_for_write():75] open: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/run-1mix7xo4.wandb
+2022-11-06 16:31:57,019 DEBUG   SenderThread:287027 [sender.py:send():232] send: header
+2022-11-06 16:31:57,019 DEBUG   SenderThread:287027 [sender.py:send():232] send: run
+2022-11-06 16:31:57,168 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: check_version
+2022-11-06 16:31:57,169 INFO    SenderThread:287027 [dir_watcher.py:__init__():197] watching files in: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files
+2022-11-06 16:31:57,169 INFO    SenderThread:287027 [sender.py:_start_run_threads():811] run started: 1mix7xo4 with start time 1667770316
+2022-11-06 16:31:57,169 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:31:57,169 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:31:57,169 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: check_version
+2022-11-06 16:31:57,241 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: run_start
+2022-11-06 16:31:57,243 DEBUG   HandlerThread:287027 [meta.py:__init__():35] meta init
+2022-11-06 16:31:57,243 DEBUG   HandlerThread:287027 [meta.py:__init__():49] meta init done
+2022-11-06 16:31:57,243 DEBUG   HandlerThread:287027 [meta.py:probe():209] probe
+2022-11-06 16:31:57,250 DEBUG   HandlerThread:287027 [meta.py:_setup_git():199] setup git
+2022-11-06 16:31:57,258 DEBUG   HandlerThread:287027 [meta.py:_setup_git():206] setup git done
+2022-11-06 16:31:57,258 DEBUG   HandlerThread:287027 [meta.py:_save_pip():53] save pip
+2022-11-06 16:31:57,259 DEBUG   HandlerThread:287027 [meta.py:_save_pip():67] save pip done
+2022-11-06 16:31:57,259 DEBUG   HandlerThread:287027 [meta.py:_save_conda():74] save conda
+2022-11-06 16:31:58,171 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_created():244] file/dir created: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:31:58,171 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_created():244] file/dir created: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/conda-environment.yaml
+2022-11-06 16:31:58,171 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_created():244] file/dir created: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/requirements.txt
+2022-11-06 16:31:59,166 DEBUG   HandlerThread:287027 [meta.py:_save_conda():84] save conda done
+2022-11-06 16:31:59,166 DEBUG   HandlerThread:287027 [meta.py:probe():247] probe done
+2022-11-06 16:31:59,169 DEBUG   SenderThread:287027 [sender.py:send():232] send: files
+2022-11-06 16:31:59,169 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-metadata.json with policy now
+2022-11-06 16:31:59,171 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/conda-environment.yaml
+2022-11-06 16:31:59,172 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_created():244] file/dir created: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-metadata.json
+2022-11-06 16:31:59,175 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:31:59,176 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:31:59,273 DEBUG   SenderThread:287027 [sender.py:send():232] send: telemetry
+2022-11-06 16:31:59,274 DEBUG   SenderThread:287027 [sender.py:send():232] send: telemetry
+2022-11-06 16:31:59,274 DEBUG   SenderThread:287027 [sender.py:send():232] send: run
+2022-11-06 16:31:59,403 INFO    SenderThread:287027 [sender.py:send_run():707] updated run: 1mix7xo4
+2022-11-06 16:31:59,631 INFO    Thread-11 :287027 [upload_job.py:push():132] Uploaded file /tmp/tmpdhhcnw16wandb/gjvb6sn1-wandb-metadata.json
+2022-11-06 16:32:00,172 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/config.yaml
+2022-11-06 16:32:00,172 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_created():244] file/dir created: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:02,173 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:04,173 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:14,176 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:14,279 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:32:14,279 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:32:15,160 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:15,161 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:15,161 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:15,162 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:15,162 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:15,162 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:15,162 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:15,162 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:15,168 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:15,168 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:15,168 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:15,168 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:15,176 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:16,177 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:18,177 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:19,418 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:19,419 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:19,419 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:19,419 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:19,425 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:19,426 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:19,426 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:19,426 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:19,427 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:19,427 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:19,427 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:19,427 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:20,178 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:20,178 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:22,178 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:23,793 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:23,793 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:23,793 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:23,794 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:23,794 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:23,794 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:23,794 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:23,800 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:23,801 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:23,801 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:23,801 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:23,801 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:24,178 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:24,179 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:25,506 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:32:26,179 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:28,112 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:28,112 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:28,113 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:28,113 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:28,119 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:28,119 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:28,119 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:28,120 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:28,120 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:28,120 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:28,120 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:28,120 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:28,179 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:28,180 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:28,180 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/config.yaml
+2022-11-06 16:32:29,404 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:32:29,404 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:32:30,180 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:32,180 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:32,389 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:32,390 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:32,390 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:32,390 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:32,390 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:32,390 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:32,390 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:32,396 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:32,397 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:32,397 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:32,397 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:32,397 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:33,181 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:34,181 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:36,181 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:36,563 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:36,563 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:36,563 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:36,564 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:36,564 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:36,564 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:36,564 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:36,570 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:36,573 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:36,573 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:36,573 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:36,573 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:37,182 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:38,182 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:40,183 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:40,839 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:40,839 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:40,840 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:40,840 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:40,849 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:40,849 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:40,849 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:40,849 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:40,850 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:40,850 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:40,850 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:40,850 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:41,183 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:42,183 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:44,184 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:44,502 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:32:44,502 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:32:45,240 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:45,240 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:45,241 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:45,241 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:45,241 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:45,241 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:45,241 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:45,247 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:45,248 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:45,248 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:45,248 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:45,248 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:46,184 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:46,184 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:48,185 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:49,535 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:49,536 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:49,536 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:49,536 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:49,542 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:49,542 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:49,542 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:49,542 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:49,543 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:49,543 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:49,543 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:49,543 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:50,185 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:50,185 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:52,186 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:53,785 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:53,785 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:53,785 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:53,786 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:53,786 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:53,786 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:53,786 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:53,791 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:53,793 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:53,793 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:53,793 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:53,793 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:54,186 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:54,186 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:55,737 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:32:56,187 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:58,055 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:58,056 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:58,056 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:58,056 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:58,062 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:32:58,062 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:58,063 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:58,063 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:58,063 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:58,063 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:32:58,063 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:32:58,063 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:32:58,187 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:32:58,187 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:32:59,599 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:32:59,600 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:33:00,188 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:02,188 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:02,312 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:02,313 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:02,313 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:02,313 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:02,319 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:02,319 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:02,320 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:02,320 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:02,320 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:02,320 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:02,320 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:02,320 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:03,188 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:04,189 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:06,189 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:06,583 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:06,583 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:06,583 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:06,584 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:06,584 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:06,584 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:06,584 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:06,589 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:06,591 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:06,591 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:06,591 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:06,591 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:07,190 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:08,190 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:10,190 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:10,920 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:10,920 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:10,920 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:10,921 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:10,921 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:10,921 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:10,921 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:10,923 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:10,926 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:10,926 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:10,926 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:10,927 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:11,191 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:12,191 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:14,191 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:14,694 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:33:14,694 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:33:15,226 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:15,227 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:15,227 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:15,227 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:15,233 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:15,233 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:15,233 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:15,234 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:15,234 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:15,234 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:15,234 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:15,234 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:16,192 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:16,192 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:18,192 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:19,477 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:19,477 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:19,478 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:19,478 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:19,478 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:19,478 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:19,478 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:19,483 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:19,485 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:19,485 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:19,485 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:19,485 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:20,193 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:20,193 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:22,193 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:23,660 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:23,660 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:23,660 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:23,660 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:23,661 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:23,661 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:23,661 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:23,663 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:23,666 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:23,666 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:23,666 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:23,667 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:24,194 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:24,194 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:25,959 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:33:26,194 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:27,899 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:27,899 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:27,899 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:27,899 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:27,900 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:27,900 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:27,900 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:27,902 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:27,905 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:27,905 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:27,905 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:27,906 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:28,195 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:28,195 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:29,787 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:33:29,787 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:33:30,195 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:32,196 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:32,249 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:32,249 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:32,249 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:32,250 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:32,250 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:32,250 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:32,250 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:32,255 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:32,257 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:32,257 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:32,257 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:32,257 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:33,196 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:34,196 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:36,197 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:36,552 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:36,552 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:36,553 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:36,553 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:36,553 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:36,553 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:36,553 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:36,558 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:36,560 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:36,560 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:36,560 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:36,560 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:37,197 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:38,197 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:40,198 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:40,673 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:40,673 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:40,673 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:40,673 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:40,674 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:40,674 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:40,674 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:40,679 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:40,679 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:40,680 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:40,680 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:40,680 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:41,198 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:42,198 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:44,199 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:44,816 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:44,816 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:44,816 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:44,817 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:44,817 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:44,817 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:44,817 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:44,822 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:44,823 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:44,823 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:44,823 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:44,823 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:44,882 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:33:44,882 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:33:45,199 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:46,199 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:48,200 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:48,977 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:48,978 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:48,978 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:48,978 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:48,983 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:48,984 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:48,984 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:48,984 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:48,984 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:48,984 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:48,984 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:48,984 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:49,200 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:50,201 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:52,201 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:53,290 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:53,291 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:53,291 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:53,291 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:53,297 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:53,297 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:53,297 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:53,297 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:53,298 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:53,298 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:53,298 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:53,298 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:54,202 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:54,202 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:56,171 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:33:56,202 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:57,462 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:57,462 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:57,462 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:57,463 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:57,468 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:57,468 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:33:57,468 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:57,469 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:57,469 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:57,469 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:33:57,469 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:33:57,469 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:33:58,202 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:33:58,203 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:33:59,978 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:33:59,978 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:34:00,203 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:01,834 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:01,835 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:01,835 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:01,835 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:01,835 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:01,836 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:01,836 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:01,841 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:01,842 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:01,842 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:01,842 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:01,842 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:02,203 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:02,204 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:04,204 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:06,204 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:06,212 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:06,213 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:06,213 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:06,213 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:06,214 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:06,214 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:06,214 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:06,219 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:06,220 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:06,220 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:06,220 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:06,221 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:07,205 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:08,205 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:10,206 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:10,393 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:10,393 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:10,393 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:10,394 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:10,394 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:10,394 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:10,394 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:10,399 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:10,400 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:10,401 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:10,401 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:10,401 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:11,206 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:12,206 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:14,207 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:14,619 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:14,619 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:14,619 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:14,620 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:14,620 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:14,620 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:14,620 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:14,625 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:14,626 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:14,626 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:14,626 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:14,627 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:15,074 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:34:15,074 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:34:15,207 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:16,207 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:18,208 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:18,924 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:18,924 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:18,924 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:18,925 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:18,925 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:18,925 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:18,925 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:18,927 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:18,930 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:18,930 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:18,930 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:18,930 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:19,208 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:20,208 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:22,209 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:23,245 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:23,246 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:23,246 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:23,246 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:23,252 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:23,252 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:23,253 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:23,253 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:23,253 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:23,253 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:23,253 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:23,253 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:24,209 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:24,209 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:26,210 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:26,396 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:34:27,535 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:27,535 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:27,536 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:27,536 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:27,536 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:27,536 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:27,536 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:27,541 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:27,543 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:27,543 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:27,543 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:27,543 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:28,210 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:28,210 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:30,198 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:34:30,198 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:34:30,211 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:31,851 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:31,852 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:31,852 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:31,852 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:31,857 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:31,858 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:31,858 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:31,858 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:31,859 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:31,859 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:31,859 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:31,859 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:32,211 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:32,211 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:34,212 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:36,117 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:36,117 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:36,117 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:36,117 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:36,123 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:36,123 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:36,123 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:36,123 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:36,124 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:36,124 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:36,124 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:36,124 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:36,212 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:36,212 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:38,213 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:40,213 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:40,345 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:40,345 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:40,346 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:40,346 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:40,346 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:40,346 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:40,346 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:40,353 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:40,354 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:40,355 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:40,355 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:40,355 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:41,213 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:42,214 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:44,214 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:44,536 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:44,536 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:44,537 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:44,537 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:44,537 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:44,537 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:44,537 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:44,542 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:44,544 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:44,544 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:44,544 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:44,544 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:45,214 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:45,298 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:34:45,298 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:34:46,215 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:48,215 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:48,841 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:48,841 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:48,841 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:48,842 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:48,842 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:48,842 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:48,842 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:48,842 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:48,847 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:48,847 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:48,847 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:48,848 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:49,215 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:50,216 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:52,216 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:53,188 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:53,188 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:53,188 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:53,189 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:53,194 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:53,194 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:53,195 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:53,195 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:53,195 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:53,195 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:53,196 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:53,196 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:53,217 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:54,217 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:56,217 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:34:56,623 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:34:57,525 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:57,525 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:57,526 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:57,526 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:57,531 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:57,532 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:34:57,532 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:57,532 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:57,533 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:57,533 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:34:57,533 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:34:57,533 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:34:58,218 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:34:58,218 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:00,218 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:00,396 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:35:00,396 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:35:01,743 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:01,744 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:01,744 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:01,744 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:01,752 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:01,753 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:01,753 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:01,753 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:01,753 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:01,754 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:01,754 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:01,754 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:02,219 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:02,219 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:04,219 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:06,070 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:06,071 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:06,071 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:06,071 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:06,072 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:06,072 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:06,072 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:06,076 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:06,080 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:06,080 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:06,080 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:06,081 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:06,220 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:06,220 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:08,220 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:10,221 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:10,338 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:10,339 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:10,340 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:10,340 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:10,340 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:10,340 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:10,340 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:10,345 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:10,347 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:10,347 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:10,347 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:10,347 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:11,221 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:12,221 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:14,222 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:14,676 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:14,676 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:14,677 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:14,677 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:14,682 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:14,683 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:14,683 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:14,683 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:14,684 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:14,684 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:14,684 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:14,684 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:15,222 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:15,491 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:35:15,491 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:35:16,222 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:18,223 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:19,016 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:19,016 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:19,016 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:19,017 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:19,022 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:19,023 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:19,023 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:19,023 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:19,023 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:19,023 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:19,023 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:19,024 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:19,223 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:20,223 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:22,224 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:23,324 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:23,324 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:23,325 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:23,325 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:23,325 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:23,326 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:23,326 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:23,326 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:23,332 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:23,332 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:23,332 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:23,333 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:24,224 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:24,225 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:26,225 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:26,845 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:35:27,713 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:27,713 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:27,713 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:27,714 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:27,714 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:27,715 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:27,715 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:27,715 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:27,721 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:27,721 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:27,722 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:27,722 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:28,225 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:28,226 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:30,226 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:30,626 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:35:30,626 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:35:31,907 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:31,907 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:31,908 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:31,908 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:31,909 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:31,909 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:31,909 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:31,911 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:31,913 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:31,914 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:31,914 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:31,914 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:32,227 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:32,227 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:34,227 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:36,131 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:36,131 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:36,132 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:36,132 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:36,132 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:36,132 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:36,132 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:36,137 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:36,139 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:36,139 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:36,139 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:36,139 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:36,228 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:36,228 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:38,228 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:40,228 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:40,445 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:40,445 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:40,446 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:40,446 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:40,446 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:40,446 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:40,446 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:40,447 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:40,453 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:40,453 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:40,453 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:40,453 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:41,229 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:42,229 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:44,229 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:44,676 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:44,676 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:44,676 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:44,677 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:44,677 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:44,677 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:44,677 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:44,683 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:44,685 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:44,685 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:44,686 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:44,686 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:45,230 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:45,719 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:35:45,719 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:35:46,230 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:48,230 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:48,928 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:48,929 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:48,929 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:48,929 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:48,931 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:48,931 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:48,931 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:48,932 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:48,937 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:48,937 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:48,938 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:48,938 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:49,231 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:50,231 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:52,231 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:53,094 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:53,094 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:53,094 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:53,095 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:53,103 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:53,103 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:53,103 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:53,104 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:53,104 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:53,104 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:53,104 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:53,104 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:53,232 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:54,232 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:56,232 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:35:57,073 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:35:57,346 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:57,346 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:57,347 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:57,347 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:57,352 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:57,353 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:35:57,353 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:57,353 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:57,354 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:57,354 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:35:57,354 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:35:57,354 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:35:58,233 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:35:58,233 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:00,233 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:00,815 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:36:00,815 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:36:01,639 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:01,639 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:01,639 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:01,640 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:01,640 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:01,640 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:01,641 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:01,647 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:01,648 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:01,648 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:01,648 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:01,649 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:02,234 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:02,234 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:04,235 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:05,949 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:05,949 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:05,949 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:05,949 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:05,955 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:05,955 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:05,955 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:05,956 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:05,956 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:05,956 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:05,956 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:05,956 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:06,235 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:06,235 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:08,236 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:10,236 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:10,247 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:10,248 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:10,248 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:10,248 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:10,248 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:10,249 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:10,249 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:10,254 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:10,255 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:10,255 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:10,255 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:10,256 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:11,236 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:12,237 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:14,237 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:14,646 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:14,647 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:14,647 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:14,647 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:14,647 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:14,647 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:14,647 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:14,653 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:14,654 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:14,654 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:14,654 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:14,654 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:15,237 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:15,908 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:36:15,909 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:36:16,238 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:18,238 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:19,008 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:19,009 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:19,009 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:19,009 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:19,009 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:19,010 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:19,010 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:19,010 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:19,016 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:19,016 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:19,016 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:19,017 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:19,238 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:20,238 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:22,239 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:23,387 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:23,388 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:23,388 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:23,388 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:23,388 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:23,388 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:23,389 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:23,389 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:23,395 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:23,395 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:23,395 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:23,395 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:24,239 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:24,240 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:26,240 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:27,304 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:36:27,691 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:27,691 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:27,692 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:27,692 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:27,692 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:27,692 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:27,692 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:27,692 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:27,699 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:27,699 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:27,699 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:27,699 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:28,241 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:28,241 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:30,241 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:31,003 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:36:31,003 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:36:32,006 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:32,006 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:32,007 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:32,007 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:32,013 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:32,013 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:32,013 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:32,013 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:32,014 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:32,014 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:32,014 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:32,014 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:32,241 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:32,242 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:34,242 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:36,243 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:36,288 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:36,288 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:36,288 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:36,289 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:36,295 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:36,295 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:36,295 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:36,295 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:36,295 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:36,295 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:36,295 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:36,296 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:37,243 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:38,243 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:40,243 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:40,611 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:40,611 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:40,612 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:40,612 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:40,621 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:40,621 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:40,622 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:40,622 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:40,622 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:40,622 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:40,622 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:40,622 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:41,244 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:42,244 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:44,244 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:44,790 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:44,790 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:44,790 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:44,790 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:44,790 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:44,790 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:44,791 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:44,796 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:44,797 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:44,797 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:44,797 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:44,797 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:45,245 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:46,137 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:36:46,137 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:36:46,245 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:48,245 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:49,027 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:49,027 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:49,027 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:49,028 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:49,028 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:49,028 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:49,028 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:49,030 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:49,037 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:49,037 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:49,037 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:49,037 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:49,246 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:50,246 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:52,246 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:53,403 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:53,403 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:53,403 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:53,404 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:53,409 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:53,409 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:53,409 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:53,410 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:53,410 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:53,410 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:53,410 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:53,410 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:54,247 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:54,247 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:56,247 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:36:57,505 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:36:57,665 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:57,666 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:57,666 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:57,666 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:57,666 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:57,666 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:57,666 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:57,672 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:36:57,673 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:57,673 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:36:57,673 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:36:57,673 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:36:58,248 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:36:58,248 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:00,248 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:01,260 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:37:01,260 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:37:02,015 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:02,016 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:02,016 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:02,016 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:02,017 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:02,017 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:02,017 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:02,019 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:02,022 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:02,023 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:02,023 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:02,023 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:02,248 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:02,249 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:04,249 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:06,249 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:06,298 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:06,298 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:06,298 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:06,298 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:06,299 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:06,299 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:06,299 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:06,304 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:06,306 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:06,306 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:06,306 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:06,306 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:07,250 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:08,250 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:10,250 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:10,456 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:10,457 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:10,457 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:10,457 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:10,458 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:10,458 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:10,458 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:10,463 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:10,464 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:10,464 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:10,464 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:10,465 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:11,251 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:12,251 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:14,251 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:14,789 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:14,789 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:14,790 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:14,790 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:14,796 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:14,796 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:14,796 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:14,796 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:14,799 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:14,800 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:14,800 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:14,800 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:15,252 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:16,252 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:16,357 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:37:16,357 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:37:18,252 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:19,073 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:19,073 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:19,073 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:19,073 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:19,074 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:19,074 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:19,074 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:19,080 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:19,082 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:19,083 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:19,083 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:19,083 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:19,253 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:20,253 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:22,253 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:23,410 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:23,410 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:23,411 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:23,411 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:23,411 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:23,412 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:23,412 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:23,412 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:23,418 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:23,419 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:23,419 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:23,419 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:24,254 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:24,254 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:26,254 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:27,568 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:27,569 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:27,569 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:27,569 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:27,570 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:27,570 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:27,570 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:27,575 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:27,576 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:27,576 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:27,577 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:27,577 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:27,722 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:37:28,255 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:28,255 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:30,255 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:31,455 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:37:31,455 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:37:31,905 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:31,906 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:31,906 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:31,906 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:31,907 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:31,907 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:31,907 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:31,907 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:31,913 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:31,913 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:31,913 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:31,913 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:32,256 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:32,256 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:34,256 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:36,169 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:36,169 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:36,170 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:36,170 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:36,170 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:36,170 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:36,170 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:36,175 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:36,177 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:36,177 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:36,177 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:36,177 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:36,257 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:36,257 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:38,257 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:40,257 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:40,445 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:40,445 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:40,445 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:40,445 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:40,454 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:40,455 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:40,455 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:40,455 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:40,455 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:40,455 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:40,455 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:40,456 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:41,258 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:42,258 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:44,258 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:44,731 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:44,731 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:44,732 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:44,732 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:44,732 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:44,732 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:44,732 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:44,739 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:44,740 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:44,740 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:44,741 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:44,741 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:45,259 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:46,259 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:46,551 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: stop_status
+2022-11-06 16:37:46,551 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: stop_status
+2022-11-06 16:37:48,259 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:48,977 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:48,977 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:48,978 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:48,978 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:48,983 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:48,984 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:48,984 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:48,984 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:48,984 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:48,985 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:48,985 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:48,985 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:49,259 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:50,260 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:52,260 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:53,189 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:53,189 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:53,189 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: partial_history
+2022-11-06 16:37:53,190 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:53,190 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:53,190 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:53,190 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:53,190 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:53,193 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:53,193 DEBUG   SenderThread:287027 [sender.py:send():232] send: history
+2022-11-06 16:37:53,193 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:53,193 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:53,260 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:53,268 DEBUG   SenderThread:287027 [sender.py:send():232] send: telemetry
+2022-11-06 16:37:54,261 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:55,261 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:55,678 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:55,678 DEBUG   SenderThread:287027 [sender.py:send():232] send: exit
+2022-11-06 16:37:55,678 INFO    SenderThread:287027 [sender.py:send_exit():368] handling exit code: 0
+2022-11-06 16:37:55,679 INFO    SenderThread:287027 [sender.py:send_exit():370] handling runtime: 358
+2022-11-06 16:37:55,679 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:55,679 INFO    SenderThread:287027 [sender.py:send_exit():376] send defer
+2022-11-06 16:37:55,679 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:55,680 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:55,680 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 0
+2022-11-06 16:37:55,680 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:55,680 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 0
+2022-11-06 16:37:55,680 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 1
+2022-11-06 16:37:55,680 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:55,680 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 1
+2022-11-06 16:37:55,720 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:55,721 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 1
+2022-11-06 16:37:55,721 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 2
+2022-11-06 16:37:55,721 DEBUG   SenderThread:287027 [sender.py:send():232] send: stats
+2022-11-06 16:37:55,721 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:55,721 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 2
+2022-11-06 16:37:55,721 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:55,721 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 2
+2022-11-06 16:37:55,721 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 3
+2022-11-06 16:37:55,721 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:55,721 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 3
+2022-11-06 16:37:55,721 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:55,721 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 3
+2022-11-06 16:37:55,721 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 4
+2022-11-06 16:37:55,721 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:55,721 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 4
+2022-11-06 16:37:55,722 DEBUG   SenderThread:287027 [sender.py:send():232] send: summary
+2022-11-06 16:37:55,722 INFO    SenderThread:287027 [sender.py:_save_file():948] saving file wandb-summary.json with policy end
+2022-11-06 16:37:55,722 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:55,722 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 4
+2022-11-06 16:37:55,722 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 5
+2022-11-06 16:37:55,722 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:55,722 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 5
+2022-11-06 16:37:55,722 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:55,722 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 5
+2022-11-06 16:37:55,780 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:55,851 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 6
+2022-11-06 16:37:55,852 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:55,852 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:55,852 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 6
+2022-11-06 16:37:55,852 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:55,852 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 6
+2022-11-06 16:37:55,852 INFO    SenderThread:287027 [dir_watcher.py:finish():312] shutting down directory watcher
+2022-11-06 16:37:55,953 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:56,261 INFO    Thread-7  :287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:56,262 INFO    SenderThread:287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:56,262 INFO    SenderThread:287027 [dir_watcher.py:_on_file_modified():257] file/dir modified: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/config.yaml
+2022-11-06 16:37:56,262 INFO    SenderThread:287027 [dir_watcher.py:finish():342] scan: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files
+2022-11-06 16:37:56,262 INFO    SenderThread:287027 [dir_watcher.py:finish():356] scan save: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log output.log
+2022-11-06 16:37:56,263 INFO    SenderThread:287027 [dir_watcher.py:finish():356] scan save: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/config.yaml config.yaml
+2022-11-06 16:37:56,263 INFO    SenderThread:287027 [dir_watcher.py:finish():356] scan save: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-metadata.json wandb-metadata.json
+2022-11-06 16:37:56,263 INFO    SenderThread:287027 [dir_watcher.py:finish():356] scan save: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/conda-environment.yaml conda-environment.yaml
+2022-11-06 16:37:56,263 INFO    SenderThread:287027 [dir_watcher.py:finish():356] scan save: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json wandb-summary.json
+2022-11-06 16:37:56,266 INFO    SenderThread:287027 [dir_watcher.py:finish():356] scan save: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/requirements.txt requirements.txt
+2022-11-06 16:37:56,266 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 7
+2022-11-06 16:37:56,266 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:56,267 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:56,267 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 7
+2022-11-06 16:37:56,267 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:56,267 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 7
+2022-11-06 16:37:56,268 INFO    SenderThread:287027 [file_pusher.py:finish():145] shutting down file pusher
+2022-11-06 16:37:56,368 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:56,368 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:56,469 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:56,469 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:56,570 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:56,570 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:56,644 INFO    Thread-14 :287027 [upload_job.py:push():132] Uploaded file /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/conda-environment.yaml
+2022-11-06 16:37:56,648 INFO    Thread-15 :287027 [upload_job.py:push():132] Uploaded file /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/wandb-summary.json
+2022-11-06 16:37:56,654 INFO    Thread-13 :287027 [upload_job.py:push():132] Uploaded file /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/config.yaml
+2022-11-06 16:37:56,655 INFO    Thread-12 :287027 [upload_job.py:push():132] Uploaded file /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/output.log
+2022-11-06 16:37:56,662 INFO    Thread-16 :287027 [upload_job.py:push():132] Uploaded file /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/files/requirements.txt
+2022-11-06 16:37:56,671 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:56,671 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:56,772 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:56,772 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:56,862 INFO    Thread-6  :287027 [sender.py:transition_state():389] send defer: 8
+2022-11-06 16:37:56,863 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:56,863 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 8
+2022-11-06 16:37:56,863 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:56,863 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 8
+2022-11-06 16:37:56,874 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:57,090 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 9
+2022-11-06 16:37:57,090 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:57,091 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:57,091 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 9
+2022-11-06 16:37:57,091 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:57,091 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 9
+2022-11-06 16:37:57,091 INFO    SenderThread:287027 [sender.py:transition_state():389] send defer: 10
+2022-11-06 16:37:57,092 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: defer
+2022-11-06 16:37:57,092 DEBUG   SenderThread:287027 [sender.py:send():232] send: final
+2022-11-06 16:37:57,092 INFO    HandlerThread:287027 [handler.py:handle_request_defer():164] handle defer: 10
+2022-11-06 16:37:57,092 DEBUG   SenderThread:287027 [sender.py:send():232] send: footer
+2022-11-06 16:37:57,092 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: defer
+2022-11-06 16:37:57,092 INFO    SenderThread:287027 [sender.py:send_request_defer():385] handle sender defer: 10
+2022-11-06 16:37:57,191 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: poll_exit
+2022-11-06 16:37:57,192 DEBUG   SenderThread:287027 [sender.py:send_request():246] send_request: poll_exit
+2022-11-06 16:37:57,192 INFO    SenderThread:287027 [file_pusher.py:join():150] waiting for file pusher
+2022-11-06 16:37:57,482 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: sampled_history
+2022-11-06 16:37:57,484 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: get_summary
+2022-11-06 16:37:57,485 DEBUG   HandlerThread:287027 [handler.py:handle_request():141] handle_request: shutdown
+2022-11-06 16:37:57,485 INFO    HandlerThread:287027 [handler.py:finish():806] shutting down handler
+2022-11-06 16:37:58,092 INFO    WriterThread:287027 [datastore.py:close():279] close: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56/wandb/run-20221106_163156-1mix7xo4/run-1mix7xo4.wandb
+2022-11-06 16:37:58,381 INFO    SenderThread:287027 [sender.py:finish():1110] shutting down sender
+2022-11-06 16:37:58,381 INFO    SenderThread:287027 [file_pusher.py:finish():145] shutting down file pusher
+2022-11-06 16:37:58,381 INFO    SenderThread:287027 [file_pusher.py:join():150] waiting for file pusher
+2022-11-06 16:37:58,383 INFO    MainThread:287027 [internal.py:handle_exit():80] Internal process exited

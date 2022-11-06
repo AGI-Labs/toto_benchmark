@@ -1,0 +1,31 @@
+default:
+- override hydra/output: local
+- override hydra/launcher: local
+data:
+  pickle_fn: /home/mohan/work/agi/cloud/arxiv/toto_benchmark/assets/cloud-dataset-pouring-v0/parsed_with_embeddings_moco_conv5_robocloud.pkl
+  subsample_period: 1
+  in_dim: 7
+  out_dim: 7
+  H: 50
+  top_k: null
+  images:
+    cameras: []
+    im_h: 480
+    im_w: 640
+    per_img_out: 128
+    crop: true
+  noise: 0.0
+agent:
+  type: bcimage_pre
+  vision_model: moco_conv5_robocloud
+  vision_model_path: ../assets/BYOL_18v2_fixed_100.pt
+  description: NA
+  hidden_dim: 128
+training:
+  lr: 0.001
+  seed: 0
+  epochs: 80
+  device: cuda:0
+  batch_size: 128
+  save_every_x_epoch: 10
+debug: false

@@ -1,0 +1,161 @@
+[2022-11-06 16:32:15,147][__main__][INFO] - epoch 0 	 train 0.023322 	 test 0.008173
+[2022-11-06 16:32:15,147][__main__][INFO] - Accumulated loss: 39.343910217285156
+[2022-11-06 16:32:19,418][__main__][INFO] - epoch 1 	 train 0.011690 	 test 0.006644
+[2022-11-06 16:32:19,418][__main__][INFO] - Accumulated loss: 19.721500396728516
+[2022-11-06 16:32:23,792][__main__][INFO] - epoch 2 	 train 0.010383 	 test 0.005667
+[2022-11-06 16:32:23,792][__main__][INFO] - Accumulated loss: 17.516361236572266
+[2022-11-06 16:32:28,111][__main__][INFO] - epoch 3 	 train 0.009615 	 test 0.005542
+[2022-11-06 16:32:28,111][__main__][INFO] - Accumulated loss: 16.221223831176758
+[2022-11-06 16:32:32,388][__main__][INFO] - epoch 4 	 train 0.009084 	 test 0.004866
+[2022-11-06 16:32:32,389][__main__][INFO] - Accumulated loss: 15.324532508850098
+[2022-11-06 16:32:36,562][__main__][INFO] - epoch 5 	 train 0.008783 	 test 0.004766
+[2022-11-06 16:32:36,562][__main__][INFO] - Accumulated loss: 14.817160606384277
+[2022-11-06 16:32:40,838][__main__][INFO] - epoch 6 	 train 0.008502 	 test 0.004524
+[2022-11-06 16:32:40,838][__main__][INFO] - Accumulated loss: 14.343225479125977
+[2022-11-06 16:32:45,239][__main__][INFO] - epoch 7 	 train 0.008347 	 test 0.004747
+[2022-11-06 16:32:45,239][__main__][INFO] - Accumulated loss: 14.082132339477539
+[2022-11-06 16:32:49,535][__main__][INFO] - epoch 8 	 train 0.008143 	 test 0.004114
+[2022-11-06 16:32:49,535][__main__][INFO] - Accumulated loss: 13.737532615661621
+[2022-11-06 16:32:53,784][__main__][INFO] - epoch 9 	 train 0.008019 	 test 0.003938
+[2022-11-06 16:32:53,784][__main__][INFO] - Accumulated loss: 13.52778434753418
+[2022-11-06 16:32:58,050][__main__][INFO] - epoch 10 	 train 0.007841 	 test 0.003943
+[2022-11-06 16:32:58,050][__main__][INFO] - Accumulated loss: 13.22707462310791
+[2022-11-06 16:33:02,311][__main__][INFO] - epoch 11 	 train 0.007787 	 test 0.003958
+[2022-11-06 16:33:02,311][__main__][INFO] - Accumulated loss: 13.137382507324219
+[2022-11-06 16:33:06,582][__main__][INFO] - epoch 12 	 train 0.007646 	 test 0.003928
+[2022-11-06 16:33:06,582][__main__][INFO] - Accumulated loss: 12.8992280960083
+[2022-11-06 16:33:10,919][__main__][INFO] - epoch 13 	 train 0.007592 	 test 0.003675
+[2022-11-06 16:33:10,919][__main__][INFO] - Accumulated loss: 12.807868957519531
+[2022-11-06 16:33:15,226][__main__][INFO] - epoch 14 	 train 0.007463 	 test 0.004027
+[2022-11-06 16:33:15,226][__main__][INFO] - Accumulated loss: 12.589691162109375
+[2022-11-06 16:33:19,476][__main__][INFO] - epoch 15 	 train 0.007478 	 test 0.003895
+[2022-11-06 16:33:19,476][__main__][INFO] - Accumulated loss: 12.61551570892334
+[2022-11-06 16:33:23,659][__main__][INFO] - epoch 16 	 train 0.007416 	 test 0.003868
+[2022-11-06 16:33:23,659][__main__][INFO] - Accumulated loss: 12.51130199432373
+[2022-11-06 16:33:27,898][__main__][INFO] - epoch 17 	 train 0.007300 	 test 0.003474
+[2022-11-06 16:33:27,898][__main__][INFO] - Accumulated loss: 12.315177917480469
+[2022-11-06 16:33:32,248][__main__][INFO] - epoch 18 	 train 0.007357 	 test 0.003733
+[2022-11-06 16:33:32,248][__main__][INFO] - Accumulated loss: 12.412070274353027
+[2022-11-06 16:33:36,551][__main__][INFO] - epoch 19 	 train 0.007205 	 test 0.003824
+[2022-11-06 16:33:36,551][__main__][INFO] - Accumulated loss: 12.154288291931152
+[2022-11-06 16:33:40,667][__main__][INFO] - epoch 20 	 train 0.007210 	 test 0.003359
+[2022-11-06 16:33:40,667][__main__][INFO] - Accumulated loss: 12.163307189941406
+[2022-11-06 16:33:44,815][__main__][INFO] - epoch 21 	 train 0.007169 	 test 0.003760
+[2022-11-06 16:33:44,815][__main__][INFO] - Accumulated loss: 12.094355583190918
+[2022-11-06 16:33:48,976][__main__][INFO] - epoch 22 	 train 0.007162 	 test 0.003406
+[2022-11-06 16:33:48,976][__main__][INFO] - Accumulated loss: 12.083139419555664
+[2022-11-06 16:33:53,290][__main__][INFO] - epoch 23 	 train 0.007104 	 test 0.003868
+[2022-11-06 16:33:53,290][__main__][INFO] - Accumulated loss: 11.983783721923828
+[2022-11-06 16:33:57,461][__main__][INFO] - epoch 24 	 train 0.007088 	 test 0.003497
+[2022-11-06 16:33:57,461][__main__][INFO] - Accumulated loss: 11.95710277557373
+[2022-11-06 16:34:01,834][__main__][INFO] - epoch 25 	 train 0.007014 	 test 0.003935
+[2022-11-06 16:34:01,834][__main__][INFO] - Accumulated loss: 11.832547187805176
+[2022-11-06 16:34:06,211][__main__][INFO] - epoch 26 	 train 0.007046 	 test 0.003168
+[2022-11-06 16:34:06,212][__main__][INFO] - Accumulated loss: 11.887017250061035
+[2022-11-06 16:34:10,392][__main__][INFO] - epoch 27 	 train 0.007009 	 test 0.003317
+[2022-11-06 16:34:10,392][__main__][INFO] - Accumulated loss: 11.825010299682617
+[2022-11-06 16:34:14,618][__main__][INFO] - epoch 28 	 train 0.006949 	 test 0.003429
+[2022-11-06 16:34:14,618][__main__][INFO] - Accumulated loss: 11.722784996032715
+[2022-11-06 16:34:18,923][__main__][INFO] - epoch 29 	 train 0.006906 	 test 0.003331
+[2022-11-06 16:34:18,923][__main__][INFO] - Accumulated loss: 11.650568008422852
+[2022-11-06 16:34:23,240][__main__][INFO] - epoch 30 	 train 0.006906 	 test 0.003606
+[2022-11-06 16:34:23,240][__main__][INFO] - Accumulated loss: 11.64961051940918
+[2022-11-06 16:34:27,534][__main__][INFO] - epoch 31 	 train 0.006880 	 test 0.003945
+[2022-11-06 16:34:27,534][__main__][INFO] - Accumulated loss: 11.607063293457031
+[2022-11-06 16:34:31,850][__main__][INFO] - epoch 32 	 train 0.006902 	 test 0.003884
+[2022-11-06 16:34:31,850][__main__][INFO] - Accumulated loss: 11.643414497375488
+[2022-11-06 16:34:36,116][__main__][INFO] - epoch 33 	 train 0.006906 	 test 0.003513
+[2022-11-06 16:34:36,116][__main__][INFO] - Accumulated loss: 11.6508207321167
+[2022-11-06 16:34:40,344][__main__][INFO] - epoch 34 	 train 0.006890 	 test 0.003350
+[2022-11-06 16:34:40,344][__main__][INFO] - Accumulated loss: 11.623188972473145
+[2022-11-06 16:34:44,535][__main__][INFO] - epoch 35 	 train 0.006835 	 test 0.003257
+[2022-11-06 16:34:44,535][__main__][INFO] - Accumulated loss: 11.531181335449219
+[2022-11-06 16:34:48,840][__main__][INFO] - epoch 36 	 train 0.006813 	 test 0.004056
+[2022-11-06 16:34:48,840][__main__][INFO] - Accumulated loss: 11.492782592773438
+[2022-11-06 16:34:53,187][__main__][INFO] - epoch 37 	 train 0.006775 	 test 0.003377
+[2022-11-06 16:34:53,187][__main__][INFO] - Accumulated loss: 11.428853034973145
+[2022-11-06 16:34:57,524][__main__][INFO] - epoch 38 	 train 0.006761 	 test 0.003263
+[2022-11-06 16:34:57,524][__main__][INFO] - Accumulated loss: 11.4064302444458
+[2022-11-06 16:35:01,742][__main__][INFO] - epoch 39 	 train 0.006752 	 test 0.003190
+[2022-11-06 16:35:01,742][__main__][INFO] - Accumulated loss: 11.390430450439453
+[2022-11-06 16:35:06,064][__main__][INFO] - epoch 40 	 train 0.006769 	 test 0.003219
+[2022-11-06 16:35:06,064][__main__][INFO] - Accumulated loss: 11.419600486755371
+[2022-11-06 16:35:10,337][__main__][INFO] - epoch 41 	 train 0.006759 	 test 0.003631
+[2022-11-06 16:35:10,338][__main__][INFO] - Accumulated loss: 11.402143478393555
+[2022-11-06 16:35:14,675][__main__][INFO] - epoch 42 	 train 0.006736 	 test 0.003717
+[2022-11-06 16:35:14,675][__main__][INFO] - Accumulated loss: 11.36445426940918
+[2022-11-06 16:35:19,015][__main__][INFO] - epoch 43 	 train 0.006808 	 test 0.003289
+[2022-11-06 16:35:19,015][__main__][INFO] - Accumulated loss: 11.484759330749512
+[2022-11-06 16:35:23,316][__main__][INFO] - epoch 44 	 train 0.006691 	 test 0.003041
+[2022-11-06 16:35:23,316][__main__][INFO] - Accumulated loss: 11.288342475891113
+[2022-11-06 16:35:27,702][__main__][INFO] - epoch 45 	 train 0.006712 	 test 0.003919
+[2022-11-06 16:35:27,702][__main__][INFO] - Accumulated loss: 11.323492050170898
+[2022-11-06 16:35:31,906][__main__][INFO] - epoch 46 	 train 0.006701 	 test 0.003283
+[2022-11-06 16:35:31,906][__main__][INFO] - Accumulated loss: 11.303908348083496
+[2022-11-06 16:35:36,130][__main__][INFO] - epoch 47 	 train 0.006662 	 test 0.003282
+[2022-11-06 16:35:36,130][__main__][INFO] - Accumulated loss: 11.23836898803711
+[2022-11-06 16:35:40,438][__main__][INFO] - epoch 48 	 train 0.006673 	 test 0.003746
+[2022-11-06 16:35:40,438][__main__][INFO] - Accumulated loss: 11.25818157196045
+[2022-11-06 16:35:44,675][__main__][INFO] - epoch 49 	 train 0.006681 	 test 0.003184
+[2022-11-06 16:35:44,675][__main__][INFO] - Accumulated loss: 11.27164077758789
+[2022-11-06 16:35:48,922][__main__][INFO] - epoch 50 	 train 0.006625 	 test 0.003195
+[2022-11-06 16:35:48,922][__main__][INFO] - Accumulated loss: 11.177056312561035
+[2022-11-06 16:35:53,093][__main__][INFO] - epoch 51 	 train 0.006648 	 test 0.003281
+[2022-11-06 16:35:53,093][__main__][INFO] - Accumulated loss: 11.214569091796875
+[2022-11-06 16:35:57,345][__main__][INFO] - epoch 52 	 train 0.006603 	 test 0.003402
+[2022-11-06 16:35:57,345][__main__][INFO] - Accumulated loss: 11.139562606811523
+[2022-11-06 16:36:01,638][__main__][INFO] - epoch 53 	 train 0.006607 	 test 0.003731
+[2022-11-06 16:36:01,638][__main__][INFO] - Accumulated loss: 11.145334243774414
+[2022-11-06 16:36:05,948][__main__][INFO] - epoch 54 	 train 0.006643 	 test 0.004105
+[2022-11-06 16:36:05,948][__main__][INFO] - Accumulated loss: 11.207428932189941
+[2022-11-06 16:36:10,247][__main__][INFO] - epoch 55 	 train 0.006616 	 test 0.003156
+[2022-11-06 16:36:10,247][__main__][INFO] - Accumulated loss: 11.160463333129883
+[2022-11-06 16:36:14,646][__main__][INFO] - epoch 56 	 train 0.006585 	 test 0.003176
+[2022-11-06 16:36:14,646][__main__][INFO] - Accumulated loss: 11.108086585998535
+[2022-11-06 16:36:19,001][__main__][INFO] - epoch 57 	 train 0.006534 	 test 0.003142
+[2022-11-06 16:36:19,001][__main__][INFO] - Accumulated loss: 11.023017883300781
+[2022-11-06 16:36:23,377][__main__][INFO] - epoch 58 	 train 0.006605 	 test 0.003051
+[2022-11-06 16:36:23,377][__main__][INFO] - Accumulated loss: 11.14207649230957
+[2022-11-06 16:36:27,684][__main__][INFO] - epoch 59 	 train 0.006525 	 test 0.003213
+[2022-11-06 16:36:27,684][__main__][INFO] - Accumulated loss: 11.008040428161621
+[2022-11-06 16:36:32,000][__main__][INFO] - epoch 60 	 train 0.006530 	 test 0.003260
+[2022-11-06 16:36:32,000][__main__][INFO] - Accumulated loss: 11.01612377166748
+[2022-11-06 16:36:36,287][__main__][INFO] - epoch 61 	 train 0.006622 	 test 0.003212
+[2022-11-06 16:36:36,287][__main__][INFO] - Accumulated loss: 11.170976638793945
+[2022-11-06 16:36:40,610][__main__][INFO] - epoch 62 	 train 0.006577 	 test 0.003322
+[2022-11-06 16:36:40,610][__main__][INFO] - Accumulated loss: 11.09582233428955
+[2022-11-06 16:36:44,789][__main__][INFO] - epoch 63 	 train 0.006520 	 test 0.003185
+[2022-11-06 16:36:44,789][__main__][INFO] - Accumulated loss: 10.998726844787598
+[2022-11-06 16:36:49,026][__main__][INFO] - epoch 64 	 train 0.006577 	 test 0.003179
+[2022-11-06 16:36:49,026][__main__][INFO] - Accumulated loss: 11.09492015838623
+[2022-11-06 16:36:53,402][__main__][INFO] - epoch 65 	 train 0.006599 	 test 0.003263
+[2022-11-06 16:36:53,402][__main__][INFO] - Accumulated loss: 11.1317777633667
+[2022-11-06 16:36:57,664][__main__][INFO] - epoch 66 	 train 0.006546 	 test 0.003069
+[2022-11-06 16:36:57,665][__main__][INFO] - Accumulated loss: 11.043254852294922
+[2022-11-06 16:37:02,015][__main__][INFO] - epoch 67 	 train 0.006538 	 test 0.003165
+[2022-11-06 16:37:02,015][__main__][INFO] - Accumulated loss: 11.030233383178711
+[2022-11-06 16:37:06,297][__main__][INFO] - epoch 68 	 train 0.006534 	 test 0.003006
+[2022-11-06 16:37:06,297][__main__][INFO] - Accumulated loss: 11.023640632629395
+[2022-11-06 16:37:10,456][__main__][INFO] - epoch 69 	 train 0.006484 	 test 0.002965
+[2022-11-06 16:37:10,456][__main__][INFO] - Accumulated loss: 10.9385347366333
+[2022-11-06 16:37:14,783][__main__][INFO] - epoch 70 	 train 0.006497 	 test 0.002998
+[2022-11-06 16:37:14,783][__main__][INFO] - Accumulated loss: 10.959640502929688
+[2022-11-06 16:37:19,072][__main__][INFO] - epoch 71 	 train 0.006467 	 test 0.002897
+[2022-11-06 16:37:19,072][__main__][INFO] - Accumulated loss: 10.909344673156738
+[2022-11-06 16:37:23,402][__main__][INFO] - epoch 72 	 train 0.006521 	 test 0.003381
+[2022-11-06 16:37:23,403][__main__][INFO] - Accumulated loss: 11.001439094543457
+[2022-11-06 16:37:27,568][__main__][INFO] - epoch 73 	 train 0.006492 	 test 0.003044
+[2022-11-06 16:37:27,568][__main__][INFO] - Accumulated loss: 10.952033042907715
+[2022-11-06 16:37:31,900][__main__][INFO] - epoch 74 	 train 0.006524 	 test 0.003492
+[2022-11-06 16:37:31,905][__main__][INFO] - Accumulated loss: 11.00522518157959
+[2022-11-06 16:37:36,168][__main__][INFO] - epoch 75 	 train 0.006464 	 test 0.003114
+[2022-11-06 16:37:36,168][__main__][INFO] - Accumulated loss: 10.905597686767578
+[2022-11-06 16:37:40,444][__main__][INFO] - epoch 76 	 train 0.006553 	 test 0.003011
+[2022-11-06 16:37:40,444][__main__][INFO] - Accumulated loss: 11.055651664733887
+[2022-11-06 16:37:44,730][__main__][INFO] - epoch 77 	 train 0.006475 	 test 0.002984
+[2022-11-06 16:37:44,730][__main__][INFO] - Accumulated loss: 10.923225402832031
+[2022-11-06 16:37:48,976][__main__][INFO] - epoch 78 	 train 0.006449 	 test 0.003290
+[2022-11-06 16:37:48,976][__main__][INFO] - Accumulated loss: 10.879678726196289
+[2022-11-06 16:37:53,188][__main__][INFO] - epoch 79 	 train 0.006553 	 test 0.003113
+[2022-11-06 16:37:53,188][__main__][INFO] - Accumulated loss: 11.0545654296875
+[2022-11-06 16:37:53,194][__main__][INFO] - Saved agent to /home/mohan/work/agi/cloud/arxiv/toto_benchmark/scripts/outputs/2022-11-06/16-31-56
