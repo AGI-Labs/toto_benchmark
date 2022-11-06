@@ -2,8 +2,7 @@
 <!-- TODO: add teaser figures, some setup/task images, etc  -->
 
 ## Installation
-<!-- TODO: conda only instructions from the docker instructions?  -->
-You can either use a local conda environment or docker setup
+You can either use a local conda environment or a docker environment.
 
 ### Setup conda environment
 1. Run ```source setup_toto_env.sh```
@@ -11,7 +10,7 @@ You can either use a local conda environment or docker setup
 ### Setup docker environment
 1. Follow the instructions in ```docker_instructions.md```
 
-Note: If you are contributing models to TOTO, we strongly suggest setting up the docker environment
+Note: If you are contributing models to TOTO, we strongly suggest setting up the docker environment.
 
 ### TOTO Visual Representation Models
 ### TOTO Datasets
@@ -72,12 +71,12 @@ python train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-
     ```
     A new agent folder will be created in `outputs/<path_to>/<agent>/`.
 - Once the above is done, run `python test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
-- For submission, Run ```python prepare_submission.py``` to generate a zipped folder which is ready for submission
+- For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
 
 ### Contributing an Agent
 - Download the datasets [here](https://link-url-here.org) and train your agents in your preferred way.
 - Update the agent file: `agents/CollaboratorAgent.py`. This acts as a wrapper around your model to interface with the robot stack. Please refer to `agents/Agent.py` for more information
 - Update the agent config file `outputs/collaborator_agent/hydra.yaml` for initializing your agent
 - Once the above is done, run `python test_stub_env.py -f outputs/collaborator_agent/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
-- For submission, Run ```python prepare_submission.py``` to generate a zipped folder which is ready for submission
+- For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
 

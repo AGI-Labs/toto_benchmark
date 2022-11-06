@@ -1,3 +1,5 @@
+#! /bin/sh
+
 # create a new conda environment
 conda env create -f ./toto.yml
 
