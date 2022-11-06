@@ -72,12 +72,12 @@ python train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-
     ```
     A new agent folder will be created in `outputs/<path_to>/<agent>/`.
 - Once the above is done, run `python test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
-- For submission, **TODO (what files to submit? if zipping the whole folder, do we want to add in a bullet point of deleting the datasets in assets/ before zipping?)**
+- For submission, Run ```python prepare_submission.py``` to generate a zipped folder which is ready for submission
 
 ### Contributing an Agent
 - Download the datasets [here](https://link-url-here.org) and train your agents in your preferred way.
 - Update the agent file: `agents/CollaboratorAgent.py`. This acts as a wrapper around your model to interface with the robot stack. Please refer to `agents/Agent.py` for more information
 - Update the agent config file `outputs/collaborator_agent/hydra.yaml` for initializing your agent
 - Once the above is done, run `python test_stub_env.py -f outputs/collaborator_agent/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
-- For submission, **TODO (zipping the whole folder should be fine? Maybe also add a note that we don't want them to submit the dataset, or any provided vision models)**
+- For submission, Run ```python prepare_submission.py``` to generate a zipped folder which is ready for submission
 
