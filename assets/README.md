@@ -1,6 +1,4 @@
-# RoboCloud
-
-## Dataset
+# TOTO Dataset
 
 ### Format
 The data is parsed into a python list of dictionaries, where each dictionary is a trajectory. The keys of each dictionary are as follows:
