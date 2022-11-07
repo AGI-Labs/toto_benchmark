@@ -15,7 +15,7 @@ Note: If you are contributing models to TOTO, we strongly suggest setting up the
 ### TOTO Visual Representation Models
 ### TOTO Datasets
 <!-- TODO: need to update the dataset link after google drive clean up -->
-TOTO consists of two tabletop manipulations tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://link-url-here.org).
+TOTO consists of two tabletop manipulations tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link).
 
 <!-- TODO: update link to dataset README.md file. May consider create a dataset/ folder and add the readme into the repo -->
 We release the following datasets: 
@@ -49,7 +49,7 @@ To submit your custom visual representation model to TOTO, you will train your v
 *Note that you may or may not use TOTO datasets when training your visual representation model.*
 
 <!-- TODO: mention somewhere the assumption that our BC pipeline assume your image embedding to be a 1D vector? -->
-- Download the datasets [here](https://link-url-here.org).
+- Download the datasets [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link).
 - Move and unzip the datasets in `assets/`, so it has the following structure:
     ```
     assets/
@@ -83,8 +83,8 @@ To submit your custom visual representation model to TOTO, you will train your v
 
 ### Type 2: Contributing an Agent
 To submit your agent, you will train your image-based agent on our datasets in any preferred way. You may develop your custom visual representation model or use existing ones in TOTO. Please see below for detailed instructions: 
-- Download the datasets [here](https://link-url-here.org) and train your agents in your preferred way.
-- *(Optional)* If you plan to use any existing TOTO visual representation model, we release the pre-trained models [here](https://link-url-here.org). Download the models and put them into `assets/`. Then, simply use our provided functions to load the models as follows:
+- Download the datasets [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link) and train your agents in your preferred way.
+- *(Optional)* If you plan to use any existing TOTO visual representation model, we release the pre-trained models [here](https://drive.google.com/drive/folders/1iqDIIIalTi3PhAnFjZxesksvFVldK42p?usp=sharing). Download the models and put them into `assets/`. Then, simply use our provided functions to load the models as follows:
     ```
     from vision import load_model, load_transforms
     img_encoder = load_model(config)
