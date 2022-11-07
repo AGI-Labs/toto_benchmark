@@ -1,0 +1,19 @@
+default:
+    - override hydra/output: local
+    - override hydra/launcher: local
+
+data:
+  subsample_period: 1 # TODO: change this to n if subsampled to use 1 of every n frames during training. This will reduce the robot's control frequency correspondingly
+  images:
+    cameras:
+      - 'cam0c' # RGB input
+      - 'cam0d' # depth input
+
+agent:
+  type: 'collaborator_agent' # TODO (optional): feel free to rename your agent here. If changed, need to update agents/__init__.py correspondingly
+  # TODO (Optional): if you plan to use any existing visual representation model in TOTO, uncomment and specify the vision model type as follows:
+  # vision_model: <vision model of your choice> # Available options: ['moco_conv5_robocloud', 'byol_scoop', 'byol_pour', 'r3m', 'resnet50']
+
+
+# TODO (optional): additional keys (if any) for initializing the agent should go here
+# This config will be an input to the _init_agent_from_config function that you will implement for your agent

@@ -20,8 +20,9 @@ data:
 agent:
   type: 'bcimage_pre'
   vision_model: 'moco_conv5_robocloud'
-  # If you use a custom vision_model, optionally specify the path to your model here
-  # vision_model_path won't be used if you use an existing TOTO vision_model 
+  # TODO (Optional): If you use a custom vision_model, optionally specify the path to your model here
+  # vision_model_path won't be used if you use an existing TOTO vision_model.
+  # TODO (Optional): additional keys (if any) for initializing your vision model should go here. 
   vision_model_path: None 
   description: NA
   hidden_dim: 128
