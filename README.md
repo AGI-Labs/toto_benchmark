@@ -43,7 +43,7 @@ python train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-
 
 ### Type 1: Contributing a Visual Representation Model
 
-To submit your custom visual representation model to TOTO, you will train your visual representation model in any preferred way, generate image embeddings for TOTO datasets with your model, and finally train and submit a BC agent on this dataset. You will submit both your visual representation model and the BC model. We have provided scripts for interfacing with your vision model and for BC training. Please follow the following instructions for details. 
+To submit your custom visual representation model to TOTO, you will train your visual representation model in any preferred way, generate image embeddings for TOTO datasets with your model, and finally train and submit a BC agent on this dataset. You will submit both your visual representation model and the BC model. We have provided scripts for interfacing with your vision model and for BC training. Please see the following instructions for details. 
 
 *Note that you may or may not use TOTO datasets when training your visual representation model.*
 
