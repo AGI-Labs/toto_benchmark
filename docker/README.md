@@ -23,8 +23,8 @@ docker run -v /totodata:/totodata -it --runtime=nvidia --shm-size 8G --gpus all 
 
 ## Train the agent (from docker container interactive shell)
 ```
-cd toto_benchmark
-python train_example.py --config-name train_bcimage.yaml
+cd toto_benchmark/scripts
+python train.py --config-name train_bc.yaml data.pickle_fn=/cloud-dataset-pouring-v0/parsed_with_embeddings_moco_conv5_robocloud.pkl
 ```
 
 ## Test the agent locally in a dummy environment (from docker container interactive shell)

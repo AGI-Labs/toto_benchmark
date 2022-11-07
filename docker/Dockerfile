@@ -30,29 +30,15 @@ RUN apt install -y time
 
 # install mamba/boa into conda `base` environment
 RUN conda install mamba -y -c conda-forge
-
 # unzip the file
-RUN mkdir TOTO_starter
-COPY ./ /TOTO_starter/
-RUN ls -la /TOTO_starter/*
-# WORKDIR TOTO_starter
-WORKDIR /TOTO_starter
+RUN git clone -b releasev2 https://github.com/AGI-Labs/toto_benchmark.git
+WORKDIR /toto_benchmark
 
-RUN conda env create -f ./toto.yml
-
-## ADD CONDA ENV PATH TO LINUX PATH 
-ENV PATH /root/miniconda3/envs/toto/bin:$PATH
-ENV CONDA_DEFAULT_ENV toto
-# make sure to put your env name in place of myconda
-
-## MAKE ALL BELOW RUN COMMANDS USE THE NEW CONDA ENVIRONMENT
-SHELL ["conda", "run", "-n", "toto", "/bin/bash", "-c"]
-
+RUN mamba env create -f ./toto_benchmark.yml
+SHELL ["conda", "run", "-n", "toto-benchmark", "/bin/bash", "-c"]
 RUN mamba install -y pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
-
-WORKDIR /
 RUN pip install git+https://github.com/AGI-Labs/robot_baselines.git
 RUN pip install git+https://github.com/openai/CLIP.git
 
 # Activate 
-RUN echo "conda activate toto" >> ~/.bashrc
+RUN echo "conda activate toto-benchmark" >> ~/.bashrc
