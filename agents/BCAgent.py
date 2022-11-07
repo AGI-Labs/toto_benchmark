@@ -1,4 +1,5 @@
-from signal import Handlers
+import os
+import pickle
 import torch
 from torch import nn
 from .BaseAgent import BaseAgent
@@ -75,6 +76,23 @@ class Policy(nn.Module):
         self.out_mean.copy_(out_mean)
         self.out_std.copy_(out_std)
 
+    def save_stats(self, foldername, filename='policy_stats.pkl'):
+        policy_stats = {
+            'inp_mean': self.inp_mean,
+            'inp_std': self.inp_std,
+            'out_mean': self.out_mean,
+            'out_std': self.out_std
+        }
+        with open(os.path.join(foldername, filename), 'wb') as handle:
+            pickle.dump(policy_stats, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+    def load_stats(self, foldername, filename='policy_stats.pkl'):
+        policy_stats = pickle.load(open(os.path.join(foldername, filename), 'rb'))
+        self.inp_mean.copy_(policy_stats['inp_mean'])
+        self.inp_std.copy_(policy_stats['inp_std'])
+        self.out_mean.copy_(policy_stats['out_mean'])
+        self.out_std.copy_(policy_stats['out_std'])
+
     def forward(self, observations):
         h = (observations - self.inp_mean) / self.inp_std
         h = self.fc1(h)
@@ -102,6 +120,9 @@ def _init_agent_from_config(config, device='cpu', normalization=None):
 
     if normalization is not None:
         models['decoder'].set_stats(normalization)
+    else:
+        assert os.path.isfile(os.path.join(config.saved_folder, 'policy_stats.pkl'))
+        models['decoder'].load_stats(config.saved_folder)
 
     for k,m in models.items():
         m.to(device)
@@ -111,4 +132,7 @@ def _init_agent_from_config(config, device='cpu', normalization=None):
             m.apply(init_weights)
 
     bc_agent = BCAgent(models, config.training.lr, device, H)
+    # load weights if exist (during inference)
+    if os.path.isfile(os.path.join(config.saved_folder, 'Agent.pth')):
+        bc_agent.load(config.saved_folder)
     return bc_agent, None # image transforms is None for BCAgent

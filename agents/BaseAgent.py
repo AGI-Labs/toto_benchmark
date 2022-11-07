@@ -19,6 +19,7 @@ class BaseAgent(Agent):
                  }
         for mname, m in self.models.items():
             state[mname] = m.state_dict()
+            m.save_stats(foldername)
         torch.save(state, os.path.join(foldername, filename))
 
     def load(self, foldername, device=None, filename='Agent.pth'):
