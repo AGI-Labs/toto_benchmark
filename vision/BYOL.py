@@ -14,8 +14,10 @@ class Identity(nn.Module):
 
 def _load_model(config):
     vision_model = models.resnet18(pretrained=False)
-    print(f"BYOL model loaded from {config.agent.vision_model_path}")
-    encoder_state_dict = torch.load(config.agent.vision_model_path, map_location=torch.device('cpu'))
+    if config.agent.vision_model == 'byol_scoop':
+        encoder_state_dict = torch.load('assets/BYOL_18_scoop_100.pt', map_location=torch.device('cpu'))
+    else:
+        encoder_state_dict = torch.load('assets/BYOL_18_pour_100.pt', map_location=torch.device('cpu'))
     vision_model.load_state_dict(encoder_state_dict['model_state_dict'])
     vision_model.fc = Identity()
     return vision_model

@@ -20,7 +20,9 @@ data:
 agent:
   type: 'bcimage_pre'
   vision_model: 'moco_conv5_robocloud'
-  vision_model_path: 'assets/BYOL_18v2_fixed_100.pt' # only used when vision_model is 'byol'
+  # If you use a custom vision_model, optionally specify the path to your model here
+  # vision_model_path won't be used if you use an existing TOTO vision_model 
+  vision_model_path: None 
   description: NA
   hidden_dim: 128
 

@@ -10,7 +10,7 @@ EMBEDDING_DIMS = {
     'clip': 512,
     'resnet50': 2048,
     'byol': 512,
-    
+
     # TODO: if you are contributing a new image encoder, change your embedding dim here
     'collaborator_encoder': 0 
 }
@@ -26,7 +26,7 @@ def load_model(config):
     model_type = config.agent.vision_model
     if model_type in MODEL_LIST:
         from .PVR import _load_model
-    if model_type == 'byol':
+    if model_type in ['byol_scoop', 'byol_pour']:
         from .BYOL import _load_model
     if model_type == 'resnet':
         from .Resnet import _load_model
@@ -41,7 +41,7 @@ def load_transforms(config):
     model_type = config.agent.vision_model
     if model_type in MODEL_LIST:
         from .PVR import _load_transforms
-    if model_type == 'byol':
+    if model_type in ['byol_scoop', 'byol_pour']:
         from .BYOL import _load_transforms
     if model_type == 'resnet':
         from .Resnet import _load_transforms
