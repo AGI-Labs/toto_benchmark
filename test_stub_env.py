@@ -9,6 +9,7 @@ import torch
 from agents import init_agent_from_config
 import time
 from utils import Namespace
+from vision import load_model, load_transforms, preprocess_image
 
 SUCCESS_MESSAGE = "Agent outputs valid action - Test passed!"
 FAILURE_MESSAGE = "Agent outputs invalid action - Test failed."
@@ -49,6 +50,13 @@ class DummyFrankaEnv():
     def validate_action(self, action):
         return action.shape == self.START_POSITION.shape
 
+def process_image_helper(state, imitation_state): # for bcimage_pre
+    imgs = [imitation_state[_c] for _c in state['cam_in_state']]
+    imgs_out = [state['img_encoder'](torch.unsqueeze(img, dim=0)).detach().numpy().reshape([1, -1]) for img in imgs]
+    concat_inputs = np.hstack([imitation_state['inputs'].reshape([1, -1]), imgs_out[0]]) ### assume 1 image only
+    imitation_state['inputs'] = concat_inputs.reshape([-1])
+    return imitation_state
+
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--agent_path",
@@ -61,10 +69,17 @@ if __name__ == "__main__":
     with open(os.path.join(args.agent_path, 'hydra.yaml'), 'r') as f:
         cfg = yaml.load(f, Loader=yaml.FullLoader)
         # Overwriting to use local
-        cfg['saved_folder'] = os.path.join(args.agent_path)
+        cfg['saved_folder'] = args.agent_path
         cfg = Namespace(cfg)
 
     agent, img_transform_fn = init_agent_from_config(cfg, 'cuda:0')
+    state = {}
+    if cfg.agent.type == 'bcimage_pre':
+        img_transform_fn = load_transforms(cfg)
+        state['img_transform_fn'] = img_transform_fn
+        state['cam_in_state'] = ['cam0c']
+        state['img_encoder'] = load_model(cfg)
+
     env = DummyFrankaEnv(img_transform_fn)
     STEPS_PER_TIME_LOG = 100
     steps = 0
@@ -72,8 +87,9 @@ if __name__ == "__main__":
     
     while(True):
         obs = env.step()
-        
         start = time.time()
+        if cfg.agent.type == 'bcimage_pre':
+            obs = process_image_helper(state, obs)
         action = agent.predict(obs)
         end = time.time()
         time_taken += end-start

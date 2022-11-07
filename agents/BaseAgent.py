@@ -37,7 +37,7 @@ class BaseAgent(Agent):
                 print(f"Not loading {mname} from checkpoint")
 
     def zero_grad(self):
-        [m.zero_grad() for m in self.models.values()]   # this is redundant?
+        [m.zero_grad() for m in self.models.values()] 
         self.optimizer.zero_grad()
 
     def train(self, sample):
