@@ -1,0 +1,8 @@
+**/.DS_STORE
+**/*.pyc
+**/*.swp
+assets
+data
+MANIFEST
+*.egg-info
+\.idea/
