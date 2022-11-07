@@ -84,7 +84,7 @@ To submit your custom visual representation model to TOTO, you will train your v
 ### Type 2: Contributing an Agent
 To submit your agent, you will train your image-based agent on our datasets in any preferred way. You may develop your custom visual representation model or use existing ones in TOTO. Please see below for detailed instructions: 
 - Download the datasets [here](https://link-url-here.org) and train your agents in your preferred way.
-- *(Optional)* If you plan to use any existing TOTO visual representation model, simply use our provided functions to load the models as follows:
+- *(Optional)* If you plan to use any existing TOTO visual representation model, we release the pre-trained models [here](https://link-url-here.org). Download the models and put them into `assets/`. Then, simply use our provided functions to load the models as follows:
     ```
     from vision import load_model, load_transforms
     img_encoder = load_model(config)
