@@ -1,5 +1,6 @@
 # Train Offline, Test Online: A Real Robot Learning Benchmark
 <!-- TODO: add teaser figures, some setup/task images, etc  -->
+![toto_dataset](docs/images/toto_dataset.gif)
 
 ## Installation
 You can either use a local conda environment or a docker environment.
