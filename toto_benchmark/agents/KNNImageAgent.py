@@ -1,12 +1,11 @@
-import os
-import torch
 import numpy as np
-from scipy import special
+import os
 import pickle
-from  scipy import special
-from torchvision import transforms as T
+from scipy import special
 from sklearn.neighbors import KDTree
-from vision import load_model, load_transforms
+import torch
+from torchvision import transforms as T
+from toto_benchmark.vision import load_model, load_transforms
 
 class KNNImageAgent(object):
     def __init__(self, k, pickle_fn, vision_model, H, feature_key, device='cuda:0'):

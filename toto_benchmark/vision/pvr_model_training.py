@@ -3,7 +3,7 @@ import numpy as np, os, pickle
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from PIL import Image
-from vision import preprocess_image
+from toto_benchmark.vision import preprocess_image
 
 # ===========================
 # Utilities

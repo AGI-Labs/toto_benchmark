@@ -1,11 +1,13 @@
+import clip
 import numpy as np, torch, torch.nn as nn, torchvision.transforms as T, os, sys
-import torchvision.models as models
+from pathlib import Path
 from PIL import Image
+import torchvision.models as models
 from torchvision.transforms import InterpolationMode
 from torch.nn.modules.linear import Identity
-import clip
+import toto_benchmark
 
-base_path = os.path.dirname(os.path.dirname(__file__))
+base_path = Path(toto_benchmark.__file__).parent.parent
 CHECKPOINT_DIR = f'{base_path}/assets'
 
 clip_vit_model, _clip_vit_preprocess = clip.load("ViT-B/32", device='cpu')

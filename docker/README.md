@@ -8,23 +8,23 @@ Note: only supports Linux; no Windows or MacOS.
 ## Build Docker Image
 
 ```
-docker build . -t TOTO_starter:deploy
+docker build . -t toto_benchmark:deploy
 ```
 
 ## Run Docker Container interactively (with the dataset mounted)
-- DATASETS_PATH: the path on the host machine which contains the robocloud dataset
+- DATASETS_PATH: the path on the host machine which contains the toto benchmark dataset
 ```
-docker run -v $DATASETS_PATH:$DATASETS_PATH -it --runtime=nvidia --shm-size 8G --gpus all TOTO_starter:deploy
+docker run -v $DATASETS_PATH:$DATASETS_PATH -it --runtime=nvidia --shm-size 8G --gpus all toto_benchmark:deploy
 ```
 example usage:
 ```
-docker run -v /RoboCloud:/RoboCloud -it --runtime=nvidia --shm-size 8G --gpus all TOTO_starter:deploy
+docker run -v /totodata:/totodata -it --runtime=nvidia --shm-size 8G --gpus all toto_benchmark:deploy
 ```
 
 ## Train the agent (from docker container interactive shell)
 ```
-cd TOTO_starter
-python train_example.py --config-name train_bcimage.yaml
+cd toto_benchmark/scripts
+python train.py --config-name train_bc.yaml data.pickle_fn=/cloud-dataset-pouring-v0/parsed_with_embeddings_moco_conv5_robocloud.pkl
 ```
 
 ## Test the agent locally in a dummy environment (from docker container interactive shell)
@@ -34,6 +34,6 @@ python test_stub_env.py -f AGENT_PATH
 ```
 example usage
 ```
-cd TOTO_starter
+cd toto_benchmark
 python test_stub_env.py -f ./outputs/dummy_agent
 ```

@@ -1,7 +1,7 @@
 import numpy as np
 import pickle
 import torch
-from vision import load_model, load_transforms
+from toto_benchmark.vision import load_model, load_transforms
 
 class D3Agent():
     def __init__(self, policy, config, device):

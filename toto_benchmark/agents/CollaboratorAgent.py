@@ -5,9 +5,9 @@ agent initialization & predict functions here.
 Next, (optionally) update your agent's name in agent/__init__.py.
 """
 
-from .Agent import Agent
-import torchvision.transforms as T
 import numpy as np
+import torchvision.transforms as T
+from .Agent import Agent
 
 NUM_JOINTS = 7
 

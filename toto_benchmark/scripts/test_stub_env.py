@@ -1,15 +1,14 @@
 import argparse
-import collections
 import numpy as np
 import os
 from PIL import Image
-import yaml
-import torch
-
-from agents import init_agent_from_config
 import time
+import torch
+import yaml
+
+from toto_benchmark.agents import init_agent_from_config
+from toto_benchmark.vision import load_model, load_transforms
 from utils import Namespace
-from vision import load_model, load_transforms, preprocess_image
 
 SUCCESS_MESSAGE = "Agent outputs valid action - Test passed!"
 FAILURE_MESSAGE = "Agent outputs invalid action - Test failed."

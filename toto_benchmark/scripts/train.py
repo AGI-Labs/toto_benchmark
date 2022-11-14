@@ -6,21 +6,20 @@ python train.py --config-name train_bc.yaml
 Hyperparameters can be set in corresponding .yaml files in confs/
 """
 
-import logging
-import os
-import pickle
-import numpy
-import torch
-
-from omegaconf import DictConfig, OmegaConf, open_dict
 import baselines
 import hydra
+import logging
+import numpy
+from omegaconf import DictConfig, OmegaConf, open_dict
+import os
+import pickle
+import torch
+from torch.utils.data import DataLoader, random_split
 import wandb
 
-from torch.utils.data import DataLoader, random_split
-from agents import init_agent_from_config
 from dataset_traj import FrankaDatasetTraj
-from vision import load_transforms, EMBEDDING_DIMS
+from toto_benchmark.agents import init_agent_from_config
+from toto_benchmark.vision import load_transforms, EMBEDDING_DIMS
 
 log = logging.getLogger(__name__)
 
@@ -28,7 +27,7 @@ def global_seeding(seed=0):
     torch.manual_seed(seed)
     numpy.random.seed(seed)
 
-@hydra.main(config_path="conf", config_name="train_bc")
+@hydra.main(config_path="../conf", config_name="train_bc")
 def main(cfg : DictConfig) -> None:
     with open_dict(cfg):
         cfg['saved_folder'] = os.getcwd()

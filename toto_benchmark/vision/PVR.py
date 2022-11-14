@@ -1,4 +1,4 @@
-from vision.pvr_model_loading import load_pvr_model, load_pvr_transforms
+from toto_benchmark.vision.pvr_model_loading import load_pvr_model, load_pvr_transforms
 
 def _load_model(config):
     vision_model_name = config.agent.vision_model

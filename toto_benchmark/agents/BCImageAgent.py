@@ -3,7 +3,7 @@ from PIL import Image
 import torch
 from torch import nn
 import torchvision.models as models
-from vision import load_model, load_transforms
+from toto_benchmark.vision import load_model, load_transforms
 from .Agent import Agent
 
 class BCImageAgent(Agent):

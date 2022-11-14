@@ -1,7 +1,4 @@
 import collections
-import numpy as np
-import os
-import pandas as pd
 
 class Namespace(collections.MutableMapping):
     """Utility class to convert a (nested) dictionary into a (nested) namespace.

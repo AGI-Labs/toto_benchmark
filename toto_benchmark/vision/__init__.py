@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import Image
-from vision.pvr_model_loading import MODEL_LIST 
+from toto_benchmark.vision.pvr_model_loading import MODEL_LIST 
 
 EMBEDDING_DIMS = {
     'moco_conv3': 2156,

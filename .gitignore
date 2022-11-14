@@ -1,0 +1,11 @@
+**/.DS_STORE
+**/*.pyc
+**/*.swp
+assets
+data
+hydra
+wandb
+.hydra
+MANIFEST
+*.egg-info
+\.idea/
