@@ -3,7 +3,6 @@
 **/*.swp
 assets
 data
-hydra
 wandb
 .hydra
 MANIFEST

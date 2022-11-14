@@ -31,7 +31,7 @@ For more detailed dataset format information, see `assets/README.md`
 Here's an example command to train an image-based BC agent with MOCO (Ours) as the image encoder. You will need to download `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl` to have this launched.
 
 ```
-python train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-scooping/scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl
+python scripts/train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-scooping/scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl
 ```
 
 <!-- TODO: instructions on training agents with other vision representations? need to parse the dataset, etc -->
@@ -71,15 +71,15 @@ To submit your custom visual representation model to TOTO, you will train your v
 
     ```
     # Example command for the scooping dataset: 
-    python data_with_embeddings.py --data_folder assets/cloud-dataset-scooping/ --vision_model collaborator_encoder 
+    python scripts/data_with_embeddings.py --data_folder assets/cloud-dataset-scooping/ --vision_model collaborator_encoder 
     ```
     After this, a new data file `assets/cloud-dataset-scooping/parsed_with_embeddings_collaborator_encoder.pkl` will be generated. 
 - Now we are ready to train a BC agent! Here's an example command for training with config `train_bc.yaml`:
     ```
-    python train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-scooping/parsed_with_embeddings_collaborator_encoder.pkl data.vision_model='collaborator_encoder'
+    python scripts/train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-scooping/parsed_with_embeddings_collaborator_encoder.pkl data.vision_model='collaborator_encoder'
     ```
     A new agent folder will be created in `outputs/<path_to>/<agent>/`.
-- Once the above is done, run `python test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
+- Once the above is done, run `python scripts/test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
 
 ### Type 2: Contributing an Agent
@@ -95,6 +95,6 @@ To submit your agent, you will train your image-based agent on our datasets in a
     ``` 
 - Update the agent file: `agents/CollaboratorAgent.py`. This acts as a wrapper around your model to interface with our robot stack. Please refer to `agents/Agent.py` for more information
 - Update the agent config file `outputs/collaborator_agent/hydra.yaml` for initializing your agent
-- Once the above is done, run `python test_stub_env.py -f outputs/collaborator_agent/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
+- Once the above is done, run `python scripts/test_stub_env.py -f outputs/collaborator_agent/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
     - Please make sure your agent files are outside of `assets/`, as it will be ignored for submission.
