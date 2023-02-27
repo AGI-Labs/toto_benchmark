@@ -6,7 +6,7 @@
 You can either use a local conda environment or a docker environment.
 
 ### Setup conda environment
-1. Run ```source setup_toto_env.sh```
+1. Run the following command to create a new conda environment: ```source setup_toto_env.sh```
 
 ### Setup docker environment
 1. Follow the instructions in ```docker_instructions.md```
@@ -22,28 +22,31 @@ TOTO consists of two tabletop manipulations tasks, scooping and pouring. The dat
 We release the following datasets: 
 - `cloud-dataset-scooping.zip`: TOTO scooping dataset
 - `cloud-dataset-pouring.zip`: TOTO pouring dataset
-- `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl`: the same scooping dataset parsed with MOCO (Ours) pre-trained visual representations. 
+
+Additional Info:
+- `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl`: the same scooping dataset parsed with MOCO (Ours) pre-trained visual representations. (included as part of the TOTO scooping dataset) 
 - `pouring_parsed_with_embeddings_moco_conv5_robocloud.pkl`: the same pouring dataset parsed with MOCO (Ours) pre-trained visual representations. 
+(included as part of the TOTO pouring dataset)
 
 For more detailed dataset format information, see `assets/README.md`
 
-## Train a TOTO BC Agent
+## Train a TOTO Behavior Cloning (BC) Agent
 Here's an example command to train an image-based BC agent with MOCO (Ours) as the image encoder. You will need to download `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl` to have this launched.
 
 ```
-python scripts/train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-scooping/scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl
+python toto_benchmark/scripts/train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-scooping/scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl
 ```
 
 <!-- TODO: instructions on training agents with other vision representations? need to parse the dataset, etc -->
 
 ## Contributing to TOTO
 
- We invite the community to submit their methods to TOTO benchmark. We allow the following types of submission:
+ We invite the community to submit their methods to TOTO benchmark. We support the following challenges:
 
-- **Type 1**: a pre-trained visual representation model. 
-- **Type 2**: an agent policy which uses either a custom visual representation or the ones we provide.
+- **Challenge 1**: a pre-trained visual representation model. 
+- **Challenge 2**: an agent policy which uses either a custom visual representation or the ones we provide.
 
-### Type 1: Contributing a Visual Representation Model
+### Challenge 1: Visual Representation Model Challenge
 
 To submit your custom visual representation model to TOTO, you will train your visual representation model in any preferred way, generate image embeddings for TOTO datasets with your model, and finally train and submit a BC agent on this dataset. You will submit both your visual representation model and the BC model. We have provided scripts for interfacing with your vision model and for BC training. Please see the following instructions for details. 
 
@@ -71,18 +74,18 @@ To submit your custom visual representation model to TOTO, you will train your v
 
     ```
     # Example command for the scooping dataset: 
-    python scripts/data_with_embeddings.py --data_folder assets/cloud-dataset-scooping/ --vision_model collaborator_encoder 
+    python toto_benchmark/scripts/data_with_embeddings.py --data_folder assets/cloud-dataset-scooping/ --vision_model collaborator_encoder 
     ```
     After this, a new data file `assets/cloud-dataset-scooping/parsed_with_embeddings_collaborator_encoder.pkl` will be generated. 
 - Now we are ready to train a BC agent! Here's an example command for training with config `train_bc.yaml`:
     ```
-    python scripts/train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-scooping/parsed_with_embeddings_collaborator_encoder.pkl data.vision_model='collaborator_encoder'
+    python toto_benchmark/scripts/train.py --config-name train_bc.yaml data.pickle_fn=assets/cloud-dataset-scooping/parsed_with_embeddings_collaborator_encoder.pkl data.vision_model='collaborator_encoder'
     ```
     A new agent folder will be created in `outputs/<path_to>/<agent>/`.
-- Once the above is done, run `python scripts/test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
+- Once the above is done, run `python toto_benchmark/scripts/test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
 
-### Type 2: Contributing an Agent
+### Challenge 2: Agent Policy Challenge
 To submit your agent, you will train your image-based agent on our datasets in any preferred way. You may develop your custom visual representation model or use existing ones in TOTO. Please see below for detailed instructions: 
 - Download the datasets [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link) and train your agents in your preferred way.
 - *(Optional)* If you plan to use any existing TOTO visual representation model, we release the pre-trained models [here](https://drive.google.com/drive/folders/1iqDIIIalTi3PhAnFjZxesksvFVldK42p?usp=sharing). Download the models and put them into `assets/`. Then, simply use our provided functions to load the models as follows:
@@ -95,6 +98,6 @@ To submit your agent, you will train your image-based agent on our datasets in a
     ``` 
 - Update the agent file: `agents/CollaboratorAgent.py`. This acts as a wrapper around your model to interface with our robot stack. Please refer to `agents/Agent.py` for more information
 - Update the agent config file `outputs/collaborator_agent/hydra.yaml` for initializing your agent
-- Once the above is done, run `python scripts/test_stub_env.py -f outputs/collaborator_agent/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
+- Once the above is done, run `python toto_benchmark/scripts/test_stub_env.py -f outputs/collaborator_agent/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
     - Please make sure your agent files are outside of `assets/`, as it will be ignored for submission.
