@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # create a new conda environment
-conda env create -f ./toto.yml
+conda env create -f ./toto_benchmark.yml
 
 # activate the environment
 conda activate toto

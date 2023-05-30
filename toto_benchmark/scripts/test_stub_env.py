@@ -21,7 +21,7 @@ python test_stub_env.py -f ./outputs -a AGENT_PATH
 ```
 example usage
 ```
-cd TOTO_starter
+cd toto_benchmark/scripts
 python test_stub_env.py -f ./outputs/dummy_agent
 ```
 '''
