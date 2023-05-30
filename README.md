@@ -9,7 +9,7 @@ You can either use a local conda environment or a docker environment.
 1. Run the following command to create a new conda environment: ```source setup_toto_env.sh```
 
 ### Setup docker environment
-1. Follow the instructions in [here](https://github.com/AGI-Labs/toto_benchmark/blob/public/docker/README.md).
+1. Follow the instructions in [here](https://github.com/AGI-Labs/toto_benchmark/blob/main/docker/README.md).
 
 Note: If you are contributing models to TOTO, we strongly suggest setting up the docker environment.
 
