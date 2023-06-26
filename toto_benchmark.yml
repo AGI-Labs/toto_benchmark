@@ -1,4 +1,4 @@
-name: toto
+name: toto-benchmark
 channels:
   - fair-robotics
   - aihabitat
@@ -144,8 +144,8 @@ dependencies:
   - nettle=3.7.3=hbbd107a_1
   - nspr=4.33=h295c915_0
   - nss=3.74=h0370c37_0
-  - numba=0.51.2=py38hc5bc63f_0
-  - numpy=1.22.4=py38h99721a1_0
+  - numba
+  - numpy
   - octomap=1.9.7=h4bd325d_0
   - omegaconf=2.0.6=py38h578d9bd_0
   - opencv=4.4.0=py38_2

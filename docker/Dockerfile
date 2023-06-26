@@ -31,7 +31,7 @@ RUN apt install -y time
 # install mamba/boa into conda `base` environment
 RUN conda install mamba -y -c conda-forge
 # unzip the file
-RUN git clone -b public https://github.com/AGI-Labs/toto_benchmark.git
+RUN git clone https://github.com/AGI-Labs/toto_benchmark.git
 WORKDIR /toto_benchmark
 
 RUN mamba env create -f ./toto_benchmark.yml
