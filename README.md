@@ -21,14 +21,16 @@ Note: If you are contributing models to TOTO, we strongly suggest setting up the
 <!-- TODO: need to update the dataset link after google drive clean up -->
 TOTO consists of two tabletop manipulations tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link).
 
+*Update*: please download the scooping data from Google Cloud Bucket [here](https://console.cloud.google.com/storage/browser/toto-dataset) instead.
+
 <!-- TODO: update link to dataset README.md file. May consider create a dataset/ folder and add the readme into the repo -->
 We release the following datasets: 
 - `cloud-dataset-scooping.zip`: TOTO scooping dataset
 - `cloud-dataset-pouring.zip`: TOTO pouring dataset
 
 Additional Info:
-- `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl`: the same scooping dataset parsed with MOCO (Ours) pre-trained visual representations. (included as part of the TOTO scooping dataset) 
-- `pouring_parsed_with_embeddings_moco_conv5_robocloud.pkl`: the same pouring dataset parsed with MOCO (Ours) pre-trained visual representations. 
+- `scooping_parsed_with_embeddings_moco_conv5.pkl`: the same scooping dataset parsed with MOCO (Ours) pre-trained visual representations. (included as part of the TOTO scooping dataset) 
+- `pouring_parsed_with_embeddings_moco_conv5.pkl`: the same pouring dataset parsed with MOCO (Ours) pre-trained visual representations. 
 (included as part of the TOTO pouring dataset)
 
 For more detailed dataset format information, see `assets/README.md`
