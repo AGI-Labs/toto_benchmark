@@ -116,3 +116,16 @@ To submit your agent, you will train your image-based agent on our datasets in a
 for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
     - Please make sure your agent files are outside of `assets/`, as it will be ignored for submission.
+
+## Citation
+
+If you use TOTO, consider citing the original paper:
+
+```
+@inproceedings{zhou2023train,
+  author={Zhou, Gaoyue and Dean, Victoria and Srirama, Mohan Kumar and Rajeswaran, Aravind and Pari, Jyothish and Hatch, Kyle and Jain, Aryan and Yu, Tianhe and Abbeel, Pieter and Pinto, Lerrel and Finn, Chelsea and Gupta, Abhinav},
+  booktitle={2023 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Train Offline, Test Online: A Real Robot Learning Benchmark}, 
+  year={2023},
+ }
+```
