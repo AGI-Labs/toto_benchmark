@@ -66,6 +66,9 @@ def main(cfg : DictConfig) -> None:
         print("\n***Pickle does not exist. Make sure the pickle is in the logs_folder directory.")
         raise
 
+    for path in data:
+        path['observations'] = numpy.hstack([path['observations'], path['embeddings']]) # Assume 'observations' in the dataset doesn't contain img embeddings
+
     dset = FrankaDatasetTraj(data,
         logs_folder=cfg.data.logs_folder,
         subsample_period=cfg.data.subsample_period,
