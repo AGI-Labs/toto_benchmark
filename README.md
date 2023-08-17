@@ -4,6 +4,10 @@
 
 ## Prerequisites
 - [Mamba](https://mamba.readthedocs.io/en/latest/installation.html)
+  ```
+  # from the base conda environment run
+  conda install -c conda-forge mamba
+  ```
 
 ## Installation
 You can either use a local conda environment or a docker environment.
