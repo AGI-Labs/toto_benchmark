@@ -1,4 +1,5 @@
 import os
+import tqdm
 import random
 import numpy as np
 import torch
@@ -28,7 +29,8 @@ class FrankaDatasetTraj(Dataset):
             cameras=None,
             img_transform_fn=None,
             noise=None,
-            crop_images=False):
+            crop_images=False,
+            sim=True):
         from multiprocessing import set_start_method
         try:
             set_start_method('spawn')
@@ -49,10 +51,14 @@ class FrankaDatasetTraj(Dataset):
         self.noise = noise
         self.crop_images = crop_images
         self.pick_high_reward_trajs()
+
         self.subsample_demos()
-        if len(self.cameras) > 0:
+        if sim:
+            self.embed_sim_images()
+        elif len(self.cameras) > 0:
             self.load_imgs()
         self.process_demos()
+        #self.process_simulation_demos()
 
     def pick_high_reward_trajs(self):
         original_data_size = len(self.demos)
@@ -68,9 +74,50 @@ class FrankaDatasetTraj(Dataset):
             self.demos = self.demos[:top_idx_thres] 
         random.shuffle(self.demos)
 
+    def embed_sim_images(self):
+        #from toto_benchmark.vision import load_model, load_transforms
+        from toto_benchmark.vision.pvr_model_loading import load_pvr_model, load_pvr_transforms
+        vision_model_name = 'moco_conv5_robocloud'
+        model = load_pvr_model(vision_model_name)[0]
+        device = 'cuda:0'
+        model = model.eval().to(device) ## assume this model is used in eval
+        transforms = load_pvr_transforms(vision_model_name)[1]
+
+        with torch.no_grad():
+            for traj in self.demos:
+                print("Starting traj of ",len(self.demos))
+                #traj['observations'] = []
+                path_len = len(traj['images'])
+                batch_size = 128
+                embeddings = []
+                for b in range((path_len // batch_size + 1)):
+                    if b * batch_size < path_len:
+                        image_batch = traj['images'][b * batch_size:min(batch_size * (b + 1), path_len)]
+                        image_batch = [transforms(Image.fromarray(img).crop((200, 0, 500, 400))) for img in image_batch]
+                                                
+                        chunk = torch.stack(image_batch)
+                        chunk_embed = model(chunk.to(device))
+                        embeddings.append(chunk_embed.to('cpu').data.numpy())
+                    print("Finished batch",b,"of",path_len//batch_size)
+                traj['embeddings'] = np.vstack(embeddings)
+                traj['observations'] = np.hstack([traj['proprioception'], traj['embeddings']])
+                
+                #for img in traj['images']:
+                #    img = (Image.fromarray(img).crop((200, 0, 500, 400)) if self.crop_images else img)
+                #    img = transforms(img).to(device)
+                #    img = img[None, :]
+                #    traj['observations'].append(img_encoder(img))
+                #    if len(traj['observations']) > 100:
+                #        break
+                    #imgs_out = [ for image in traj['images']]
+                    #concat_inputs = torch.cat([sample['inputs']] + imgs_out, dim=-1)
+                    #return self.models['decoder'](concat_inputs)
+                #traj['observations'] = np.asarray(traj['observations'])
+
     def subsample_demos(self):
         for traj in self.demos:
-            for key in ['cam0c', 'observations', 'actions', 'terminated', 'rewards']:
+            #for key in ['cam0c', 'observations', 'actions', 'terminated', 'rewards']:
+            for key in traj.keys():
                 if key == 'observations':
                     traj[key] = traj[key][:, :self.obs_dim]
                 if key == 'rewards':
@@ -107,6 +154,43 @@ class FrankaDatasetTraj(Dataset):
         self.labels = np_to_tensor(labels, self.device)
         self.labels = self.labels.reshape([self.labels.shape[0], -1]) # flatten actions to (#trajs, H * action_dim)
 
+    # This not being used currently
+    def process_simulation_demos(self):
+        inputs, labels = [], []
+        ac_chunk = 1 # TODO
+        random.shuffle(self.demos)
+
+        for traj in tqdm.tqdm(self.demos):
+            imgs, acs = traj['images'], traj['actions']
+            #assert len(obs) == len(acs) and len(acs) == len(imgs), "All time dimensions must match!"
+            
+            # pad camera dimension if needed
+            #if len(imgs.shape) == 4:
+            #    imgs = imgs[:,None]
+
+            #for t in range(len(imgs) - ac_chunk):
+                #i_t, o_t = imgs[t], obs[t]
+                #i_t_prime, o_t_prime = imgs[t+ac_chunk], obs[t+ac_chunk]
+                #a_t = acs[t:t+ac_chunk]
+                #self.s_a_sprime.append(((i_t, o_t), a_t, (i_t_prime, o_t_prime)))
+                #inputs.append(traj['images'][t])
+                #labels.append(traj['actions'][t])
+            inputs.extend(traj['images'])
+            labels.extend(traj['actions'])
+            if len(inputs) > 1000:
+                break
+
+        inputs = np.asarray(inputs).astype(np.float64)
+        labels = np.asarray(labels).astype(np.float64)
+
+        #inputs = inputs[:,None]
+        #inputs = np.stack(inputs, axis=0).astype(np.float64)
+        #labels = np.stack(labels, axis=0).astype(np.float64)
+        self.inputs = np_to_tensor(inputs, self.device)
+        self.labels = np_to_tensor(labels, self.device)
+        print(self.labels.shape, self.inputs.shape)
+        self.labels = self.labels.reshape([self.labels.shape[0], -1]) # flatten actions to (#trajs, H * action_dim)
+        
     def load_imgs(self):
         print("Start loading images...")
         for path in self.demos:
@@ -127,6 +211,7 @@ class FrankaDatasetTraj(Dataset):
                 }
         if self.noise:
             datapoint['inputs'] += torch.randn_like(datapoint['inputs']) * self.noise
+
         if self.cameras:
             for _c in self.cameras:
                 try:
