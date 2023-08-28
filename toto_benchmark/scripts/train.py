@@ -43,16 +43,16 @@ def save_frames_as_gif(frames, path='./', filename=None, frame_rate_divider=1):
         patch.set_data(frames[i])
 
     anim = animation.FuncAnimation(plt.gcf(), animate, frames = len(frames), interval=50)
-    fname = os.join(path, filename)
+    fname = os.path.join(path, filename)
     anim.save(fname, writer='imagemagick', fps=60 / frame_rate_divider)
     print("Saved gif", fname)
 
 
 def _eval_agent(env, agent, device, model, transforms, epoch, n_rollouts=10):
-    total_rewards = []
+    episode_rewards = []
     for i in range(n_rollouts):
         obs = env.reset(); done=False; success=False
-        t = 0; total_reward = 0
+        t = 0; reward = 0
 
         frames = []
         frame_rate_divider = 15
@@ -72,19 +72,18 @@ def _eval_agent(env, agent, device, model, transforms, epoch, n_rollouts=10):
                 inputs = torch.from_numpy(obs).float()
 
                 action = agent.predict({'inputs': obs})
-                obs, r, done, env_info = env.step(action)
+                obs, reward, done, env_info = env.step(action)
                 t += 1
-                total_reward += r
                 if done or t >= _MAX_STEPS:
                     break
         except:
             pass
-        total_rewards.append(float(total_reward))
+
+        episode_rewards.append(float(reward))
         if i == 0:
             fname = datetime.now().strftime("%m-%d-%Y-%H-%M-%S_epoch") + str(epoch) + '.gif'
             save_frames_as_gif(frames, path=hydra.utils.get_original_cwd(), filename=fname, frame_rate_divider=frame_rate_divider)
-
-    return np.mean(total_rewards)
+    return np.mean(episode_rewards)
 
 
 @hydra.main(config_path="../conf", config_name="train_bc")

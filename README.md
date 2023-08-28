@@ -2,6 +2,19 @@
 <!-- TODO: add teaser figures, some setup/task images, etc  -->
 ![toto_dataset](docs/images/toto_dataset.gif)
 
+## Simulation phase instructions
+Our pouring simulator uses DeepMind MuJoCo, which you can install with this command:
+  ```
+  pip install mujoco
+
+  ```
+To set up MuJoCo rendering, install egl follwing the instructions [here])https://pytorch.org/rl/reference/generated/knowledge_base/MUJOCO_INSTALLATION.html#prerequisite-for-rendering-all-mujoco-versions).
+
+### The following example command trains a BC agent on the simulated pouring task:
+  ```
+python toto_benchmark/scripts/train.py --config-name train_bc_sim.yaml
+  ```
+  
 ## Prerequisites
 - [Mamba](https://mamba.readthedocs.io/en/latest/installation.html)
   ```

@@ -84,9 +84,10 @@ class FrankaDatasetTraj(Dataset):
         transforms = load_pvr_transforms(vision_model_name)[1]
 
         with torch.no_grad():
+            traj_num = 0
             for traj in self.demos:
-                print("Starting traj of ",len(self.demos))
-                #traj['observations'] = []
+                print("Starting traj",traj_num,"of",len(self.demos))
+                traj_num += 1
                 path_len = len(traj['images'])
                 batch_size = 128
                 embeddings = []
@@ -98,21 +99,9 @@ class FrankaDatasetTraj(Dataset):
                         chunk = torch.stack(image_batch)
                         chunk_embed = model(chunk.to(device))
                         embeddings.append(chunk_embed.to('cpu').data.numpy())
-                    print("Finished batch",b,"of",path_len//batch_size)
                 traj['embeddings'] = np.vstack(embeddings)
                 traj['observations'] = np.hstack([traj['proprioception'], traj['embeddings']])
                 
-                #for img in traj['images']:
-                #    img = (Image.fromarray(img).crop((200, 0, 500, 400)) if self.crop_images else img)
-                #    img = transforms(img).to(device)
-                #    img = img[None, :]
-                #    traj['observations'].append(img_encoder(img))
-                #    if len(traj['observations']) > 100:
-                #        break
-                    #imgs_out = [ for image in traj['images']]
-                    #concat_inputs = torch.cat([sample['inputs']] + imgs_out, dim=-1)
-                    #return self.models['decoder'](concat_inputs)
-                #traj['observations'] = np.asarray(traj['observations'])
 
     def subsample_demos(self):
         for traj in self.demos:
