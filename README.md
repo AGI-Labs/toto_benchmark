@@ -6,9 +6,8 @@
 Our pouring simulator uses DeepMind MuJoCo, which you can install with this command:
   ```
   pip install mujoco
-
   ```
-To set up MuJoCo rendering, install egl follwing the instructions [here])https://pytorch.org/rl/reference/generated/knowledge_base/MUJOCO_INSTALLATION.html#prerequisite-for-rendering-all-mujoco-versions).
+To set up MuJoCo rendering, install egl follwing the instructions [here](https://pytorch.org/rl/reference/generated/knowledge_base/MUJOCO_INSTALLATION.html#prerequisite-for-rendering-all-mujoco-versions).
 
 ### The following example command trains a BC agent on the simulated pouring task:
   ```
