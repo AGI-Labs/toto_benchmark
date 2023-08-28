@@ -7,25 +7,85 @@ Hyperparameters can be set in corresponding .yaml files in confs/
 """
 
 import baselines
+from datetime import datetime
 import hydra
 import logging
-import numpy
+import numpy as np
 from omegaconf import DictConfig, OmegaConf, open_dict
 import os
 import pickle
 import torch
 from torch.utils.data import DataLoader, random_split
 import wandb
+import matplotlib.pyplot as plt
+from matplotlib import animation
+from PIL import Image
+
 
 from dataset_traj import FrankaDatasetTraj
 from toto_benchmark.agents import init_agent_from_config
 from toto_benchmark.vision import load_transforms, EMBEDDING_DIMS
+from toto_benchmark.vision.pvr_model_loading import load_pvr_model, load_pvr_transforms
 
 log = logging.getLogger(__name__)
 
 def global_seeding(seed=0):
     torch.manual_seed(seed)
-    numpy.random.seed(seed)
+    np.random.seed(seed)
+
+def save_frames_as_gif(frames, path='./', filename=None, frame_rate_divider=1):
+    plt.figure(figsize=(frames[0].shape[1] / 72.0, frames[0].shape[0] / 72.0), dpi=72)
+
+    patch = plt.imshow(frames[0])
+    plt.axis('off')
+
+    def animate(i):
+        patch.set_data(frames[i])
+
+    anim = animation.FuncAnimation(plt.gcf(), animate, frames = len(frames), interval=50)
+    fname = os.join(path, filename)
+    anim.save(fname, writer='imagemagick', fps=60 / frame_rate_divider)
+    print("Saved gif", fname)
+
+
+def _eval_agent(env, agent, device, model, transforms, epoch, n_rollouts=10):
+    total_rewards = []
+    for i in range(n_rollouts):
+        obs = env.reset(); done=False; success=False
+        t = 0; total_reward = 0
+
+        frames = []
+        frame_rate_divider = 15
+        _MAX_STEPS = 1000
+
+        try:
+            while not done and t < _MAX_STEPS and not success:
+                # In first eval rollout, same frames for gif
+                if i == 0 and t % frame_rate_divider == 0:
+                    frames.append(obs['image'])
+
+                image = torch.stack((transforms(Image.fromarray(obs['image']).crop((200, 0, 500, 400))),))
+                embed = model(image.to(device)).to('cpu').data.numpy()
+
+                o = torch.from_numpy(obs['proprioception'])[None].float()
+                obs = np.hstack([o, embed])
+                inputs = torch.from_numpy(obs).float()
+
+                action = agent.predict({'inputs': obs})
+                obs, r, done, env_info = env.step(action)
+                t += 1
+                total_reward += r
+                if done or t >= _MAX_STEPS:
+                    break
+        except:
+            pass
+        total_rewards.append(float(total_reward))
+        if i == 0:
+            fname = datetime.now().strftime("%m-%d-%Y-%H-%M-%S_epoch") + str(epoch) + '.gif'
+            save_frames_as_gif(frames, path=hydra.utils.get_original_cwd(), filename=fname, frame_rate_divider=frame_rate_divider)
+
+    return np.mean(total_rewards)
+
 
 @hydra.main(config_path="../conf", config_name="train_bc")
 def main(cfg : DictConfig) -> None:
@@ -46,6 +106,14 @@ def main(cfg : DictConfig) -> None:
             cfg['data']['in_dim'] = cfg['data']['in_dim'] + cfg['data']['images']['per_img_out']
 
     print(OmegaConf.to_yaml(cfg, resolve=True))
+
+    from dm_pour import DMWaterPouringEnv
+    eval_env = DMWaterPouringEnv(has_viewer=False)
+    vision_model_name = 'moco_conv5_robocloud'
+    model = load_pvr_model(vision_model_name)[0]
+    model = model.eval().to(cfg.training.device) ## assume this model is used in eval
+    transforms = load_pvr_transforms(vision_model_name)[1]
+
     with open(os.path.join(os.getcwd(), 'hydra.yaml'), 'w') as f:
         f.write(OmegaConf.to_yaml(cfg, resolve=True))
 
@@ -112,7 +180,9 @@ def main(cfg : DictConfig) -> None:
                 data[key] = data[key].to(cfg.training.device)
             test_metric.add(agent.eval(data))
 
-        log.info('epoch {} \t train {:.6f} \t test {:.6f}'.format(epoch, train_metric.mean, test_metric.mean))
+        eval_reward = _eval_agent(eval_env, agent, cfg.training.device, model, transforms, epoch)
+
+        log.info('epoch {} \t train {:.6f} \t test {:.6f} \t eval {:.6f}'.format(epoch, train_metric.mean, test_metric.mean, eval_reward))
         log.info(f'Accumulated loss: {acc_loss}')
         if epoch % cfg.training.save_every_x_epoch == 0:
             agent.save(os.getcwd())
