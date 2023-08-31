@@ -23,7 +23,7 @@ from PIL import Image
 
 from dataset_traj import FrankaDatasetTraj
 from toto_benchmark.agents import init_agent_from_config
-from toto_benchmark.vision import load_transforms, EMBEDDING_DIMS
+from toto_benchmark.vision import load_model, load_transforms, EMBEDDING_DIMS
 
 log = logging.getLogger(__name__)
 
@@ -105,7 +105,7 @@ def main(cfg : DictConfig) -> None:
     print(OmegaConf.to_yaml(cfg, resolve=True))
 
     # TODO: if doing separate eval script, can delete this section
-    from dm_pour import DMWaterPouringEnv
+    from toto_benchmark.sim.dm_pour import DMWaterPouringEnv
     eval_env = DMWaterPouringEnv(has_viewer=False)
     model = load_model(cfg)
     model = model.eval().to(cfg.training.device) ## assume this model is used in eval

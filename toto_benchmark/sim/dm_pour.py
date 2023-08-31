@@ -3,7 +3,7 @@ import mujoco
 import os
 import numpy as np
 from mujoco import _enums, _functions
-from toto_benchmark.random import np_random
+from toto_benchmark.sim.random import np_random
 
 
 class DMWaterPouringEnv:
@@ -45,7 +45,7 @@ class DMWaterPouringEnv:
     
     def _initialize_sim(self, xml_string=None): # xml_string not used
         base_path = os.path.dirname(hydra.utils.get_original_cwd())
-        self.model = mujoco.MjModel.from_xml_path(os.path.join(base_path, "toto_benchmark/assets/franka_panda_pouring.xml"))
+        self.model = mujoco.MjModel.from_xml_path(os.path.join(base_path, "toto_benchmark/toto_benchmark/sim/franka_panda_pouring.xml"))
         self.data = mujoco.MjData(self.model)
         mujoco.mj_resetData(self.model, self.data)
         self.renderer = mujoco.Renderer(self.model)
