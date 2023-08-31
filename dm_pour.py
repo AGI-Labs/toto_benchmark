@@ -7,7 +7,7 @@ from toto_benchmark.random import np_random
 
 
 class DMWaterPouringEnv:
-    def __init__(self, has_viewer=True, use_real_robot=False, ignore_done=False):
+    def __init__(self, has_viewer=False, use_real_robot=False, ignore_done=False):
         self.seed()
         self.has_viewer = has_viewer
         self.use_real_robot = use_real_robot

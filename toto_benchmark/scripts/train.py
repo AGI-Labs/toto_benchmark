@@ -21,11 +21,9 @@ import matplotlib.pyplot as plt
 from matplotlib import animation
 from PIL import Image
 
-
 from dataset_traj import FrankaDatasetTraj
 from toto_benchmark.agents import init_agent_from_config
 from toto_benchmark.vision import load_transforms, EMBEDDING_DIMS
-from toto_benchmark.vision.pvr_model_loading import load_pvr_model, load_pvr_transforms
 
 log = logging.getLogger(__name__)
 
@@ -106,12 +104,12 @@ def main(cfg : DictConfig) -> None:
 
     print(OmegaConf.to_yaml(cfg, resolve=True))
 
+    # TODO: if doing separate eval script, can delete this section
     from dm_pour import DMWaterPouringEnv
     eval_env = DMWaterPouringEnv(has_viewer=False)
-    vision_model_name = 'moco_conv5_robocloud'
-    model = load_pvr_model(vision_model_name)[0]
+    model = load_model(cfg)
     model = model.eval().to(cfg.training.device) ## assume this model is used in eval
-    transforms = load_pvr_transforms(vision_model_name)[1]
+    transforms = load_transforms(cfg)
 
     with open(os.path.join(os.getcwd(), 'hydra.yaml'), 'w') as f:
         f.write(OmegaConf.to_yaml(cfg, resolve=True))
@@ -133,23 +131,7 @@ def main(cfg : DictConfig) -> None:
         print("\n***Pickle does not exist. Make sure the pickle is in the logs_folder directory.")
         raise
 
-    #for path in data:
-    #    path['observations'] = numpy.hstack([path['observations'], path['embeddings']]) # Assume 'observations' in the dataset doesn't contain img embeddings
-
-    dset = FrankaDatasetTraj(data,
-        logs_folder=cfg.data.logs_folder,
-        subsample_period=cfg.data.subsample_period,
-        im_h=cfg.data.images.im_h,
-        im_w=cfg.data.images.im_w,
-        obs_dim=cfg.data.in_dim,
-        action_dim=cfg.data.out_dim,
-        H=cfg.data.H,
-        top_k=cfg.data.top_k,
-        device=cfg.training.device,
-        cameras=cfg.data.images.cameras,
-        img_transform_fn=load_transforms(cfg),
-        noise=cfg.data.noise,
-        crop_images=cfg.data.images.crop)
+    dset = FrankaDatasetTraj(data, cfg, sim=True) # TODO flag in config for sim/embedding on the fly? Way to infer it from data?
     del data
     split_sizes = [int(len(dset) * 0.8), len(dset) - int(len(dset) * 0.8)]
     train_set, test_set = random_split(dset, split_sizes)

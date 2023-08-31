@@ -6,18 +6,21 @@ import yaml, argparse, os, pickle
 from utils import Namespace
 from toto_benchmark.vision import load_model, load_transforms, preprocess_image
 
-def precompute_embeddings(cfg, paths, data_path):
+def precompute_embeddings(cfg, paths, data_path=None, from_files=True):
     device = 'cuda:0'
     model = load_model(cfg)
-    model.to(device)
+    model.to(device) # TODO here and in precompute_embeddings_byol: model.eval().to(device)?
     transforms = load_transforms(cfg)
-    model = model.to(device)
     batch_size = 128
     print("Total number of paths : %i" % len(paths))
     for idx, path in tqdm(enumerate(paths)):
         path_images = []
         for t in range(path['observations'].shape[0]):
-            img = Image.open(os.path.join(data_path, path['traj_id'], path['cam0c'][t])) 
+            if from_files:
+                assert data_path is not None
+                img = Image.open(os.path.join(data_path, path['traj_id'], path['cam0c'][t]))
+            else:
+                img = path['images'][t]
             img = preprocess_image(img, transforms)
             path_images.append(img)
         embeddings = []
@@ -31,7 +34,6 @@ def precompute_embeddings(cfg, paths, data_path):
             embeddings = np.vstack(embeddings)
             assert embeddings.shape == (path_len, chunk_embed.shape[1])
         path['embeddings'] = embeddings.copy()
-        path['observations'] = np.hstack([path['observations'], path['embeddings']])
     return paths
 
 def precompute_embeddings_byol(cfg, paths, data_path):
@@ -85,10 +87,7 @@ if __name__ == "__main__":
         paths_with_embeddings = precompute_embeddings_byol(cfg, paths, data_path)
     else:
         # support batch_size >= 1
-        paths_with_embeddings = precompute_embeddings(cfg, paths, data_path) 
+        paths_with_embeddings = precompute_embeddings(cfg, paths, data_path=data_path)
 
     with open(os.path.join(args.data_folder, f'parsed_with_embeddings_{args.vision_model}.pkl'), 'wb') as f:
         pickle.dump(paths_with_embeddings, f)
-
-
-

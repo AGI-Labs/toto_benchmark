@@ -6,6 +6,9 @@ import torch
 from torch.utils.data import Dataset
 from PIL import Image
 
+from toto_benchmark.vision import load_transforms
+from data_with_embeddings import precompute_embeddings
+
 def np_to_tensor(nparr, device):
     return torch.from_numpy(nparr).float()
 
@@ -16,49 +19,36 @@ def shift_window(arr, window, np_array=True):
     return nparr
 
 class FrankaDatasetTraj(Dataset):
-    def __init__(self, data,
-            logs_folder='./',
-            subsample_period=1,
-            im_h=480,
-            im_w=640,
-            obs_dim=7,
-            action_dim=7,
-            H=50,
-            top_k=None,
-            device='cpu',
-            cameras=None,
-            img_transform_fn=None,
-            noise=None,
-            crop_images=False,
-            sim=True):
+    def __init__(self, data, cfg, sim=True):
         from multiprocessing import set_start_method
         try:
             set_start_method('spawn')
         except RuntimeError:
             pass
-        self.logs_folder = logs_folder
-        self.subsample_period = subsample_period
-        self.im_h = im_h
-        self.im_w = im_w
-        self.obs_dim = obs_dim
-        self.action_dim = action_dim # not used
-        self.H = H
-        self.top_k = top_k
         self.demos = data
-        self.device = device
-        self.cameras = cameras or []
-        self.img_transform_fn = img_transform_fn
-        self.noise = noise
-        self.crop_images = crop_images
+        self.cfg = cfg
+        self.logs_folder = cfg.data.logs_folder
+        self.subsample_period = cfg.data.subsample_period
+        self.im_h = cfg.data.images.im_h
+        self.im_w = cfg.data.images.im_w
+        self.obs_dim = cfg.data.in_dim
+        self.H = cfg.data.H
+        self.top_k = cfg.data.top_k
+        self.device = cfg.training.device
+        self.cameras = cfg.data.images.cameras or []
+        self.img_transform_fn = load_transforms(cfg)
+        self.noise = cfg.data.noise
+        self.crop_images = cfg.data.images.crop
         self.pick_high_reward_trajs()
 
         self.subsample_demos()
+
         if sim:
             self.embed_sim_images()
         elif len(self.cameras) > 0:
-            self.load_imgs()
+            self.load_imgs() # TODO is len(self.cameras) > 0 for BC from embeddings?
+
         self.process_demos()
-        #self.process_simulation_demos()
 
     def pick_high_reward_trajs(self):
         original_data_size = len(self.demos)
@@ -75,36 +65,13 @@ class FrankaDatasetTraj(Dataset):
         random.shuffle(self.demos)
 
     def embed_sim_images(self):
-        #from toto_benchmark.vision import load_model, load_transforms
-        from toto_benchmark.vision.pvr_model_loading import load_pvr_model, load_pvr_transforms
-        vision_model_name = 'moco_conv5_robocloud'
-        model = load_pvr_model(vision_model_name)[0]
-        device = 'cuda:0'
-        model = model.eval().to(device) ## assume this model is used in eval
-        transforms = load_pvr_transforms(vision_model_name)[1]
-
-        with torch.no_grad():
-            traj_num = 0
-            for traj in self.demos:
-                print("Starting traj",traj_num,"of",len(self.demos))
-                traj_num += 1
-                path_len = len(traj['images'])
-                batch_size = 128
-                embeddings = []
-                for b in range((path_len // batch_size + 1)):
-                    if b * batch_size < path_len:
-                        image_batch = traj['images'][b * batch_size:min(batch_size * (b + 1), path_len)]
-                        image_batch = [transforms(Image.fromarray(img).crop((200, 0, 500, 400))) for img in image_batch]
-                                                
-                        chunk = torch.stack(image_batch)
-                        chunk_embed = model(chunk.to(device))
-                        embeddings.append(chunk_embed.to('cpu').data.numpy())
-                traj['embeddings'] = np.vstack(embeddings)
-                traj['observations'] = np.hstack([traj['proprioception'], traj['embeddings']])
-                
+        for demo in self.demos: # TODO remove this after fixing pkl key name
+            demo['observations'] = demo['proprioception']
+        self.demos = precompute_embeddings(self.cfg, self.demos, from_files=False)
 
     def subsample_demos(self):
         for traj in self.demos:
+            # TODO okay to delete previous explicit looping over keys?
             #for key in ['cam0c', 'observations', 'actions', 'terminated', 'rewards']:
             for key in traj.keys():
                 if key == 'observations':
@@ -120,6 +87,8 @@ class FrankaDatasetTraj(Dataset):
         inputs, labels = [], []
         cnt = 0
         for traj in self.demos:
+            traj['observations'] = np.hstack([traj['observations'], traj['embeddings']])
+
             if traj['actions'].shape[0] > self.H:
                 for start in range(traj['actions'].shape[0] - self.H + 1):
                     inputs.append(traj['observations'][start])
@@ -143,43 +112,6 @@ class FrankaDatasetTraj(Dataset):
         self.labels = np_to_tensor(labels, self.device)
         self.labels = self.labels.reshape([self.labels.shape[0], -1]) # flatten actions to (#trajs, H * action_dim)
 
-    # This not being used currently
-    def process_simulation_demos(self):
-        inputs, labels = [], []
-        ac_chunk = 1 # TODO
-        random.shuffle(self.demos)
-
-        for traj in tqdm.tqdm(self.demos):
-            imgs, acs = traj['images'], traj['actions']
-            #assert len(obs) == len(acs) and len(acs) == len(imgs), "All time dimensions must match!"
-            
-            # pad camera dimension if needed
-            #if len(imgs.shape) == 4:
-            #    imgs = imgs[:,None]
-
-            #for t in range(len(imgs) - ac_chunk):
-                #i_t, o_t = imgs[t], obs[t]
-                #i_t_prime, o_t_prime = imgs[t+ac_chunk], obs[t+ac_chunk]
-                #a_t = acs[t:t+ac_chunk]
-                #self.s_a_sprime.append(((i_t, o_t), a_t, (i_t_prime, o_t_prime)))
-                #inputs.append(traj['images'][t])
-                #labels.append(traj['actions'][t])
-            inputs.extend(traj['images'])
-            labels.extend(traj['actions'])
-            if len(inputs) > 1000:
-                break
-
-        inputs = np.asarray(inputs).astype(np.float64)
-        labels = np.asarray(labels).astype(np.float64)
-
-        #inputs = inputs[:,None]
-        #inputs = np.stack(inputs, axis=0).astype(np.float64)
-        #labels = np.stack(labels, axis=0).astype(np.float64)
-        self.inputs = np_to_tensor(inputs, self.device)
-        self.labels = np_to_tensor(labels, self.device)
-        print(self.labels.shape, self.inputs.shape)
-        self.labels = self.labels.reshape([self.labels.shape[0], -1]) # flatten actions to (#trajs, H * action_dim)
-        
     def load_imgs(self):
         print("Start loading images...")
         for path in self.demos:

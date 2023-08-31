@@ -8,3 +8,4 @@ wandb
 MANIFEST
 *.egg-info
 \.idea/
+*.gif

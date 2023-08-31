@@ -3,11 +3,18 @@
 ![toto_dataset](docs/images/toto_dataset.gif)
 
 ## Simulation phase instructions
+### Environment installation
 Our pouring simulator uses DeepMind MuJoCo, which you can install with this command:
   ```
   pip install mujoco
   ```
 To set up MuJoCo rendering, install egl following the instructions [here](https://pytorch.org/rl/reference/generated/knowledge_base/MUJOCO_INSTALLATION.html#prerequisite-for-rendering-all-mujoco-versions).
+
+You can check that the environment is properly installed by running the following from the toto_benchmark directory:
+  ```
+  from dm_pour import DMWaterPouringEnv
+  eval_env = DMWaterPouringEnv()
+  ```
 
 ### Simulation training
 The following example command trains a BC agent on the simulated pouring task:
