@@ -1,16 +1,15 @@
 import os
-import tqdm
 import random
+from multiprocessing import set_start_method
+
 import numpy as np
 import torch
 from torch.utils.data import Dataset
 from PIL import Image
 
-from toto_benchmark.vision import load_transforms
 from data_with_embeddings import precompute_embeddings
+from toto_benchmark.vision import load_transforms
 
-def np_to_tensor(nparr, device):
-    return torch.from_numpy(nparr).float()
 
 def shift_window(arr, window, np_array=True):
     nparr = np.array(arr) if np_array else list(arr)
@@ -20,7 +19,6 @@ def shift_window(arr, window, np_array=True):
 
 class FrankaDatasetTraj(Dataset):
     def __init__(self, data, cfg, sim=True):
-        from multiprocessing import set_start_method
         try:
             set_start_method('spawn')
         except RuntimeError:
@@ -52,7 +50,7 @@ class FrankaDatasetTraj(Dataset):
 
     def pick_high_reward_trajs(self):
         original_data_size = len(self.demos)
-        if self.top_k == None: # assumed using all successful traj (reward > 0)
+        if self.top_k is None: # assumed using all successful traj (reward > 0)
             self.demos = [traj for traj in self.demos if traj['rewards'][-1] > 0]
             print(f"Using {len(self.demos)} number of successful trajs. Total trajs: {original_data_size}")
         elif self.top_k == 1: # using all data
@@ -61,7 +59,7 @@ class FrankaDatasetTraj(Dataset):
             self.demos = sorted(self.demos, key=lambda x: x['rewards'][-1], reverse=True)
             top_idx_thres = int(self.top_k * len(self.demos))
             print(f"picking top {self.top_k * 100}% of trajs: {top_idx_thres} from {original_data_size}")
-            self.demos = self.demos[:top_idx_thres] 
+            self.demos = self.demos[:top_idx_thres]
         random.shuffle(self.demos)
 
     def embed_sim_images(self):
@@ -85,20 +83,20 @@ class FrankaDatasetTraj(Dataset):
 
     def process_demos(self):
         inputs, labels = [], []
-        cnt = 0
         for traj in self.demos:
             traj['observations'] = np.hstack([traj['observations'], traj['embeddings']])
 
             if traj['actions'].shape[0] > self.H:
                 for start in range(traj['actions'].shape[0] - self.H + 1):
                     inputs.append(traj['observations'][start])
-                    labels.append(traj['actions'][start : start + self.H, :]) 
+                    labels.append(traj['actions'][start : start + self.H, :])
             else:
                 extended_actions = np.vstack([traj['actions'], np.tile(traj['actions'][-1], [self.H - traj['actions'].shape[0], 1])]) # pad short trajs with the last action
                 inputs.append(traj['observations'][0])
                 labels.append(extended_actions)
-        inputs = np.stack(inputs, axis=0).astype(np.float64)
-        labels = np.stack(labels, axis=0).astype(np.float64)
+
+        inputs = np.stack(inputs, axis=0)
+        labels = np.stack(labels, axis=0)
         if self.cameras:
             images = []
             for traj in self.demos:
@@ -108,8 +106,9 @@ class FrankaDatasetTraj(Dataset):
                 else:
                     images.append(traj['images'][0])
             self.images = images
-        self.inputs = np_to_tensor(inputs, self.device)
-        self.labels = np_to_tensor(labels, self.device)
+
+        self.inputs = torch.from_numpy(inputs).float()
+        self.labels = torch.from_numpy(labels).float()
         self.labels = self.labels.reshape([self.labels.shape[0], -1]) # flatten actions to (#trajs, H * action_dim)
 
     def load_imgs(self):
