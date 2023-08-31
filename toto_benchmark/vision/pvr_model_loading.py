@@ -20,13 +20,6 @@ _resnet_transforms = T.Compose([
                         T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
                         ])
 
-_mae_transforms = T.Compose([
-                        T.Resize(256, interpolation=InterpolationMode.BICUBIC),
-                        T.CenterCrop(224),
-                        T.ToTensor(),
-                        T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
-                        ])
-
 _r3m_transforms = T.Compose([
                         T.Resize(256),
                         T.CenterCrop(224),
@@ -38,25 +31,8 @@ _r3m_transforms = T.Compose([
 MODEL_LIST = ['resnet50', 'resnet50_rand', 'clip_vit', 'clip_rn50',
               'moco_conv5', 'moco_conv4', 'moco_conv3',
               'moco_croponly_conv5', 'moco_croponly_conv4', 'moco_croponly_conv3',
-              'mae_ViT-B', 'mae_ViT-L', 'mae_ViT-H', 'r3m', 'moco_conv5_robocloud'
+              'r3m', 'moco_conv5_robocloud'
              ]
-
-
-class MAE_embedding_model(torch.nn.Module):
-    def __init__(self, checkpoint_path, arch='mae_vit_large_patch16'):
-        super().__init__()
-        # build model
-        model = None # TODO: install models_mae from https://github.com/facebookresearch/mae
-        # model = getattr(models_mae, arch)()
-        checkpoint = torch.load(checkpoint_path, map_location='cpu')
-        msg = model.load_state_dict(checkpoint['model'], strict=False)
-        print(msg)
-        self.mae_model = model
-    
-    def forward(self, imgs, mask_ratio=0.0):
-        latent, mask, ids_restore = self.mae_model.forward_encoder(imgs, mask_ratio)
-        cls_latent = latent[:, 0, :]
-        return cls_latent
 
 
 def load_pvr_transforms(embedding_name, *args, **kwargs):
@@ -72,18 +48,6 @@ def load_pvr_transforms(embedding_name, *args, **kwargs):
     elif embedding_name == 'resnet50_rand':
         # Randomly initialized ResNet50 features
         embedding_dim, transforms = 2048, _resnet_transforms
-    # ============================================================
-    # MAE
-    # ============================================================
-    elif embedding_name == 'mae_ViT-B':
-        embedding_dim = 768
-        transforms = _mae_transforms
-    elif embedding_name == 'mae_ViT-L':
-        embedding_dim = 1024
-        transforms = _mae_transforms
-    elif embedding_name == 'mae_ViT-H':
-        embedding_dim = 1280
-        transforms = _mae_transforms
     # ============================================================
     # CLIP
     # ============================================================
@@ -152,21 +116,6 @@ def load_pvr_model(embedding_name, *args, **kwargs):
         model = models.resnet50(pretrained=False, progress=False)
         model.fc = Identity()
         embedding_dim, transforms = 2048, _resnet_transforms
-    # ============================================================
-    # MAE
-    # ============================================================
-    elif embedding_name == 'mae_ViT-B':
-        model = MAE_embedding_model(checkpoint_path = CHECKPOINT_DIR + 'mae_pretrain_vit_base.pth', arch='mae_vit_base_patch16')
-        embedding_dim = 768
-        transforms = _mae_transforms
-    elif embedding_name == 'mae_ViT-L':
-        model = MAE_embedding_model(checkpoint_path = CHECKPOINT_DIR + 'mae_pretrain_vit_large.pth', arch='mae_vit_large_patch16')
-        embedding_dim = 1024
-        transforms = _mae_transforms
-    elif embedding_name == 'mae_ViT-H':
-        model = MAE_embedding_model(checkpoint_path = CHECKPOINT_DIR + 'mae_pretrain_vit_huge.pth', arch='mae_vit_huge_patch14')
-        embedding_dim = 1280
-        transforms = _mae_transforms
     # ============================================================
     # CLIP
     # ============================================================
