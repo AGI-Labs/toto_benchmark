@@ -1,19 +1,19 @@
 """Train a TOTO agent.
 
 Example command:
-python train.py --config-name train_bc.yaml 
+python train.py --config-name train_bc.yaml
 
 Hyperparameters can be set in corresponding .yaml files in confs/
 """
 
-import baselines
 from datetime import datetime
-import hydra
 import logging
-import numpy as np
-from omegaconf import DictConfig, OmegaConf, open_dict
 import os
 import pickle
+
+import hydra
+import numpy as np
+from omegaconf import DictConfig, OmegaConf, open_dict
 import torch
 from torch.utils.data import DataLoader, random_split
 import wandb
@@ -21,9 +21,12 @@ import matplotlib.pyplot as plt
 from matplotlib import animation
 from PIL import Image
 
-from dataset_traj import FrankaDatasetTraj
+
+import baselines
 from toto_benchmark.agents import init_agent_from_config
+from toto_benchmark.sim.dm_pour import DMWaterPouringEnv
 from toto_benchmark.vision import load_model, load_transforms, EMBEDDING_DIMS
+from dataset_traj import FrankaDatasetTraj
 
 log = logging.getLogger(__name__)
 
@@ -49,33 +52,26 @@ def save_frames_as_gif(frames, path='./', filename=None, frame_rate_divider=1):
 def _eval_agent(env, agent, device, model, transforms, epoch, n_rollouts=10):
     episode_rewards = []
     for i in range(n_rollouts):
-        obs = env.reset(); done=False; success=False
-        t = 0; reward = 0
+        obs = env.reset()
+        done = False
+        reward = 0
 
         frames = []
         frame_rate_divider = 15
-        _MAX_STEPS = 1000
 
-        try:
-            while not done and t < _MAX_STEPS and not success:
-                # In first eval rollout, same frames for gif
-                if i == 0 and t % frame_rate_divider == 0:
-                    frames.append(obs['image'])
+        while not done:
+            # In first eval rollout, same frames for gif
+            if i == 0 and t % frame_rate_divider == 0:
+                frames.append(obs['image'])
 
-                image = torch.stack((transforms(Image.fromarray(obs['image']).crop((200, 0, 500, 400))),))
-                embed = model(image.to(device)).to('cpu').data.numpy()
+            image = torch.stack((transforms(Image.fromarray(obs['image'])),))
+            embed = model(image.to(device)).to('cpu').data.numpy()
 
-                o = torch.from_numpy(obs['proprioception'])[None].float()
-                obs = np.hstack([o, embed])
-                inputs = torch.from_numpy(obs).float()
+            o = torch.from_numpy(obs['proprioception'])[None].float()
+            obs = np.hstack([o, embed])
 
-                action = agent.predict({'inputs': obs})
-                obs, reward, done, env_info = env.step(action)
-                t += 1
-                if done or t >= _MAX_STEPS:
-                    break
-        except:
-            pass
+            action = agent.predict({'inputs': obs})
+            obs, reward, done, _ = env.step(action)
 
         episode_rewards.append(float(reward))
         if i == 0:
@@ -94,7 +90,7 @@ def main(cfg : DictConfig) -> None:
             cfg['data']['images']['crop'] = False
         if 'H' not in cfg['data']:
             cfg['data']['H'] = 1
-        cfg['data']['logs_folder'] = os.path.dirname(cfg['data']['pickle_fn']) 
+        cfg['data']['logs_folder'] = os.path.dirname(cfg['data']['pickle_fn'])
 
     if cfg.agent.type in ['bcimage', 'bcimage_pre']:
         cfg['data']['images']['per_img_out'] = EMBEDDING_DIMS[cfg['agent']['vision_model']]
@@ -105,7 +101,6 @@ def main(cfg : DictConfig) -> None:
     print(OmegaConf.to_yaml(cfg, resolve=True))
 
     # TODO: if doing separate eval script, can delete this section
-    from toto_benchmark.sim.dm_pour import DMWaterPouringEnv
     eval_env = DMWaterPouringEnv(has_viewer=False)
     model = load_model(cfg)
     model = model.eval().to(cfg.training.device) ## assume this model is used in eval
@@ -137,7 +132,8 @@ def main(cfg : DictConfig) -> None:
     train_set, test_set = random_split(dset, split_sizes)
 
     num_workers = 0
-    train_loader = DataLoader(train_set, batch_size=cfg.training.batch_size, shuffle=True, num_workers=num_workers, pin_memory=True)
+    train_loader = DataLoader(train_set, batch_size=cfg.training.batch_size, \
+                              shuffle=True, num_workers=num_workers, pin_memory=True)
     test_loader = DataLoader(test_set, batch_size=cfg.training.batch_size)
     agent, _ = init_agent_from_config(cfg, cfg.training.device, normalization=dset)
     train_metric, test_metric = baselines.Metric(), baselines.Metric()
