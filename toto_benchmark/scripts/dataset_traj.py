@@ -44,7 +44,7 @@ class FrankaDatasetTraj(Dataset):
         if sim:
             self.embed_sim_images()
         elif len(self.cameras) > 0:
-            self.load_imgs() # TODO is len(self.cameras) > 0 for BC from embeddings?
+            self.load_imgs()
 
         self.process_demos()
 
@@ -69,8 +69,6 @@ class FrankaDatasetTraj(Dataset):
 
     def subsample_demos(self):
         for traj in self.demos:
-            # TODO okay to delete previous explicit looping over keys?
-            #for key in ['cam0c', 'observations', 'actions', 'terminated', 'rewards']:
             for key in traj.keys():
                 if key == 'observations':
                     traj[key] = traj[key][:, :self.obs_dim]
@@ -79,7 +77,8 @@ class FrankaDatasetTraj(Dataset):
                     traj[key] = traj[key][::self.subsample_period]
                     traj[key][-1] = rew
                 else:
-                    traj[key] = traj[key][::self.subsample_period]
+                    if key not in ('traj_id', 'material', 'normalized_reward'):
+                        traj[key] = traj[key][::self.subsample_period]
 
     def process_demos(self):
         inputs, labels = [], []

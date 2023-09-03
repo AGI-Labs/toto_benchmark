@@ -9,7 +9,8 @@ from toto_benchmark.vision import load_model, load_transforms, preprocess_image
 def precompute_embeddings(cfg, paths, data_path=None, from_files=True):
     device = 'cuda:0'
     model = load_model(cfg)
-    model.to(device) # TODO here and in precompute_embeddings_byol: model.eval().to(device)?
+    model.to(device)
+    model = model.eval()
     transforms = load_transforms(cfg)
     batch_size = 128
     print("Total number of paths : %i" % len(paths))
@@ -40,6 +41,7 @@ def precompute_embeddings_byol(cfg, paths, data_path):
     device = 'cuda:0'
     model = load_model(cfg)
     model.to(device)
+    model = model.eval()
     byol_transforms = load_transforms(cfg)
     batch_size = 1
     print("Total number of paths : %i" % len(paths))
