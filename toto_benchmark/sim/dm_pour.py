@@ -46,7 +46,7 @@ class DMWaterPouringEnv:
     
     def _initialize_sim(self, xml_string=None): # xml_string not used
         base_path = os.path.dirname(toto_benchmark.__file__)
-        self.model = mujoco.MjModel.from_xml_path(os.path.join(base_path, "toto_benchmark/sim/franka_panda_pouring.xml"))
+        self.model = mujoco.MjModel.from_xml_path(os.path.join(base_path, "sim/franka_panda_pouring.xml"))
         self.data = mujoco.MjData(self.model)
         mujoco.mj_resetData(self.model, self.data)
         self.renderer = mujoco.Renderer(self.model)
