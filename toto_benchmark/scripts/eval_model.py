@@ -24,7 +24,7 @@ for i in range(len(init_tank_pos)):
         a = [0.18, 0.2, 0.3, -1.8, 0, 1.5, 0.7-np.pi/4] # dummy action
         # -------------------------------------------
         obs, reward, done, _ = env.step(a)
-    rewards.append(reward) # TODO: take last reward or max reward along the trajectory?
+    rewards.append(reward) # internal TODO: take last reward or max reward along the trajectory?
     print(f'Traj {i} Final reward: {reward}')
 print(f'Finished evaluating {len(init_tank_pos)} trajectories.')
 mean_reward = np.mean(rewards)
