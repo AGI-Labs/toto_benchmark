@@ -3,7 +3,7 @@ import mujoco
 import os
 import numpy as np
 from mujoco import _enums, _functions
-from toto_benchmark.sim.random import np_random
+from toto_benchmark.sim.rand import np_random
 import toto_benchmark
 
 
