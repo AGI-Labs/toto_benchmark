@@ -164,7 +164,7 @@ class DMWaterPouringEnv:
 
     def _post_action(self, action):
         reward = self.reward(action)
-        self.done = (self.timestep >= self.horizon) or (reward == 100.0) and not self.ignore_done # TODO: confirm this termination condition
+        self.done = (self.timestep >= self.horizon) or (reward == 100.0) and not self.ignore_done
         info = {'proprioception': self._get_proprio()}
         return reward, self.done, info
 
