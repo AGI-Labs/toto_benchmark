@@ -4,6 +4,7 @@ import os
 import numpy as np
 from mujoco import _enums, _functions
 from toto_benchmark.sim.random import np_random
+import toto_benchmark
 
 
 class DMWaterPouringEnv:
@@ -44,8 +45,8 @@ class DMWaterPouringEnv:
         self.reset()
     
     def _initialize_sim(self, xml_string=None): # xml_string not used
-        base_path = os.path.dirname(hydra.utils.get_original_cwd())
-        self.model = mujoco.MjModel.from_xml_path(os.path.join(base_path, "toto_benchmark/toto_benchmark/sim/franka_panda_pouring.xml"))
+        base_path = os.path.dirname(toto_benchmark.__file__)
+        self.model = mujoco.MjModel.from_xml_path(os.path.join(base_path, "sim/franka_panda_pouring.xml"))
         self.data = mujoco.MjData(self.model)
         mujoco.mj_resetData(self.model, self.data)
         self.renderer = mujoco.Renderer(self.model)
@@ -61,7 +62,7 @@ class DMWaterPouringEnv:
     def reset(self):
         mujoco.mj_resetData(self.model, self.data)
         # Randomize the robot start position
-        init_joints = np.random.uniform(low=self.robot_min_positions, high=self.robot_max_positions)
+        init_joints = self.np_random.uniform(low=self.robot_min_positions, high=self.robot_max_positions)
         for joint in range(1, 8):
             self.data.joint("panda0_joint" + str(joint)).qpos = init_joints[joint-1]
         
@@ -69,7 +70,7 @@ class DMWaterPouringEnv:
         self.data.joint("panda0_finger_joint2").qpos = 0.04
 
         # Randomize tank position
-        tank_init_pos = np.random.uniform(low=self.tank_range_low, high=self.tank_range_high)
+        tank_init_pos = self.np_random.uniform(low=self.tank_range_low, high=self.tank_range_high)
         self.model.body_pos[self.data.body('water_tank').id] = tank_init_pos
         self.tank_pos = tank_init_pos
             
