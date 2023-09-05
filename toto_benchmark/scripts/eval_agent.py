@@ -38,9 +38,10 @@ def eval_agent(agent_predict_fn):
     n_rollouts = 100
     env = DMWaterPouringEnv(has_viewer=False)
     rewards = []
+    env.seed(0)
+
     for i in range(n_rollouts):
         print(f'Evaluating Traj {i} ...')
-        env.seed(0) # TODO should this be outside the for loop?
         obs = env.reset()
 
         frames = []
@@ -49,8 +50,8 @@ def eval_agent(agent_predict_fn):
             a = agent_predict_fn(obs)
             obs, reward, _, _ = env.step(a)
 
-            if env.timestep == 5:
-                print(a)
+            if env.timestep == 5: # TODO delete this after Kathy checks seed results
+                print(a, env.model.body_pos[env.data.body('water_tank').id])
             # In first eval rollout, same frames for gif
             if i == 0 and env.timestep % gif_frame_rate_divider == 0:
                 frames.append(obs['image'])
@@ -86,19 +87,25 @@ def create_agent_predict_fn(agent, cfg):
         return agent.predict({'inputs': obs})
     return agent_predict_fn
 
-if __name__ == "__main__":
+
+def load_agent_from_args():
     args = get_args()
+
     with open(os.path.join(args.agent_path, 'hydra.yaml'), 'r') as f:
         cfg = yaml.load(f, Loader=yaml.FullLoader)
-        # Overwriting to use local
-        cfg['saved_folder'] = args.agent_path
-        cfg = Namespace(cfg)
+
+    # Overwriting to use local
+    cfg['saved_folder'] = args.agent_path
+    cfg = Namespace(cfg)
 
     agent, img_transform_fn = init_agent_from_config(cfg, 'cuda:0')
 
-    if cfg.agent.type == 'bcimage_pre':
-        agent_predict_fn = create_agent_predict_fn(agent, cfg)
-    else:
-        # TODO define your custom agent predict function here
-        agent_predict_fn = None
+    agent_predict_fn = create_agent_predict_fn(agent, cfg)
+    return agent_predict_fn
+
+if __name__ == "__main__":
+    # load_agent_from_args() is an example that loads a BC agent from train.py
+    # TODO(optional): replace agent_predict_fn with your custom agent predict function
+    agent_predict_fn = load_agent_from_args()
+
     eval_agent(agent_predict_fn)
