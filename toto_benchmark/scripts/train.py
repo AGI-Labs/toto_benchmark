@@ -71,8 +71,7 @@ def main(cfg : DictConfig) -> None:
         print("\n***Pickle does not exist. Make sure the pickle is in the logs_folder directory.")
         raise
 
-    sim=True # TODO flag in config for sim/embedding on the fly? Way to infer it from data?
-    dset = FrankaDatasetTraj(data, cfg, sim=sim)
+    dset = FrankaDatasetTraj(data, cfg, sim=cfg.data.sim)
     del data
     split_sizes = [int(len(dset) * 0.8), len(dset) - int(len(dset) * 0.8)]
     train_set, test_set = random_split(dset, split_sizes)
@@ -103,7 +102,7 @@ def main(cfg : DictConfig) -> None:
                 data[key] = data[key].to(cfg.training.device)
             test_metric.add(agent.eval(data))
 
-        log.info('epoch {} \t train {:.6f} \t test {:.6f} \t eval {:.6f}'.format(epoch, train_metric.mean, test_metric.mean, eval_reward))
+        log.info('epoch {} \t train {:.6f} \t test {:.6f}'.format(epoch, train_metric.mean, test_metric.mean))
         log.info(f'Accumulated loss: {acc_loss}')
         if epoch % cfg.training.save_every_x_epoch == 0:
             agent.save(os.getcwd())
@@ -114,7 +113,7 @@ def main(cfg : DictConfig) -> None:
 
     agent.save(os.getcwd())
 
-    if sim:
+    if cfg.data.sim:
         # Evaluate the simulation agent online
         eval_agent(create_agent_predict_fn(agent, cfg))
 

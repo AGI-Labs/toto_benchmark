@@ -3,6 +3,7 @@ default:
     - override hydra/launcher: local
 
 data:
+  sim: False
   pickle_fn: assets/cloud-dataset-scooping/scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl
   subsample_period: 1
   in_dim: 7

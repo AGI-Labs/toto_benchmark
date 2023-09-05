@@ -1,27 +1,6 @@
 # Train Offline, Test Online: A Real Robot Learning Benchmark
 <!-- TODO: add teaser figures, some setup/task images, etc  -->
 ![toto_dataset](docs/images/toto_dataset.gif)
-
-## Simulation phase instructions
-### Environment installation
-Our pouring simulator uses DeepMind MuJoCo, which you can install with this command:
-  ```
-  pip install mujoco
-  ```
-To set up MuJoCo rendering, install egl following the instructions [here](https://pytorch.org/rl/reference/generated/knowledge_base/MUJOCO_INSTALLATION.html#prerequisite-for-rendering-all-mujoco-versions).
-
-You can check that the environment is properly installed by running the following from the toto_benchmark directory:
-  ```
-  from dm_pour import DMWaterPouringEnv
-  eval_env = DMWaterPouringEnv()
-  ```
-
-### Simulation training
-The following example command trains a BC agent on the simulated pouring task:
-  ```
-python toto_benchmark/scripts/train.py --config-name train_bc_sim.yaml
-  ```
-  
 ## Prerequisites
 - [Mamba](https://mamba.readthedocs.io/en/latest/installation.html)
   ```
@@ -40,7 +19,35 @@ You can either use a local conda environment or a docker environment.
 
 Note: If you are contributing models to TOTO, we strongly suggest setting up the docker environment.
 
+## Simulation phase instructions
+### Environment installation
+Our pouring simulator uses DeepMind MuJoCo, which you can install with this command:
+  ```
+  pip install mujoco
+  ```
+To set up MuJoCo rendering, install egl following the instructions [here](https://pytorch.org/rl/reference/generated/knowledge_base/MUJOCO_INSTALLATION.html#prerequisite-for-rendering-all-mujoco-versions).
+
+You can check that the environment is properly installed by running the following from the toto_benchmark directory:
+  ```
+  (toto-benchmark) user@machine:~$ MUJOCO_GL=egl python
+  Python 3.8.0 | packaged by conda-forge | (default, Nov 22 2019, 19:11:38)
+  [GCC 7.3.0] :: Anaconda, Inc. on linux
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>> from toto_benchmark.sim.dm_pour import DMWaterPouringEnv
+  >>> eval_env = DMWaterPouringEnv()
+  ```
+
+TODO: simulation dataset download instructions
+
+### Simulation training
+The following example command trains a BC agent on the simulated pouring task:
+  ```
+python toto_benchmark/scripts/train.py --config-name train_bc_sim.yaml
+  ```
+
 ### TOTO Visual Representation Models
+TODO: vision model instructions?
+
 ### TOTO Datasets
 <!-- TODO: need to update the dataset link after google drive clean up -->
 TOTO consists of two tabletop manipulations tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link).
@@ -71,8 +78,7 @@ python scripts/train.py --config-name train_bc.yaml data.pickle_fn=../assets/clo
 <!-- TODO: instructions on training agents with other vision representations? need to parse the dataset, etc -->
 
 ## Contributing to TOTO
-
- We invite the community to submit their methods to TOTO benchmark. We support the following challenges:
+We invite the community to submit their methods to the TOTO benchmark. We support the following challenges:
 
 - **Challenge 1**: a pre-trained visual representation model. 
 - **Challenge 2**: an agent policy which uses either a custom visual representation or the ones we provide.
