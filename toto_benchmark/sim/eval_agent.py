@@ -12,8 +12,8 @@ import yaml
 import toto_benchmark
 from toto_benchmark.agents import init_agent_from_config
 from toto_benchmark.vision import load_model, load_transforms
-from utils import Namespace
-from test_stub_env import get_args
+from toto_benchmark.scripts.utils import Namespace
+from toto_benchmark.scripts.test_stub_env import get_args
 
 # TODO should this file go in sim/ instead of scripts/?
 
@@ -98,7 +98,7 @@ def load_agent_from_args():
     cfg['saved_folder'] = args.agent_path
     cfg = Namespace(cfg)
 
-    agent, img_transform_fn = init_agent_from_config(cfg, 'cuda:0')
+    agent, img_transform_fn = init_agent_from_config(cfg, cfg.training.device)
 
     agent_predict_fn = create_agent_predict_fn(agent, cfg)
     return agent_predict_fn

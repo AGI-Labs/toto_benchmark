@@ -21,7 +21,7 @@ import baselines
 from toto_benchmark.agents import init_agent_from_config
 from toto_benchmark.vision import EMBEDDING_DIMS
 from dataset_traj import FrankaDatasetTraj
-from eval_agent import eval_agent, create_agent_predict_fn
+from toto_benchmark.sim.eval_agent import eval_agent, create_agent_predict_fn
 
 log = logging.getLogger(__name__)
 

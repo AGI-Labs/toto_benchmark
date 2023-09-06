@@ -8,7 +8,7 @@ import yaml
 
 from toto_benchmark.agents import init_agent_from_config
 from toto_benchmark.vision import load_model, load_transforms
-from utils import Namespace
+from toto_benchmark.scripts.utils import Namespace
 
 SUCCESS_MESSAGE = "Agent outputs valid action - Test passed!"
 FAILURE_MESSAGE = "Agent outputs invalid action - Test failed."
