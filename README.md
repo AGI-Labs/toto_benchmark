@@ -37,7 +37,8 @@ You can check that the environment is properly installed by running the followin
   >>> eval_env = DMWaterPouringEnv()
   ```
 
-TODO: simulation dataset download instructions
+### Dataset
+The simulation dataset can be downloaded [here](https://drive.google.com/drive/folders/1HKtjLBgI6FJlMj44Tbr_cDPUCCz-mEZO?usp=sharing). The file contains 103 human teleoperated trajectories of our pouring task.
 
 ### Simulation training
 The following example command trains a BC agent on the simulated pouring task:
