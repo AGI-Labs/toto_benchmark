@@ -15,7 +15,6 @@ from toto_benchmark.vision import load_model, load_transforms
 from toto_benchmark.scripts.utils import Namespace
 from toto_benchmark.scripts.test_stub_env import get_args
 
-# TODO should this file go in sim/ instead of scripts/?
 
 def save_frames_as_gif(frames, frame_rate_divider=1):
     fname = datetime.now().strftime('%m-%d-%Y-%H-%M-%S.gif')
@@ -50,8 +49,6 @@ def eval_agent(agent_predict_fn):
             a = agent_predict_fn(obs)
             obs, reward, _, _ = env.step(a)
 
-            if env.timestep == 5: # TODO delete this after Kathy checks seed results
-                print(a, env.model.body_pos[env.data.body('water_tank').id])
             # In first eval rollout, same frames for gif
             if i == 0 and env.timestep % gif_frame_rate_divider == 0:
                 frames.append(obs['image'])
