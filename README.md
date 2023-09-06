@@ -1,14 +1,36 @@
+
 # Train Offline, Test Online: A Real Robot Learning Benchmark
-<!-- TODO: add teaser figures, some setup/task images, etc  -->
+<!-- TODO(Kathy): add teaser figures, some setup/task images, etc  -->
+## Phase 1: Simulation
+1. [Software installation](#software-installation)
+2. [Simulator installation](#simulator-installation)
+3. [Download our simulation dataset](#download-our-simulation-dataset)
+4. [(Optional) Train a TOTO Behavior Cloning Agent](#train-a-toto-behavior-cloning-agent)
+5. [Evaluating your agent](#simulation-evaluation)
+
+## Phase 2: Real World
+1. [Software installation](#software-installation)
+3. [Download our real-world dataset](#download-our-real-world-dataset)
+4. [(Optional) Train a TOTO Behavior Cloning Agent](#train-a-toto-behavior-cloning-agent)
+5. [Submitting your agent for real-world evaluation](#real-world-evaluation)
+
+## Submitting your custom agent or vision representation
+We invite the community to submit their custom methods to the TOTO competition. We support the following challenges:
+
+- [**Challenge 1**](#submitting-a-custom-vision-representation): a pre-trained visual representation model. 
+- [**Challenge 2**](#submitting-a-custom-policy): an agent policy which uses either a custom visual representation or the ones we provide.
+
 ![toto_dataset](docs/images/toto_dataset.gif)
-## Prerequisites
-- [Mamba](https://mamba.readthedocs.io/en/latest/installation.html)
+
+
+
+## Software Installation
+### Prerequisites
+[Mamba](https://mamba.readthedocs.io/en/latest/installation.html)
   ```
   # from the base conda environment run
   conda install -c conda-forge mamba
   ```
-
-## Installation
 You can either use a local conda environment or a docker environment.
 
 ### Setup conda environment
@@ -19,8 +41,10 @@ You can either use a local conda environment or a docker environment.
 
 Note: If you are contributing models to TOTO, we strongly suggest setting up the docker environment.
 
-## Simulation phase instructions
-### Environment installation
+### (Optional) Download our vision representation models
+TODO(Kathy): vision model instructions?
+
+## Simulator installation
 Our pouring simulator uses DeepMind MuJoCo, which you can install with this command:
   ```
   pip install mujoco
@@ -37,25 +61,23 @@ You can check that the environment is properly installed by running the followin
   >>> eval_env = DMWaterPouringEnv()
   ```
 
-### Dataset
+## Download our simulation dataset
 The simulation dataset can be downloaded [here](https://drive.google.com/drive/folders/1HKtjLBgI6FJlMj44Tbr_cDPUCCz-mEZO?usp=sharing). The file contains 103 human teleoperated trajectories of our pouring task.
 
-### Simulation training
-The following example command trains a BC agent on the simulated pouring task:
+## Simulation evaluation
+To evaluate an agent following the BC training provided in the example train.py script, run the following command:
   ```
-python toto_benchmark/scripts/train.py --config-name train_bc_sim.yaml
+python toto_benchmark/scripts/eval_agent.py -f outputs/<path_to>/<agent>/
   ```
+If you wish to evaluate a custom agent, replace the agent_predict_fn indicated by the TODO(optional) in toto_benchmark/scripts/eval_agent.py.
 
-### TOTO Visual Representation Models
-TODO: vision model instructions?
-
-### TOTO Datasets
-<!-- TODO: need to update the dataset link after google drive clean up -->
-TOTO consists of two tabletop manipulations tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link).
+## Download our real-world dataset
+<!-- TODO(Kathy): need to update the dataset link after google drive clean up -->
+TOTO consists of two tabletop manipulation tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link).
 
 *Update*: please download the scooping data from Google Cloud Bucket [here](https://console.cloud.google.com/storage/browser/toto-dataset) instead.
 
-<!-- TODO: update link to dataset README.md file. May consider create a dataset/ folder and add the readme into the repo -->
+<!-- TODO(Kathy): update link to dataset README.md file. May consider create a dataset/ folder and add the readme into the repo -->
 We release the following datasets: 
 - `cloud-dataset-scooping.zip`: TOTO scooping dataset
 - `cloud-dataset-pouring.zip`: TOTO pouring dataset
@@ -67,8 +89,11 @@ Additional Info:
 
 For more detailed dataset format information, see `assets/README.md`
 
-## Train a TOTO Behavior Cloning (BC) Agent
-Here's an example command to train an image-based BC agent with MOCO (Ours) as the image encoder. You will need to download `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl` to have this launched.
+## Real-world evalation
+<!-- TODO(Kathy): port over instructions from website? -->
+
+## Train a TOTO Behavior Cloning Agent
+Here's an example command to train an image-based behavior cloning (BC) agent on the real-world data with MOCO (Ours) as the image encoder. You will need to download `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl` to have this launched.
 
 ```
 cd toto_benchmark
@@ -76,15 +101,15 @@ cd toto_benchmark
 python scripts/train.py --config-name train_bc.yaml data.pickle_fn=../assets/cloud-dataset-scooping/scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl
 ```
 
+The config train_bc_sim.yaml is set up to train a BC agent on the simulated pouring task (phase 1):
+  ```
+python scripts/train.py --config-name train_bc_sim.yaml
+  ```
+
 <!-- TODO: instructions on training agents with other vision representations? need to parse the dataset, etc -->
 
-## Contributing to TOTO
-We invite the community to submit their methods to the TOTO benchmark. We support the following challenges:
 
-- **Challenge 1**: a pre-trained visual representation model. 
-- **Challenge 2**: an agent policy which uses either a custom visual representation or the ones we provide.
-
-### Challenge 1: Visual Representation Model Challenge
+## Submitting a custom vision representation
 
 To submit your custom visual representation model to TOTO, you will train your visual representation model in any preferred way, generate image embeddings for TOTO datasets with your model, and finally train and submit a BC agent on this dataset. You will submit both your visual representation model and the BC model, as your visual representation model will be loaded and called during evaluations. We have provided scripts for interfacing with your vision model and for BC training. Please see the following instructions for details. 
 
@@ -125,7 +150,7 @@ To submit your custom visual representation model to TOTO, you will train your v
 - Once the above is done, run `python scripts/test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
 
-### Challenge 2: Agent Policy Challenge
+## Submitting a custom policy
 To submit your agent, you will train your image-based agent on our datasets in any preferred way. You may develop your custom visual representation model or use existing ones in TOTO. Please see below for detailed instructions: 
 - Download the datasets [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link) and train your agents in your preferred way.
 - *(Optional)* If you plan to use any existing TOTO visual representation model, we release the pre-trained models [here](https://drive.google.com/drive/folders/1iqDIIIalTi3PhAnFjZxesksvFVldK42p?usp=sharing). Download the models and put them into `assets/`. Then, simply use our provided functions to load the models as follows:
