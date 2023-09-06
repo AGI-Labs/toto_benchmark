@@ -30,7 +30,7 @@ def save_frames_as_gif(frames, frame_rate_divider=1):
 
     anim = animation.FuncAnimation(plt.gcf(), animate, frames = len(frames), interval=50)
     anim.save(save_path, writer='imagemagick', fps=60 / frame_rate_divider)
-    print("Saved gif", fname)
+    print("Saved gif to", save_path)
 
 
 def eval_agent(agent_predict_fn):

@@ -18,6 +18,7 @@ from torch.utils.data import DataLoader, random_split
 import wandb
 
 import baselines
+import toto_benchmark
 from toto_benchmark.agents import init_agent_from_config
 from toto_benchmark.vision import EMBEDDING_DIMS
 from dataset_traj import FrankaDatasetTraj
@@ -30,8 +31,8 @@ def global_seeding(seed=0):
     torch.manual_seed(seed)
     np.random.seed(seed)
 
-
-@hydra.main(config_path="../conf", config_name="train_bc")
+config_path = os.path.join(os.path.dirname(toto_benchmark.__file__), 'conf')
+@hydra.main(config_path=config_path, config_name="train_bc")
 def main(cfg : DictConfig) -> None:
     with open_dict(cfg):
         cfg['saved_folder'] = os.getcwd()
