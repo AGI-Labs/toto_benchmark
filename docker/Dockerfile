@@ -28,15 +28,15 @@ RUN apt install -y build-essential cmake libtinfo-dev lsb-release libmpfr-dev li
 RUN apt install -y xvfb
 RUN apt install -y time
 
-# install mamba/boa into conda `base` environment
-RUN conda install mamba -y -c conda-forge
+# install conda/boa into conda `base` environment
+RUN conda install conda -y -c conda-forge
 # unzip the file
 RUN git clone https://github.com/AGI-Labs/toto_benchmark.git
 WORKDIR /toto_benchmark
 
-RUN mamba env create -f ./toto_benchmark.yml
+RUN conda env create -f ./toto_benchmark.yml
 SHELL ["conda", "run", "-n", "toto-benchmark", "/bin/bash", "-c"]
-RUN mamba install -y pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
+RUN conda install -y pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
 RUN pip install git+https://github.com/AGI-Labs/robot_baselines.git
 RUN pip install git+https://github.com/openai/CLIP.git
 
