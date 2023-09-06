@@ -42,7 +42,7 @@ You can either use a local conda environment or a docker environment.
 Note: If you are contributing models to TOTO, we strongly suggest setting up the docker environment.
 
 ### (Optional) Download our vision representation models
-TODO(Kathy): vision model instructions?
+We release our vision representation models [here](https://drive.google.com/drive/folders/1iqDIIIalTi3PhAnFjZxesksvFVldK42p?usp=sharing).This contains the in-domain models (MoCo and BYOL) that are trained with the TOTO dataset.
 
 ## Simulator installation
 Our pouring simulator uses DeepMind MuJoCo, which you can install with this command:
@@ -72,8 +72,7 @@ python toto_benchmark/scripts/eval_agent.py -f outputs/<path_to>/<agent>/
 If you wish to evaluate a custom agent, replace the agent_predict_fn indicated by the TODO(optional) in toto_benchmark/scripts/eval_agent.py.
 
 ## Download our real-world dataset
-<!-- TODO(Kathy): need to update the dataset link after google drive clean up -->
-TOTO consists of two tabletop manipulation tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=share_link).
+TOTO consists of two tabletop manipulation tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=sharing).
 
 *Update*: please download the scooping data from Google Cloud Bucket [here](https://console.cloud.google.com/storage/browser/toto-dataset) instead.
 
