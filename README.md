@@ -100,7 +100,7 @@ cd toto_benchmark
 python scripts/train.py --config-name train_bc.yaml data.pickle_fn=../assets/cloud-dataset-scooping/scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl
 ```
 
-The config train_bc_sim.yaml is set up to train a BC agent on the simulated pouring task (phase 1):
+The config train_bc_sim.yaml is set up to train a BC agent on the simulated pouring task (phase 1). Before launching the command, [download our simulation dataset](#download-our-simulation-dataset) and put the file under `toto_benchmark/sim`:
   ```
 python scripts/train.py --config-name train_bc_sim.yaml
   ```
