@@ -63,8 +63,6 @@ class FrankaDatasetTraj(Dataset):
         random.shuffle(self.demos)
 
     def embed_sim_images(self):
-        for demo in self.demos: # TODO remove this after fixing pkl key name
-            demo['observations'] = demo['proprioception']
         self.demos = precompute_embeddings(self.cfg, self.demos, from_files=False)
 
     def subsample_demos(self):

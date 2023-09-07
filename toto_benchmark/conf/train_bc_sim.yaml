@@ -5,7 +5,7 @@ default:
 data:
   # part 0 of sim data
   sim: True
-  pickle_fn: assets/sim_data/data/parsed.pkl
+  pickle_fn: sim/dm_human_dataset.pickle
   subsample_period: 1
   in_dim: 7
   out_dim: 7
