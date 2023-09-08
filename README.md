@@ -92,7 +92,7 @@ For more detailed dataset format information, see `assets/README.md`
 <!-- TODO(Kathy): port over instructions from website? -->
 
 ## Train a TOTO Behavior Cloning Agent
-Here's an example command to train an image-based behavior cloning (BC) agent on the real-world data with MOCO (Ours) as the image encoder. You will need to download `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl` to have this launched.
+Here's an example command to train an image-based behavior cloning (BC) agent on the real-world data with MOCO (Ours) as the image encoder. Our BC agent assumes that each image has been encoded into a 1D vector. You will need to download `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl` to have this launched.
 
 ```
 cd toto_benchmark
