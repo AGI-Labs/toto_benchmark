@@ -42,7 +42,7 @@ You can either use a local conda environment or a docker environment.
 Note: If you are contributing models to TOTO, we strongly suggest setting up the docker environment.
 
 ### (Optional) Download our vision representation models
-We release our vision representation models [here](https://drive.google.com/drive/folders/1iqDIIIalTi3PhAnFjZxesksvFVldK42p?usp=sharing).This contains the in-domain models (MoCo and BYOL) that are trained with the TOTO dataset.
+We release our vision representation models [here](https://drive.google.com/drive/folders/1iqDIIIalTi3PhAnFjZxesksvFVldK42p?usp=sharing). This contains the in-domain models (MoCo and BYOL) that are trained with the TOTO dataset.
 
 ## Simulator installation
 Our pouring simulator uses DeepMind MuJoCo, which you can install with this command:

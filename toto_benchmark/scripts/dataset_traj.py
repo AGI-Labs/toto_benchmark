@@ -42,7 +42,7 @@ class FrankaDatasetTraj(Dataset):
         self.subsample_demos()
 
         if sim:
-            self.embed_sim_images()
+            self.demos = precompute_embeddings(self.cfg, self.demos, from_files=False)
         elif len(self.cameras) > 0:
             self.load_imgs()
 
@@ -62,8 +62,6 @@ class FrankaDatasetTraj(Dataset):
             self.demos = self.demos[:top_idx_thres]
         random.shuffle(self.demos)
 
-    def embed_sim_images(self):
-        self.demos = precompute_embeddings(self.cfg, self.demos, from_files=False)
 
     def subsample_demos(self):
         for traj in self.demos:
