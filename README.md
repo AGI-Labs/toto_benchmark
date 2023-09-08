@@ -1,4 +1,3 @@
-
 # Train Offline, Test Online: A Real Robot Learning Benchmark
 <!-- TODO(Kathy): add teaser figures, some setup/task images, etc  -->
 ## Phase 1: Simulation
@@ -22,15 +21,10 @@ We invite the community to submit their custom methods to the TOTO competition. 
 
 ![toto_dataset](docs/images/toto_dataset.gif)
 
+## Prerequisites
+- Conda
 
-
-## Software Installation
-### Prerequisites
-[Mamba](https://mamba.readthedocs.io/en/latest/installation.html)
-  ```
-  # from the base conda environment run
-  conda install -c conda-forge mamba
-  ```
+## Installation
 You can either use a local conda environment or a docker environment.
 
 ### Setup conda environment
@@ -76,7 +70,7 @@ TOTO consists of two tabletop manipulation tasks, scooping and pouring. The data
 
 *Update*: please download the scooping data from Google Cloud Bucket [here](https://console.cloud.google.com/storage/browser/toto-dataset) instead.
 
-<!-- TODO(Kathy): update link to dataset README.md file. May consider create a dataset/ folder and add the readme into the repo -->
+<!-- TODO: update link to dataset README.md file. May consider create a dataset/ folder and add the readme into the repo -->
 We release the following datasets: 
 - `cloud-dataset-scooping.zip`: TOTO scooping dataset
 - `cloud-dataset-pouring.zip`: TOTO pouring dataset
