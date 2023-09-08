@@ -26,7 +26,6 @@ from toto_benchmark.sim.eval_agent import eval_agent, create_agent_predict_fn
 
 log = logging.getLogger(__name__)
 
-# TODO is this consistent with use of np_random?
 def global_seeding(seed=0):
     torch.manual_seed(seed)
     np.random.seed(seed)
