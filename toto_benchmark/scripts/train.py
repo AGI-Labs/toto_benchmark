@@ -1,33 +1,38 @@
 """Train a TOTO agent.
 
 Example command:
-python train.py --config-name train_bc.yaml 
+python train.py --config-name train_bc.yaml
 
 Hyperparameters can be set in corresponding .yaml files in confs/
 """
 
-import baselines
-import hydra
 import logging
-import numpy
-from omegaconf import DictConfig, OmegaConf, open_dict
 import os
 import pickle
+
+import hydra
+import numpy as np
+from omegaconf import DictConfig, OmegaConf, open_dict
 import torch
 from torch.utils.data import DataLoader, random_split
 import wandb
 
-from dataset_traj import FrankaDatasetTraj
+import baselines
+import toto_benchmark
 from toto_benchmark.agents import init_agent_from_config
-from toto_benchmark.vision import load_transforms, EMBEDDING_DIMS
+from toto_benchmark.vision import EMBEDDING_DIMS
+from dataset_traj import FrankaDatasetTraj
+from toto_benchmark.sim.eval_agent import eval_agent, create_agent_predict_fn
 
 log = logging.getLogger(__name__)
 
+# TODO is this consistent with use of np_random?
 def global_seeding(seed=0):
     torch.manual_seed(seed)
-    numpy.random.seed(seed)
+    np.random.seed(seed)
 
-@hydra.main(config_path="../conf", config_name="train_bc")
+config_path = os.path.join(os.path.dirname(toto_benchmark.__file__), 'conf')
+@hydra.main(config_path=config_path, config_name="train_bc")
 def main(cfg : DictConfig) -> None:
     with open_dict(cfg):
         cfg['saved_folder'] = os.getcwd()
@@ -37,7 +42,7 @@ def main(cfg : DictConfig) -> None:
             cfg['data']['images']['crop'] = False
         if 'H' not in cfg['data']:
             cfg['data']['H'] = 1
-        cfg['data']['logs_folder'] = os.path.dirname(cfg['data']['pickle_fn']) 
+        cfg['data']['logs_folder'] = os.path.dirname(cfg['data']['pickle_fn'])
 
     if cfg.agent.type in ['bcimage', 'bcimage_pre']:
         cfg['data']['images']['per_img_out'] = EMBEDDING_DIMS[cfg['agent']['vision_model']]
@@ -46,6 +51,7 @@ def main(cfg : DictConfig) -> None:
             cfg['data']['in_dim'] = cfg['data']['in_dim'] + cfg['data']['images']['per_img_out']
 
     print(OmegaConf.to_yaml(cfg, resolve=True))
+
     with open(os.path.join(os.getcwd(), 'hydra.yaml'), 'w') as f:
         f.write(OmegaConf.to_yaml(cfg, resolve=True))
 
@@ -66,29 +72,14 @@ def main(cfg : DictConfig) -> None:
         print("\n***Pickle does not exist. Make sure the pickle is in the logs_folder directory.")
         raise
 
-    for path in data:
-        path['observations'] = numpy.hstack([path['observations'], path['embeddings']]) # Assume 'observations' in the dataset doesn't contain img embeddings
-
-    dset = FrankaDatasetTraj(data,
-        logs_folder=cfg.data.logs_folder,
-        subsample_period=cfg.data.subsample_period,
-        im_h=cfg.data.images.im_h,
-        im_w=cfg.data.images.im_w,
-        obs_dim=cfg.data.in_dim,
-        action_dim=cfg.data.out_dim,
-        H=cfg.data.H,
-        top_k=cfg.data.top_k,
-        device=cfg.training.device,
-        cameras=cfg.data.images.cameras,
-        img_transform_fn=load_transforms(cfg),
-        noise=cfg.data.noise,
-        crop_images=cfg.data.images.crop)
+    dset = FrankaDatasetTraj(data, cfg, sim=cfg.data.sim)
     del data
     split_sizes = [int(len(dset) * 0.8), len(dset) - int(len(dset) * 0.8)]
     train_set, test_set = random_split(dset, split_sizes)
 
     num_workers = 0
-    train_loader = DataLoader(train_set, batch_size=cfg.training.batch_size, shuffle=True, num_workers=num_workers, pin_memory=True)
+    train_loader = DataLoader(train_set, batch_size=cfg.training.batch_size, \
+                              shuffle=True, num_workers=num_workers, pin_memory=True)
     test_loader = DataLoader(test_set, batch_size=cfg.training.batch_size)
     agent, _ = init_agent_from_config(cfg, cfg.training.device, normalization=dset)
     train_metric, test_metric = baselines.Metric(), baselines.Metric()
@@ -122,6 +113,11 @@ def main(cfg : DictConfig) -> None:
         wandb.log({"Acc Train Loss": acc_loss, "Epoch": epoch})
 
     agent.save(os.getcwd())
+
+    if cfg.data.sim:
+        # Evaluate the simulation agent online
+        eval_agent(create_agent_predict_fn(agent, cfg))
+
     log.info("Saved agent to {}".format(os.getcwd()))
 
 if __name__ == '__main__':

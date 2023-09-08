@@ -1,0 +1,248 @@
+<mujoco model="franka_panda v200">
+    <!-- =================================================
+    Copyright 2018 Vikash Kumar
+    Model   :: Franka (MuJoCoV2.0)
+    Author  :: Vikash Kumar (vikashplus@gmail.com)
+    source  :: https://github.com/vikashplus/franka_sim
+    License :: Under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+====================================================== -->
+    <equality>
+        <weld body1="vive_controller" body2="world" solref="0.02 1" solimp=".7 .95 0.050"/>
+    </equality>
+
+    <compiler angle="radian" />
+    <size njmax="5000" nconmax="20000" nstack="5000000" nuser_actuator="5" nuserdata="3"/>
+    <default class="main">
+        <default class="panda">
+            <joint limited="true" stiffness="1" frictionloss="100" />
+            <general ctrllimited="true" forcelimited="true" biastype="affine" biasprm="0 -1 0 0 0 0 0 0 0 0" user="1002 40 2001 0 0" />
+            <default class="panda_viz">
+                <geom type="mesh" contype="0" conaffinity="0" rgba="0.95 0.99 0.92 1" />
+                <general user="1002 40 2001 0 0" />
+            </default>
+            <default class="panda_col">
+                <geom type="mesh" group="3" rgba="0.5 0.6 0.7 1" />
+                <general user="1002 40 2001 0 0" />
+            </default>
+            <default class="panda_arm">
+                <joint damping="100" />
+                <general user="1002 40 2001 0 0" />
+            </default>
+            <default class="panda_forearm">
+                <joint damping="10" />
+                <general user="1002 40 2001 0 0" />
+            </default>
+            <default class="panda_finger">
+                <joint stiffness="0" armature="5" damping="100" frictionloss="0" />
+                <geom conaffinity="0" condim="6" group="3" friction="1 0.5 0.0001" solref="0.01 1" solimp="0.8 0.9 0.001 0.5 2" margin="0.001" rgba="0.5 0.6 0.7 0.4" />
+                <general user="1002 40 2001 0 0" />
+            </default>
+        </default>
+        <default class="panda_overlay">
+            <joint armature="1" damping="1000" frictionloss="10" />
+            <geom type="mesh" contype="0" conaffinity="0" group="2" rgba="0.42 0.42 0.42 0.5" />
+        </default>
+    </default>
+    <asset>
+        <material name="MatGnd" texture="texplane" texuniform="true" reflectance="0.5" />
+        <mesh name="link0_col" file="meshes/collision/link0.stl" />
+        <mesh name="link1_col" file="meshes/collision/link1.stl" />
+        <mesh name="link2_col" file="meshes/collision/link2.stl" />
+        <mesh name="link3_col" file="meshes/collision/link3.stl" />
+        <mesh name="link4_col" file="meshes/collision/link4.stl" />
+        <mesh name="link5_col" file="meshes/collision/link5.stl" />
+        <mesh name="link6_col" file="meshes/collision/link6.stl" />
+        <mesh name="link7_col" file="meshes/collision/link7.stl" />
+        <mesh name="hand_col" file="meshes/collision/hand.stl" />
+        <mesh name="link0_viz" file="meshes/visual/link0.stl" />
+        <mesh name="link1_viz" file="meshes/visual/link1.stl" />
+        <mesh name="link2_viz" file="meshes/visual/link2.stl" />
+        <mesh name="link3_viz" file="meshes/visual/link3.stl" />
+        <mesh name="link4_viz" file="meshes/visual/link4.stl" />
+        <mesh name="link5_viz" file="meshes/visual/link5.stl" />
+        <mesh name="link6_viz" file="meshes/visual/link6.stl" />
+        <mesh name="link7_viz" file="meshes/visual/link7.stl" />
+        <mesh name="hand_viz" file="meshes/visual/hand.stl" />
+        <mesh name="finger_col" file="meshes/collision/finger.stl" scale="1.75 1 1.75" />
+        <mesh name="finger_viz" file="meshes/collision/finger.stl" scale="1.75 1 1.75" />
+    </asset>
+    <worldbody>
+    
+        <body name="vive_controller" mocap="true" pos="0.622938 -0.0355731 1.11179" quat="0.43989 0.827498 0.0183504 -0.348435">
+            <geom type="box" group="3" pos='0 0 .142' size="0.02 0.10 0.03" contype="0" conaffinity="0" rgba=".9 .7 .95 1" euler="0 0 -.785"/>
+        </body>
+
+      <geom name="ground" size="5 5 10" type="plane" material="MatGnd" />
+        <body name="panda0_link0" childclass="panda" pos="-0.15 0 0.52">
+            <inertial pos="-0.0291898 -0.000879465 0.0566032" quat="0.00411744 0.564916 0.0132875 0.825031" mass="2.91242" diaginertia="0.0122527 0.011364 0.00827785" />
+            <geom class="panda_viz" mesh="link0_viz" />
+            <geom class="panda_col" mesh="link0_col" />
+            <body name="panda0_link1" pos="0 0 0.333">
+                <inertial pos="1.1399e-05 -0.0312655 -0.0693733" quat="0.98466 0.174481 -0.000101815 0.000347662" mass="2.7063" diaginertia="0.0160285 0.0150276 0.00533183" />
+                <joint name="panda0_joint1" class="panda_arm" pos="0 0 0.25" axis="0 0 1" springref="-0.145" stiffness="8" range="-2.8773 2.8773" />
+                <geom class="panda_viz" mesh="link1_viz" />
+                <geom class="panda_col" mesh="link1_col" />
+                <body name="panda0_link2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                    <inertial pos="-1.31766e-05 -0.0703216 0.0311782" quat="0.57484 0.818266 -6.05764e-05 -6.61626e-05" mass="2.73046" diaginertia="0.0163724 0.0153528 0.0053937" />
+                    <joint name="panda0_joint2" class="panda_arm" pos="0 0 0" axis="0 0 1" springref="-0.67" stiffness="5" range="-1.7428 1.7428" />
+                    <geom class="panda_viz" mesh="link2_viz" />
+                    <geom class="panda_col" mesh="link2_col" />
+                    <body name="panda0_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+                        <inertial pos="0.0443483 0.0249283 -0.03813" quat="0.0615263 0.349824 0.234291 0.904956" mass="2.04104" diaginertia="0.0087048 0.00852619 0.00365919" />
+                        <joint name="panda0_joint3" class="panda_arm" pos="0 0 0" axis="0 0 1" springref="-0.052" stiffness="5" range="-2.8773 2.8773" />
+                        <geom class="panda_viz" mesh="link3_viz" />
+                        <geom class="panda_col" mesh="link3_col" />
+                        <body name="panda0_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                            <inertial pos="-0.0385503 0.0395256 0.0247162" quat="0.813566 0.465041 0.309792 0.160858" mass="2.08129" diaginertia="0.00900688 0.00883179 0.00377335" />
+                            <joint name="panda0_joint4" class="panda_arm" pos="0 0 0" axis="0 0 1" springref="-1.56" stiffness="10" range="-3.0018 -0.1398" />
+                            <geom class="panda_viz" mesh="link4_viz" />
+                            <geom class="panda_col" mesh="link4_col" />
+                            <body name="panda0_link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                                <inertial pos="-6.36776e-05 0.0384124 -0.10997" quat="0.990767 -0.135571 0.000963106 0.000694406" mass="3.00049" diaginertia="0.0261858 0.0252422 0.00534818" />
+                                <joint name="panda0_joint5" class="panda_forearm" pos="0 0 0" axis="0 0 1" springref="0.01" range="-2.8773 2.8773" />
+                                <geom class="panda_viz" mesh="link5_viz" />
+                                <geom class="panda_col" mesh="link5_col" />
+                                <body name="panda0_link6" pos="0 0 0" quat="0.500398 0.5 -0.499602 0.5">
+                                    <inertial pos="0.0510023 0.00693267 0.00616899" quat="-0.0460841 0.754362 0.044494 0.653325" mass="1.3235" diaginertia="0.00401813 0.00328514 0.00207945" />
+                                    <joint name="panda0_joint6" class="panda_forearm" pos="0 0 0" axis="0 0 1" springref="0.7" range="-1.5683 2.1616" />
+                                    <geom class="panda_viz" mesh="link6_viz" />
+                                    <geom class="panda_col" mesh="link6_col" />
+                                    <body name="panda0_link7" pos="0.088 0 0" quat="0.653541 0.653021 -0.270491 0.270706">
+                                        <inertial pos="0.0103614 0.0103596 0.0791078" quat="0.63547 0.278021 -0.670462 0.263369" mass="0.2" diaginertia="0.000305585 0.000253055 0.000133979" />
+                                        <joint name="panda0_joint7" class="panda_forearm" pos="0 0 0" axis="0 0 1" springref="-0.91" stiffness="0" range="-2.8773 2.8773" />
+                                        <geom class="panda_viz" mesh="link7_viz" />
+                                        <geom class="panda_col" mesh="link7_col" />
+                                        <body name="franka_gripper" pos="0 0 0">
+                                            <inertial pos="-0.000437158 -0.000433247 0.13093" quat="0.274283 0.267014 0.64485 0.661545" mass="0.81909" diaginertia="0.0027796 0.00251652 0.000557482" />
+                                            <geom class="panda_viz" pos="0 0 0.107" quat="0.92388 0 0 -0.382683" mesh="hand_viz" />
+                                            <geom class="panda_col" pos="0 0 0.107" quat="0.92388 0 0 -0.382683" mesh="hand_col" />
+                                            <site name="end_effector" pos="0 0 0.262" quat="0.92388 0 0 -0.382683" size="0.01" />
+                                            <body name="panda0_leftfinger" childclass="panda_finger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683">
+                                                <inertial pos="-1.57863e-05 0.0118731 0.0434103" quat="0.705868 0.0310348 -0.0314925 0.706962" mass="0.0927059" diaginertia="6.57134e-05 6.09611e-05 1.09932e-05" />
+                                                <joint name="panda0_finger_joint1" class="panda_finger" pos="0 1 0" axis="0 1 0" type="slide" range="0 0.04" />
+                                                <geom class="panda_viz" mesh="finger_viz" />
+                                                <geom size="0.007 0.00912414" pos="0 0.0075 0.0875" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.007 0.00912414" pos="0 0.0075 0.0875" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0075 0.00912414" pos="0 0.0085 0.0775" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0075 0.00912414" pos="0 0.0085 0.0775" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0082 0.00912414" pos="0 0.0095 0.0675" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0082 0.00912414" pos="0 0.0095 0.0675" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.009 0.00912414" pos="0 0.0105 0.0575" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.009 0.00912414" pos="0 0.0105 0.0575" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.01 0.00912414" pos="0 0.012 0.0475" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.01 0.00912414" pos="0 0.012 0.0475" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.011 0.00912414" pos="0 0.0135 0.035" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.011 0.00912414" pos="0 0.0135 0.035" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0185 0.012 0.0175" pos="0 0.014 0.015" quat="0.999888 0.0149994 0 0" type="box" />
+                                            </body>
+					    <body name="mug_0" pos="0 0 0.25" quat="-0.653 -0.271 -0.653 0.271">
+					      <geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_1" name="collision_mug_1" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_2" name="collision_mug_2" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_3" name="collision_mug_3" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_4" name="collision_mug_4" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_5" name="collision_mug_5" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_6" name="collision_mug_6" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_7" name="collision_mug_7" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_8" name="collision_mug_8" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_9" name="collision_mug_9" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_10" name="collision_mug_10" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_11" name="collision_mug_11" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_12" name="collision_mug_12" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_13" name="collision_mug_13" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_14" name="collision_mug_14" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_15" name="collision_mug_15" type="mesh" /><geom condim="4" density="1000" group="2" margin="0.003" mesh="mug_collision_mesh_16" name="collision_mug_16" type="mesh" /><geom conaffinity="0" contype="0" group="1" material="mug_material" mesh="mug_visual_mesh" type="mesh" />
+					    </body>
+                                            <body name="panda0_rightfinger" childclass="panda_finger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683">
+                                                <inertial pos="1.57863e-05 -0.0118731 0.0434103" quat="0.705868 -0.0310348 0.0314925 0.706962" mass="0.0927059" diaginertia="6.57134e-05 6.09611e-05 1.09932e-05" />
+                                                <joint name="panda0_finger_joint2" class="panda_finger" pos="0 1 0" axis="0 -1 0" type="slide" range="0 0.04" />
+                                                <geom class="panda_viz" quat="0 0 0 1" mesh="finger_viz" />
+                                                <geom size="0.007 0.00912414" pos="0 -0.0075 0.0875" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.007 0.00912414" pos="0 -0.0075 0.0875" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0075 0.00912414" pos="0 -0.0085 0.0775" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0075 0.00912414" pos="0 -0.0085 0.0775" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0082 0.00912414" pos="0 -0.0095 0.0675" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0082 0.00912414" pos="0 -0.0095 0.0675" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.009 0.00912414" pos="0 -0.0105 0.0575" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.009 0.00912414" pos="0 -0.0105 0.0575" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.01 0.00912414" pos="0 -0.012 0.0475" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.01 0.00912414" pos="0 -0.012 0.0475" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.011 0.00912414" pos="0 -0.0135 0.035" quat="0.707107 -0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.011 0.00912414" pos="0 -0.0135 0.035" quat="0.707107 0.116248 0.697486 0" type="capsule" />
+                                                <geom size="0.0185 0.012 0.0175" pos="0 -0.014 0.015" quat="0.999888 -0.0149994 0 0" type="box" />
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+          </body>
+	      <geom condim="3" material="floorplane" name="floor" pos="0 0 -2" size="1.5 1.5 .125" type="plane" />
+        
+        <body name="table" pos="0.0 0.0 0.5">
+            <geom friction="1 0.5 0.01" group="2" name="table_collision" pos="0 0 0" rgba="0.5 0.5 0 1" size="0.6 0.6 0.025" type="box" />
+            <geom conaffinity="0" contype="0" group="1" material="table_ceramic" name="table_visual" pos="0 0 0" size="0.6 0.6 0.025" type="box" />
+            <site name="table_top" pos="0.0 0.0 0.025" rgba="0 0 0 0" size="0.001 0.001 0.001" />
+            
+            <geom conaffinity="0" contype="0" group="1" material="table_legs_metal" name="table_leg1_visual" pos="0.5 0.5 -0.4875" size="0.025 0.4875" type="cylinder" />
+            <geom conaffinity="0" contype="0" group="1" material="table_legs_metal" name="table_leg2_visual" pos="-0.5 0.5 -0.4875" size="0.025 0.4875" type="cylinder" />
+            <geom conaffinity="0" contype="0" group="1" material="table_legs_metal" name="table_leg3_visual" pos="-0.5 -0.5 -0.4875" size="0.025 0.4875" type="cylinder" />
+            <geom conaffinity="0" contype="0" group="1" material="table_legs_metal" name="table_leg4_visual" pos="0.5 -0.5 -0.4875" size="0.025 0.4875" type="cylinder" />
+        </body>
+
+        <light castshadow="false" diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" name="light1" pos="1 1 4.0" specular="0.3 0.3 0.3" />
+        <light castshadow="false" diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" name="light2" pos="-3. -3. 4.0" specular="0.3 0.3 0.3" />
+	<camera mode="fixed" name="newerview" pos="0.000 -1.3 2.0" xyaxes="1.000 -0.000 0.000 0.000 0.788 0.616"/>
+        <camera mode="fixed" name="zeroview" pos="0 0 0" quat="0 1 0 0" />
+        <camera mode="fixed" name="frontview" pos="0 -1 1.4" quat="0.65 0.2705981 0.2705981 0.6532815" />
+        <camera mode="fixed" name="backview" pos="0 0.6 1.4" quat="0 0 0.2815 0.9595" />
+        <camera mode="fixed" name="sideview" pos="-0.6 -0.3 0.75" quat=" 0.6781121 0.5164697 -0.3290275 -0.4064037" />
+	<camera mode="fixed" name="left_cap" pos="-1.2 -0.5 1.8" quat="0.78 0.49 -0.22 -0.32" />
+        <camera mode="fixed" name="right_cap" pos="1.2 -0.5 1.8" quat="0.76 0.5 0.21 0.35"/>
+	<camera mode="fixed" name="newview" pos="0 -1.75 2.25"  quat="0.65 0.2705981 0.2705981 0.6532815" />
+	<body name="water_tank" pos="0.42 -0.1 0.55" quat="1 0 0 0"><geom conaffinity="0" contype="0" group="1" pos="0 0 0.003" rgba="0.9 0.9 0.3 1" size="0.06899999999999999 0.06899999999999999 0.003" type="box" /><geom group="2" name="water_tank_0" pos="0 0 0.003" size="0.075 0.075 0.012" type="box" /><geom conaffinity="0" contype="0" group="1" pos="0.072 0 0.03" rgba="0.9 0.9 0.3 1" size="0.003 0.075 0.03" type="box" /><geom group="2" name="water_tank_1" pos="0.072 0 0.03" size="0.012 0.075 0.03" type="box" /><geom conaffinity="0" contype="0" group="1" pos="0 0.072 0.03" rgba="0.9 0.9 0.3 1" size="0.06899999999999999 0.003 0.03" type="box" /><geom group="2" name="water_tank_2" pos="0 0.072 0.03" size="0.075 0.012 0.03" type="box" /><geom conaffinity="0" contype="0" group="1" pos="-0.072 0 0.03" rgba="0.9 0.9 0.3 1" size="0.003 0.075 0.03" type="box" /><geom group="2" name="water_tank_3" pos="-0.072 0 0.03" size="0.012 0.075 0.03" type="box" /><geom conaffinity="0" contype="0" group="1" pos="0 -0.072 0.03" rgba="0.9 0.9 0.3 1" size="0.06899999999999999 0.003 0.03" type="box" /><geom group="2" name="water_tank_4" pos="0 -0.072 0.03" size="0.075 0.012 0.03" type="box" />
+	</body>
+	<composite count="2 2 3" offset="0.56 -0.32 1.02" spacing="0.012" type="particle">
+	  <geom rgba="0.3216 0.3569 0.9804 0.6" size="0.01" /><joint damping="0.01" kind="main" />
+	</composite>
+    </worldbody>
+    <actuator>
+        <general name="panda0_joint1" class="panda" joint="panda0_joint1" ctrlrange="-1 1" forcerange="-86 86" gainprm="870 0 0 0 0 0 0 0 0 0" biasprm="0 -870 0 0 0 0 0 0 0 0" />
+        <general name="panda0_joint2" class="panda" joint="panda0_joint2" ctrlrange="-0.5 1" forcerange="-86 86" gainprm="870 0 0 0 0 0 0 0 0 0" biasprm="0 -870 0 0 0 0 0 0 0 0" />
+        <general name="panda0_joint3" class="panda" joint="panda0_joint3" ctrlrange="-2.88 2.88" forcerange="-86 86" gainprm="870 0 0 0 0 0 0 0 0 0" biasprm="0 -870 0 0 0 0 0 0 0 0" />
+        <general name="panda0_joint4" class="panda" joint="panda0_joint4" ctrlrange="-3.06 -0.05" forcerange="-86 86" gainprm="870 0 0 0 0 0 0 0 0 0" biasprm="0 -870 0 0 0 0 0 0 0 0" />
+        <general name="panda0_joint5" class="panda" joint="panda0_joint5" ctrlrange="-2.88 2.88" forcerange="-18 18" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+        <general name="panda0_joint6" class="panda" joint="panda0_joint6" ctrlrange="-1.58 2.17" forcerange="-18 18" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+        <general name="panda0_joint7" class="panda" joint="panda0_joint7" ctrlrange="-3.66 2.09" forcerange="-18 18" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+    </actuator>
+    <sensor>
+        <jointpos joint="panda0_joint1" name="fr_arm_jp1" />
+        <jointpos joint="panda0_joint2" name="fr_arm_jp2" />
+        <jointpos joint="panda0_joint3" name="fr_arm_jp3" />
+        <jointpos joint="panda0_joint4" name="fr_arm_jp4" />
+        <jointpos joint="panda0_joint5" name="fr_arm_jp5" />
+        <jointpos joint="panda0_joint6" name="fr_arm_jp6" />
+        <jointpos joint="panda0_joint7" name="fr_arm_jp7" />
+        <jointvel joint="panda0_joint1" name="fr_arm_jv1" />
+        <jointvel joint="panda0_joint2" name="fr_arm_jv2" />
+        <jointvel joint="panda0_joint3" name="fr_arm_jv3" />
+        <jointvel joint="panda0_joint4" name="fr_arm_jv4" />
+        <jointvel joint="panda0_joint5" name="fr_arm_jv5" />
+        <jointvel joint="panda0_joint6" name="fr_arm_jv6" />
+        <jointvel joint="panda0_joint7" name="fr_arm_jv7" />
+        <jointpos joint="panda0_finger_joint1" name="fr_fin_jp1" />
+        <jointpos joint="panda0_finger_joint2" name="fr_fin_jp2" />
+        <jointvel joint="panda0_finger_joint1" name="fr_fin_jv1" />
+        <jointvel joint="panda0_finger_joint2" name="fr_fin_jv2" />
+    </sensor>
+    <asset>
+      <texture builtin="gradient" height="256" rgb1=".9 .9 1." rgb2=".2 .3 .4" type="skybox" width="256" />
+      <texture file="textures/wood-tiles.png" name="texplane" type="2d" />
+      <material name="floorplane" reflectance="0.01" shininess="0.0" specular="0.0" texrepeat="2 2" texture="texplane" texuniform="true" />
+      
+      <texture file="textures/ceramic.png" name="tex-ceramic" type="cube" />
+      <material name="table_ceramic" reflectance="0.0" shininess="0.0" specular="0.2" texrepeat="1 1" texture="tex-ceramic" />
+        
+      <texture file="textures/steel-brushed.png" name="tex-steel-brushed" type="cube" />
+      <material name="table_legs_metal" reflectance="0.8" shininess="0.8" texrepeat="1 1" texture="tex-steel-brushed" />
+        
+      <texture file="textures/cream-plaster.png" name="tex-cream-plaster" type="2d" />
+      <material name="walls_mat" reflectance="0.0" shininess="0.1" specular="0.1" texrepeat="3 3" texture="tex-cream-plaster" texuniform="true" />
+      
+      <texture builtin="flat" height="512" name="textable" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5" width="512" />
+      <material name="table_mat" texture="textable" />
+      <mesh file="mug/025_mug_1.stl" name="mug_collision_mesh_1" scale="1 1 1" /><mesh file="mug/025_mug_10.stl" name="mug_collision_mesh_2" scale="1 1 1" /><mesh file="mug/025_mug_11.stl" name="mug_collision_mesh_3" scale="1 1 1" /><mesh file="mug/025_mug_12.stl" name="mug_collision_mesh_4" scale="1 1 1" /><mesh file="mug/025_mug_13.stl" name="mug_collision_mesh_5" scale="1 1 1" /><mesh file="mug/025_mug_14.stl" name="mug_collision_mesh_6" scale="1 1 1" /><mesh file="mug/025_mug_15.stl" name="mug_collision_mesh_7" scale="1 1 1" /><mesh file="mug/025_mug_16.stl" name="mug_collision_mesh_8" scale="1 1 1" /><mesh file="mug/025_mug_2.stl" name="mug_collision_mesh_9" scale="1 1 1" /><mesh file="mug/025_mug_3.stl" name="mug_collision_mesh_10" scale="1 1 1" /><mesh file="mug/025_mug_4.stl" name="mug_collision_mesh_11" scale="1 1 1" /><mesh file="mug/025_mug_5.stl" name="mug_collision_mesh_12" scale="1 1 1" /><mesh file="mug/025_mug_6.stl" name="mug_collision_mesh_13" scale="1 1 1" /><mesh file="mug/025_mug_7.stl" name="mug_collision_mesh_14" scale="1 1 1" /><mesh file="mug/025_mug_8.stl" name="mug_collision_mesh_15" scale="1 1 1" /><mesh file="mug/025_mug_9.stl" name="mug_collision_mesh_16" scale="1 1 1" /><mesh file="mug/textured_simple_blender.msh" name="mug_visual_mesh" scale="1 1 1" /><texture file="mug/texture_map.png" name="mug_texture" type="2d" /><material name="mug_material" texture="mug_texture" />
+    </asset>
+    <tendon /><equality /><contact /><default />
+    <keyframe>
+      <key qpos="0.0 0.25 0.0 -1.5 -1.0 -0.5 -1.0 0.04 0.04 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0 -0.054563994374921675 0.09653909372423204 0.0" qvel="0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0" time="0.0"/>
+    </keyframe>
+</mujoco>
