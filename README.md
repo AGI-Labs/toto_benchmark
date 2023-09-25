@@ -82,7 +82,10 @@ Additional Info:
 
 For more detailed dataset format information, see `assets/README.md`
 
-## Real-world evalation
+## Simulation submission
+- Submit your zipped folder for evaluation using this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdOCCoRnXj7W_laT9wyqqW-ks4mkmJjYLydmfMmILMub7l0VQ/viewform).
+
+## Real-world evaluation
 <!-- TODO(Kathy): port over instructions from website? -->
 
 ## Train a TOTO Behavior Cloning Agent
@@ -142,6 +145,8 @@ To submit your custom visual representation model to TOTO, you will train your v
     A new agent folder will be created in `outputs/<path_to>/<agent>/`.
 - Once the above is done, run `python scripts/test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
+- Submit your zipped folder for evaluation using this [google form](https://forms.gle/hJWPaXK1DcpuJnhQA).
+- We will evaluate your agents on the robot hardware and update your position on the leaderboard.
 
 ## Submitting a custom policy
 To submit your agent, you will train your image-based agent on our datasets in any preferred way. You may develop your custom visual representation model or use existing ones in TOTO. Please see below for detailed instructions: 
@@ -165,6 +170,8 @@ To submit your agent, you will train your image-based agent on our datasets in a
 for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
 - For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
     - Please make sure your agent files are outside of `assets/`, as it will be ignored for submission.
+- Submit your zipped folder for evaluation using this [google form](https://forms.gle/hJWPaXK1DcpuJnhQA).
+- We will evaluate your agents on the robot hardware and update your position on the leaderboard.
 
 ## Citation
 
