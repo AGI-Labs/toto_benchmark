@@ -14,7 +14,6 @@ import toto_benchmark
 from toto_benchmark.agents import init_agent_from_config
 from toto_benchmark.vision import load_model, load_transforms
 from toto_benchmark.scripts.utils import Namespace
-from toto_benchmark.scripts.test_stub_env import get_args
 
 
 def save_frames_as_gif(frames, frame_rate_divider=1):
@@ -100,10 +99,7 @@ def create_agent_predict_fn(agent, cfg):
         return agent.predict({'inputs': obs})
     return agent_predict_fn
 
-
-def load_agent_from_args():
-    args = get_args()
-
+def load_agent_from_args(args):
     with open(os.path.join(args.agent_path, 'hydra.yaml'), 'r') as f:
         cfg = yaml.load(f, Loader=yaml.FullLoader)
 
@@ -116,15 +112,14 @@ def load_agent_from_args():
     agent_predict_fn = create_agent_predict_fn(agent, cfg)
     return agent_predict_fn
 
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", "--team_name", required=True, type=str, help='Your team name')
+    parser.add_argument("-a", "--agent_path", type=str, help='Path to your agent')
     args = parser.parse_args()
 
     # load_agent_from_args() is an example that loads a BC agent from train.py
     # TODO(optional): replace agent_predict_fn with your custom agent predict function
-    agent_predict_fn = load_agent_from_args()
+    agent_predict_fn = load_agent_from_args(args)
 
     eval_agent(agent_predict_fn, args.team_name)
