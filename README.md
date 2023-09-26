@@ -65,6 +65,8 @@ python toto_benchmark/scripts/eval_agent.py -f outputs/<path_to>/<agent>/
   ```
 If you wish to evaluate a custom agent, replace the agent_predict_fn indicated by the TODO(optional) in toto_benchmark/scripts/eval_agent.py.
 
+- Submit your agent for evaluation using this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdOCCoRnXj7W_laT9wyqqW-ks4mkmJjYLydmfMmILMub7l0VQ/viewform).
+
 ## Download our real-world dataset
 TOTO consists of two tabletop manipulation tasks, scooping and pouring. The datasets of the two tasks can be downloaded [here](https://drive.google.com/drive/folders/1JGPGjCqUP4nUOAxY3Fpx3PjUQ_loo7fc?usp=sharing).
 
@@ -81,8 +83,6 @@ Additional Info:
 (included as part of the TOTO pouring dataset)
 
 For more detailed dataset format information, see `assets/README.md`
-
-- Submit your agent for evaluation using this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdOCCoRnXj7W_laT9wyqqW-ks4mkmJjYLydmfMmILMub7l0VQ/viewform).
 
 ## Real-world evaluation
 <!-- TODO(Kathy): port over instructions from website? -->
