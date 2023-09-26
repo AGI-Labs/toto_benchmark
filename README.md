@@ -82,8 +82,7 @@ Additional Info:
 
 For more detailed dataset format information, see `assets/README.md`
 
-## Simulation submission
-- Submit your zipped folder for evaluation using this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdOCCoRnXj7W_laT9wyqqW-ks4mkmJjYLydmfMmILMub7l0VQ/viewform).
+- Submit your agent for evaluation using this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdOCCoRnXj7W_laT9wyqqW-ks4mkmJjYLydmfMmILMub7l0VQ/viewform).
 
 ## Real-world evaluation
 <!-- TODO(Kathy): port over instructions from website? -->
