@@ -40,7 +40,6 @@ def eval_agent(agent_predict_fn, team_name):
     env.seed(0)
 
     for i in range(n_rollouts):
-        print(f'Evaluating Traj {i} ...')
         obs = env.reset()
 
         frames = []
@@ -59,7 +58,7 @@ def eval_agent(agent_predict_fn, team_name):
             save_frames_as_gif(frames, frame_rate_divider=gif_frame_rate_divider)
 
         rewards.append(reward)
-        print(f'Traj {i} Final reward: {reward}')
+        print(f'Traj {i} final reward: {reward}')
 
     print(f'Finished evaluating {n_rollouts} trajectories.')
 
