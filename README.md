@@ -61,7 +61,7 @@ The simulation dataset can be downloaded [here](https://drive.google.com/drive/f
 ## Simulation evaluation
 To evaluate an agent following the BC training provided in the example train.py script, run the following command:
   ```
-python toto_benchmark/scripts/eval_agent.py -f outputs/<path_to>/<agent>/
+python toto_benchmark/scripts/eval_agent.py -f outputs/<path_to>/<agent>/ -n <your_team_name>
   ```
 If you wish to evaluate a custom agent, replace the agent_predict_fn indicated by the TODO(optional) in toto_benchmark/scripts/eval_agent.py.
 
