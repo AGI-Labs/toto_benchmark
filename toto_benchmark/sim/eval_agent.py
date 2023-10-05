@@ -33,7 +33,7 @@ def save_frames_as_gif(frames, frame_rate_divider=1):
     print("Saved gif to", save_path)
 
 def eval_agent(agent_predict_fn, team_name):
-    n_rollouts = 100
+    n_rollouts = 25
     env = DMWaterPouringEnv(has_viewer=False)
     rewards = []
     traj_lengths = []
