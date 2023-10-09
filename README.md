@@ -100,8 +100,6 @@ Additional Info:
 
 For more detailed dataset format information, see `assets/README.md`
 
-## Real-world evaluation
-<!-- TODO(Kathy): port over instructions from website? -->
 
 ## Train a TOTO Behavior Cloning Agent
 Here's an example command to train an image-based behavior cloning (BC) agent on the real-world data with MOCO (Ours) as the image encoder. Our BC agent assumes that each image has been encoded into a 1D vector. You will need to download `scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl` to have this launched.
@@ -159,9 +157,7 @@ To submit your custom visual representation model to TOTO, you will train your v
     ```
     A new agent folder will be created in `outputs/<path_to>/<agent>/`.
 - Once the above is done, run `python scripts/test_stub_env.py -f outputs/<path_to>/<agent>/` for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
-- For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
-- Submit your zipped folder for evaluation using this [google form](https://forms.gle/hJWPaXK1DcpuJnhQA).
-- We will evaluate your agents on the robot hardware and update your position on the leaderboard.
+- Next, follow the instructions in the real world evaluation section.
 
 ## Submitting a custom policy
 To submit your agent, you will train your image-based agent on our datasets in any preferred way. You may develop your custom visual representation model or use existing ones in TOTO. Please see below for detailed instructions: 
@@ -183,8 +179,11 @@ To submit your agent, you will train your image-based agent on our datasets in a
     python scripts/test_stub_env.py -f outputs/collaborator_agent/
     ``` 
 for a simple simulated test on the robot. If everything works as expected, we are ready to have the agent to be evaluated on the real robot!
-- For submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
-    - Please make sure your agent files are outside of `assets/`, as they will be ignored for submission.
+- Next, follow the instructions in the real world evaluation section.
+
+## Real-world evaluation
+
+- For real-world evaluation submission, Run ```prepare_submission.sh``` script to generate a zipped folder which is ready for submission.
 - Submit your zipped folder for evaluation using this [google form](https://forms.gle/hJWPaXK1DcpuJnhQA).
 - We will evaluate your agents on the robot hardware and update your position on the leaderboard.
 
