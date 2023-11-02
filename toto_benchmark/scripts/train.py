@@ -15,14 +15,14 @@ import numpy as np
 from omegaconf import DictConfig, OmegaConf, open_dict
 import torch
 from torch.utils.data import DataLoader, random_split
-import wandb
+# import wandb # Disable wandb and eval for running on colab
 
 import baselines
 import toto_benchmark
 from toto_benchmark.agents import init_agent_from_config
 from toto_benchmark.vision import EMBEDDING_DIMS
 from dataset_traj import FrankaDatasetTraj
-from toto_benchmark.sim.eval_agent import eval_agent, create_agent_predict_fn
+# from toto_benchmark.sim.eval_agent import eval_agent, create_agent_predict_fn
 
 log = logging.getLogger(__name__)
 
@@ -61,8 +61,8 @@ def main(cfg : DictConfig) -> None:
     flat_dict = {}
     for key in ['data', 'agent', 'training']:
         flat_dict.update(dict(cfg[key]))
-    wandb.init(project="toto-bc", config=flat_dict)
-    wandb.run.name = "{}".format(agent_name)
+    # wandb.init(project="toto-bc", config=flat_dict)
+    # wandb.run.name = "{}".format(agent_name)
 
     try:
         with open(os.path.join(hydra.utils.get_original_cwd(), cfg.data.pickle_fn), 'rb') as f:
@@ -107,15 +107,15 @@ def main(cfg : DictConfig) -> None:
         if epoch % cfg.training.save_every_x_epoch == 0:
             agent.save(os.getcwd())
 
-        wandb.log({"Train Loss": train_metric.mean, "Epoch": epoch})
-        wandb.log({"Test Loss": test_metric.mean, "Epoch": epoch})
-        wandb.log({"Acc Train Loss": acc_loss, "Epoch": epoch})
+        # wandb.log({"Train Loss": train_metric.mean, "Epoch": epoch})
+        # wandb.log({"Test Loss": test_metric.mean, "Epoch": epoch})
+        # wandb.log({"Acc Train Loss": acc_loss, "Epoch": epoch})
 
     agent.save(os.getcwd())
 
-    if cfg.data.sim:
-        # Evaluate the simulation agent online
-        eval_agent(create_agent_predict_fn(agent, cfg))
+    # if cfg.data.sim:
+    #     # Evaluate the simulation agent online
+    #     eval_agent(create_agent_predict_fn(agent, cfg))
 
     log.info("Saved agent to {}".format(os.getcwd()))
 

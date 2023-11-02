@@ -4,11 +4,12 @@ default:
 
 data:
   sim: False
-  pickle_fn: assets/cloud-dataset-scooping/scooping_parsed_with_embeddings_moco_conv5_robocloud.pkl
-  subsample_period: 1
+  pickle_fn: assets/pouring_parsed_with_embeddings_moco_conv5.pkl
+  percent_dropped: 0.5
+  subsample_period: 3
   in_dim: 7
   out_dim: 7
-  H: 50 # horizon of actions to predict each time
+  H: 20 # horizon of actions to predict each time
   top_k: null
   images:
     cameras: []

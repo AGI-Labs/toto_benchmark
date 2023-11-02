@@ -37,6 +37,7 @@ class FrankaDatasetTraj(Dataset):
         self.img_transform_fn = load_transforms(cfg)
         self.noise = cfg.data.noise
         self.crop_images = cfg.data.images.crop
+        self.percent_dropped = cfg.data.percent_dropped
         self.pick_high_reward_trajs()
 
         self.subsample_demos()
@@ -83,8 +84,9 @@ class FrankaDatasetTraj(Dataset):
 
             if traj['actions'].shape[0] > self.H:
                 for start in range(traj['actions'].shape[0] - self.H + 1):
-                    inputs.append(traj['observations'][start])
-                    labels.append(traj['actions'][start : start + self.H, :])
+                    if np.random.uniform(0, 1) > self.percent_dropped: # randomly drop threshold percent of traj segments
+                        inputs.append(traj['observations'][start])
+                        labels.append(traj['actions'][start : start + self.H, :])
             else:
                 extended_actions = np.vstack([traj['actions'], np.tile(traj['actions'][-1], [self.H - traj['actions'].shape[0], 1])]) # pad short trajs with the last action
                 inputs.append(traj['observations'][0])
